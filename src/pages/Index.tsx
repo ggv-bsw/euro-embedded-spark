@@ -162,7 +162,7 @@ export default function Index() {
                   </div>
                   <div className="flex justify-between p-3 bg-background/50 rounded-lg">
                     <span className="text-muted-foreground">Languages</span>
-                    <span className="font-semibold">EN, RU, RO, SV</span>
+                    <span className="font-semibold">EN, RU, RO</span>
                   </div>
                   <div className="flex justify-between p-3 bg-background/50 rounded-lg">
                     <span className="text-muted-foreground">Main Markets</span>
