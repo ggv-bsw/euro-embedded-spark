@@ -137,7 +137,7 @@ export default function About() {
             </div>
             <div className="text-muted-foreground text-center space-y-4">
               <p className="font-bold text-lg">
-                I believe technology has no borders — only opportunities.
+                Technology knows no borders — and neither do we.
               </p>
               <p>
                 In a world where speed defines success, nearshoring with BSW TECH turns distance into advantage — accelerating innovation, reducing costs, and transforming bold ideas into real products.
