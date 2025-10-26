@@ -225,11 +225,11 @@ export default function Index() {
       <section className="py-24">
         <div className="max-w-container mx-auto px-6 lg:px-20">
           <div className="text-center mb-16">
-            <Award className="w-16 h-16 text-primary mx-auto mb-6" />
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <Award className="w-16 h-16 text-primary mx-auto mb-6 animate-float" />
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in-up">
               Quality & Trust <span className="text-gradient">Recognized</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
               We operate under strict European standards and are proud members of key industry organizations.
             </p>
           </div>
@@ -237,7 +237,8 @@ export default function Index() {
             {certifications.map((cert, index) => (
               <div
                 key={index}
-                className="px-8 py-4 bg-card border border-primary/20 rounded-lg hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20 transition-all"
+                className="px-8 py-4 bg-card border border-primary/20 rounded-lg hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1 hover:scale-105 transition-all duration-300 animate-fade-in-up"
+                style={{ animationDelay: `${0.2 + index * 0.1}s` }}
               >
                 <span className="font-semibold text-foreground">{cert}</span>
               </div>
