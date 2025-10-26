@@ -142,9 +142,6 @@ export default function About() {
               <p>
                 In a world where speed defines success, nearshoring with BSW TECH turns distance into advantage — accelerating innovation, reducing costs, and transforming bold ideas into real products.
               </p>
-              <p className="text-sm italic mt-6">
-                Signature : Ghirjev Gheorghe Anatolie
-              </p>
             </div>
           </div>
         </div>
