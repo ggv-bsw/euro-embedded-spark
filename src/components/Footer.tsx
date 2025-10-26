@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Linkedin, Github, Youtube, Mail, MapPin, Phone } from "lucide-react";
+import bswLogo from "@/assets/bsw-logo.png";
 
 const footerLinks = {
   company: [
@@ -35,10 +36,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link to="/" className="inline-block mb-4">
-              <div className="text-2xl font-bold">
-                <span className="text-gradient">BSW</span>{" "}
-                <span className="text-foreground">TECH</span>
-              </div>
+              <img src={bswLogo} alt="BSW TECH" className="h-12 w-auto" />
             </Link>
             <p className="text-muted-foreground mb-6 max-w-sm">
               Cost-efficient near-shore engineering for Automotive, IoT & Embedded Systems. 

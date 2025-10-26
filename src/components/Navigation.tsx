@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import bswLogo from "@/assets/bsw-logo.png";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -37,11 +38,8 @@ export default function Navigation() {
       <div className="max-w-container mx-auto px-6 lg:px-20">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group">
-            <div className="text-2xl font-bold">
-              <span className="text-gradient">BSW</span>{" "}
-              <span className="text-foreground group-hover:text-primary transition-colors">TECH</span>
-            </div>
+          <Link to="/" className="flex items-center group">
+            <img src={bswLogo} alt="BSW TECH" className="h-10 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
