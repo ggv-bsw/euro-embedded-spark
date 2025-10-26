@@ -78,7 +78,7 @@ const whyPoints = [
   "EU Time-Zone & Engineering Standards",
   "ISO 9001 · 14001 · 27001 · 37001 Certified",
   "End-to-End Design → Prototyping → Launch",
-  "Automotive & IoT Expertise Since 2017",
+  "Automotive & IoT Expertise Since 11.11.2021",
 ];
 
 export default function Index() {
