@@ -71,7 +71,7 @@ export default function Contact() {
                     <p className="text-muted-foreground">
                       Chișinău, Moldova
                       <br />
-                      EU Presence: Sweden
+                      EU Presence: Romania, Estonia
                     </p>
                   </div>
                 </div>

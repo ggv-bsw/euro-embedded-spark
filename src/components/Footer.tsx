@@ -47,7 +47,7 @@ export default function Footer() {
             <div className="space-y-3 text-sm text-muted-foreground">
               <div className="flex items-start gap-2">
                 <MapPin size={16} className="mt-1 flex-shrink-0" />
-                <span>Chișinău, Moldova | EU Presence in Sweden</span>
+                <span>Chișinău, Moldova | EU Presence in Romania, Estonia</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail size={16} className="flex-shrink-0" />
