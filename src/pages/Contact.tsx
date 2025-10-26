@@ -115,7 +115,7 @@ export default function Contact() {
                     <Github className="w-6 h-6 text-primary" />
                   </a>
                   <a
-                    href="https://youtube.com/@bsw-tech"
+                    href="https://www.youtube.com/@BSWTech-h8q"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-3 bg-card border border-line rounded-lg hover:border-primary/50 hover:bg-primary/10 transition-all"
