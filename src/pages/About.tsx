@@ -135,10 +135,14 @@ export default function About() {
               <h3 className="text-2xl font-bold mb-2">Gheorghe Ghirjev</h3>
               <p className="text-primary font-semibold">CEO & Founder</p>
             </div>
-            <p className="text-muted-foreground text-center">
-              Entrepreneur and Engineer with 15+ years of experience in embedded systems and product innovation. 
-              Leading BSW TECH's vision to become the premier near-shore engineering partner for European automotive and IoT companies.
-            </p>
+            <div className="text-muted-foreground text-center space-y-4">
+              <p className="font-bold text-lg">
+                I believe technology has no borders — only opportunities.
+              </p>
+              <p>
+                In a world where speed defines success, nearshoring with BSW TECH turns distance into advantage — accelerating innovation, reducing costs, and transforming bold ideas into real products.
+              </p>
+            </div>
           </div>
         </div>
       </section>
