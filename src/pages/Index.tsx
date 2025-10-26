@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Cpu, Car, Wifi, Package, Smartphone, Award, MapPin, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Cpu, Car, Wifi, Package, Smartphone, Award, MapPin, CheckCircle2, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -37,6 +37,12 @@ const services = [
     title: "Mobile & Full-Stack Development",
     description: "Native apps in Kotlin and Swift, React-based front-ends and secure backend APIs built for connected devices.",
     keywords: "Full-Stack, React, Swift, Kotlin, Backend, API",
+  },
+  {
+    icon: Users,
+    title: "Outsourcing / Out Staffing",
+    description: "We build a team of professionals for you, all working together to deliver fast and cost efficient digital experiences.",
+    keywords: "Outsourcing, Project Management, Out Staffing, Body Leasing",
   },
 ];
 
