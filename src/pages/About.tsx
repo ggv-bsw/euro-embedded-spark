@@ -3,6 +3,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import gheorghePhoto from "@/assets/gheorghe-photo.jpg";
 
 const certifications = [
   { name: "ISO 9001", description: "Quality Management Systems" },
@@ -126,9 +127,11 @@ export default function About() {
           </div>
           <div className="max-w-3xl mx-auto bg-gradient-to-br from-primary/10 to-secondary/10 p-8 rounded-2xl border border-primary/20">
             <div className="text-center mb-6">
-              <div className="w-24 h-24 bg-primary/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <Users className="w-12 h-12 text-primary" />
-              </div>
+              <img 
+                src={gheorghePhoto} 
+                alt="Gheorghe Ghirjev - CEO & Co-Founder" 
+                className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-primary/20"
+              />
               <h3 className="text-2xl font-bold mb-2">Gheorghe Ghirjev</h3>
               <p className="text-primary font-semibold">CEO & Co-Founder</p>
             </div>
