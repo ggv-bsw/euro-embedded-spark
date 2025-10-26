@@ -152,7 +152,7 @@ export default function Index() {
                 <MapPin className="w-12 h-12 text-primary mb-4" />
                 <h3 className="text-2xl font-bold mb-4">Strategic Location</h3>
                 <p className="text-muted-foreground mb-6">
-                  Headquartered in Chișinău, Moldova with presence in Sweden. 
+                  Headquartered in Chișinău, Moldova with presence in Romania and Estonia. 
                   Perfect timezone alignment for Nordic and German markets.
                 </p>
                 <div className="space-y-3 text-sm">
