@@ -83,10 +83,10 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold mb-1">Email</h3>
                     <a 
-                      href="mailto:contact@bsw-tech.com"
+                      href="mailto:hr@bsw-tech.com"
                       className="text-primary hover:underline"
                     >
-                      contact@bsw-tech.com
+                      hr@bsw-tech.com
                     </a>
                   </div>
                 </div>
