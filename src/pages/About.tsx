@@ -133,7 +133,7 @@ export default function About() {
                 className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-primary/20"
               />
               <h3 className="text-2xl font-bold mb-2">Gheorghe Ghirjev</h3>
-              <p className="text-primary font-semibold">CEO & Co-Founder</p>
+              <p className="text-primary font-semibold">CEO & Founder</p>
             </div>
             <p className="text-muted-foreground text-center">
               Entrepreneur and Engineer with 15+ years of experience in embedded systems and product innovation. 
