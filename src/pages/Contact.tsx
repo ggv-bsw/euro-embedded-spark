@@ -132,8 +132,14 @@ export default function Contact() {
                 <p className="text-muted-foreground mb-4">
                   Schedule a meeting directly with our team to discuss your project requirements.
                 </p>
-                <Button variant="secondary" size="lg" className="w-full">
-                  Schedule via Calendly
+                <Button variant="secondary" size="lg" className="w-full" asChild>
+                  <a 
+                    href="https://calendly.com/gheorghe-ghirjev-bsw-tech/30min" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    Schedule via Calendly
+                  </a>
                 </Button>
               </div>
             </div>
