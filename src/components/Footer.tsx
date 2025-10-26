@@ -36,7 +36,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link to="/" className="inline-block mb-4">
-              <img src={bswLogo} alt="BSW TECH" className="h-12 w-auto" />
+              <img src={bswLogo} alt="BSW TECH" className="h-16 w-auto" />
             </Link>
             <p className="text-muted-foreground mb-6 max-w-sm">
               Cost-efficient near-shore engineering for Automotive, IoT & Embedded Systems. 

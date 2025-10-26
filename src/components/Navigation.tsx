@@ -39,7 +39,7 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center group">
-            <img src={bswLogo} alt="BSW TECH" className="h-10 w-auto" />
+            <img src={bswLogo} alt="BSW TECH" className="h-14 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
