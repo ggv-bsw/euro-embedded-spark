@@ -92,14 +92,14 @@ export default function About() {
                   enabling us to deliver complete product solutions from concept to production.
                 </p>
                 <p>
-                  Since 2017, we've been helping Nordic and German companies accelerate their R&D capacity with 
+                  Since 2021, we've been helping Nordic and German companies accelerate their R&D capacity with 
                   cost-efficient near-shore engineering that doesn't compromise on quality.
                 </p>
               </div>
             </div>
             <div className="space-y-8">
               <div className="bg-card p-8 rounded-2xl border border-line">
-                <div className="text-4xl font-bold text-primary mb-2">2017</div>
+                <div className="text-4xl font-bold text-primary mb-2">2021</div>
                 <div className="text-muted-foreground">Founded</div>
               </div>
               <div className="bg-card p-8 rounded-2xl border border-line">
