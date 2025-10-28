@@ -38,8 +38,9 @@ export default function Navigation() {
       <div className="max-w-container mx-auto px-6 lg:px-20">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center group">
+          <Link to="/" className="flex items-center gap-3 group">
             <img src={bswLogo} alt="BSW TECH" className="h-14 w-auto" />
+            <span className="text-2xl font-heading font-bold text-foreground">BSW Tech</span>
           </Link>
 
           {/* Desktop Navigation */}
