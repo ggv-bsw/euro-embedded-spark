@@ -12,3 +12,6 @@ Allow: /
 
 User-agent: *
 Allow: /
+Disallow: /playground
+
+Sitemap: https://bsw-tech.com/sitemap.xml
