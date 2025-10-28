@@ -35,8 +35,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link to="/" className="inline-block mb-4">
+            <Link to="/" className="inline-flex items-center gap-3 mb-4">
               <img src={bswLogo} alt="BSW TECH" className="h-16 w-auto" />
+              <span className="text-2xl font-heading font-bold text-gradient">BSW Tech</span>
             </Link>
             <p className="text-muted-foreground mb-6 max-w-sm">
               Cost-efficient near-shore engineering for Automotive, IoT & Embedded Systems. 
