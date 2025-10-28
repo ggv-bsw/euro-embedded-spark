@@ -40,7 +40,7 @@ export default function Navigation() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <img src={bswLogo} alt="BSW TECH" className="h-14 w-auto" />
-            <span className="text-2xl font-heading font-bold text-foreground">BSW Tech</span>
+            <span className="text-2xl font-heading font-bold text-gradient">BSW Tech</span>
           </Link>
 
           {/* Desktop Navigation */}
