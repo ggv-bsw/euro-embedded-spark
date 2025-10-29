@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Linkedin, Github, Youtube, Mail, MapPin, Phone } from "lucide-react";
+import { Linkedin, Github, Youtube, Mail, MapPin, Phone, Instagram } from "lucide-react";
 import bswLogo from "@/assets/bsw-logo.png";
 
 const footerLinks = {
@@ -26,6 +26,7 @@ const socialLinks = [
   { icon: Linkedin, url: "https://linkedin.com/company/bsw-tech", label: "LinkedIn" },
   { icon: Github, url: "https://github.com/bsw-tech", label: "GitHub" },
   { icon: Youtube, url: "https://www.youtube.com/@BSWTech-h8q", label: "YouTube" },
+  { icon: Instagram, url: "https://www.instagram.com/bswtech/", label: "Instagram" },
 ];
 
 export default function Footer() {

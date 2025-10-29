@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, MapPin, Linkedin, Github, Youtube } from "lucide-react";
+import { Mail, MapPin, Linkedin, Github, Youtube, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -185,6 +185,15 @@ export default function Contact() {
                     aria-label="YouTube"
                   >
                     <Youtube className="w-6 h-6 text-primary" />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/bswtech/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-card border border-line rounded-lg hover:border-primary/50 hover:bg-primary/10 transition-all"
+                    aria-label="Instagram"
+                  >
+                    <Instagram className="w-6 h-6 text-primary" />
                   </a>
                 </div>
               </div>
