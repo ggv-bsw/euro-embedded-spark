@@ -25,7 +25,7 @@ const footerLinks = {
 const socialLinks = [
   { icon: Linkedin, url: "https://linkedin.com/company/bsw-tech", label: "LinkedIn" },
   { icon: Github, url: "https://github.com/bsw-tech", label: "GitHub" },
-  { icon: Youtube, url: "https://youtube.com/@bsw-tech", label: "YouTube" },
+  { icon: Youtube, url: "https://www.youtube.com/@BSWTech-h8q", label: "YouTube" },
 ];
 
 export default function Footer() {
