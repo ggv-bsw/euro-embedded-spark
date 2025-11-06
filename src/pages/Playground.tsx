@@ -81,7 +81,6 @@ export default function Playground() {
       <SEO
         title="Playground | BSW TECH Open Source & Prototypes"
         description="Explore BSW TECH open-source projects and prototypes: embedded, AUTOSAR, IoT, and tooling."
-        noindex
       />
 
       <script
