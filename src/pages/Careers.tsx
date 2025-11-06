@@ -85,49 +85,48 @@ const openPositions = [
 const SITE = "https://bsw-tech.com";
 
 export default function Careers() {
+  // const jobsLd = openPositions.map((p) => {
+  //   const isRemote = /remote/i.test(p.location);
+  //   const mainLoc = p.location.split("/")[0].trim();
+  //   const [city, country] = mainLoc.split(",").map((s) => s.trim());
 
-  const jobsLd = openPositions.map((p) => {
-    const isRemote = /remote/i.test(p.location);
-    const mainLoc = p.location.split("/")[0].trim();
-    const [city, country] = mainLoc.split(",").map((s) => s.trim());
+  //   return {
+  //     "@type": "JobPosting",
+  //     title: p.title,
+  //     description: p.description,
+  //     employmentType: (p.type || "Full-time").toUpperCase().replace("-", "_"),
+  //     ...(isRemote
+  //       ? {
+  //           jobLocationType: "TELECOMMUTE",
+  //           applicantLocationRequirements: {
+  //             "@type": "Country",
+  //             name: "Europe",
+  //           },
+  //         }
+  //       : {
+  //           jobLocation: {
+  //             "@type": "Place",
+  //             address: {
+  //               "@type": "PostalAddress",
+  //               ...(city ? { addressLocality: city } : {}),
+  //               ...(country ? { addressCountry: country } : {}),
+  //             },
+  //           },
+  //         }),
+  //     hiringOrganization: {
+  //       "@type": "Organization",
+  //       name: "BSW TECH",
+  //       sameAs: [
+  //         "https://linkedin.com/company/bsw-tech",
+  //         "https://github.com/bsw-tech",
+  //         "https://www.youtube.com/@BSWTech-h8q",
+  //         "https://www.instagram.com/bswtech/",
+  //       ],
+  //       url: SITE,
+  //     },
+  //   };
+  // });
 
-    return {
-      "@type": "JobPosting",
-      title: p.title,
-      description: p.description,
-      employmentType: (p.type || "Full-time").toUpperCase().replace("-", "_"),
-      ...(isRemote
-        ? {
-            jobLocationType: "TELECOMMUTE",
-            applicantLocationRequirements: {
-              "@type": "Country",
-              name: "Europe",
-            },
-          }
-        : {
-            jobLocation: {
-              "@type": "Place",
-              address: {
-                "@type": "PostalAddress",
-                ...(city ? { addressLocality: city } : {}),
-                ...(country ? { addressCountry: country } : {}),
-              },
-            },
-          }),
-      hiringOrganization: {
-        "@type": "Organization",
-        name: "BSW TECH",
-        sameAs: [
-          "https://linkedin.com/company/bsw-tech",
-          "https://github.com/bsw-tech",
-          "https://www.youtube.com/@BSWTech-h8q",
-          "https://www.instagram.com/bswtech/",
-        ],
-        url: SITE,
-      },
-    };
-  });
-  
   return (
     <>
       <SEO
@@ -136,7 +135,7 @@ export default function Careers() {
         keywords="embedded jobs Moldova, AUTOSAR jobs, IoT developer jobs, careers BSW TECH"
       />
 
-      <script
+      {/* <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -151,7 +150,7 @@ export default function Careers() {
             })),
           }),
         }}
-      />
+      /> */}
 
       <script
         type="application/ld+json"
