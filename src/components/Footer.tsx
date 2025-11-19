@@ -38,11 +38,11 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Link to="/" className="inline-flex items-center gap-3 mb-4">
               <img src={bswLogo} alt="BSW TECH" className="h-16 w-auto" />
-              <span className="text-2xl font-heading font-bold text-primary">BSW Tech</span>
+              <span className="text-2xl font-heading font-bold text-primary">BSW</span>
             </Link>
             <p className="text-muted-foreground mb-6 max-w-sm">
-              Cost-efficient near-shore engineering for Automotive, IoT & Embedded Systems. 
-              Bridging Eastern European talent with Western European precision.
+              Cost-efficient near-shore engineering for Automotive, IoT & Embedded Systems. Bridging Eastern European
+              talent with Western European precision.
             </p>
             <div className="space-y-3 text-sm text-muted-foreground">
               <div className="flex items-start gap-2">
@@ -64,10 +64,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.path}>
-                  <Link
-                    to={link.path}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                  >
+                  <Link to={link.path} className="text-sm text-muted-foreground hover:text-primary transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -81,10 +78,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.path}>
-                  <Link
-                    to={link.path}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                  >
+                  <Link to={link.path} className="text-sm text-muted-foreground hover:text-primary transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -98,10 +92,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {footerLinks.resources.map((link) => (
                 <li key={link.path}>
-                  <Link
-                    to={link.path}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                  >
+                  <Link to={link.path} className="text-sm text-muted-foreground hover:text-primary transition-colors">
                     {link.name}
                   </Link>
                 </li>
