@@ -38,7 +38,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Link to="/" className="inline-flex items-center gap-3 mb-4">
               <img src={bswLogo} alt="BSW TECH" className="h-16 w-auto" />
-              <span className="text-2xl font-heading font-bold text-primary">BSW</span>
+              <span className="text-2xl font-heading font-bold text-brand-pink">BSW</span>
             </Link>
             <p className="text-muted-foreground mb-6 max-w-sm">
               Cost-efficient near-shore engineering for Automotive, IoT & Embedded Systems. Bridging Eastern European
