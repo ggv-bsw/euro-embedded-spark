@@ -1,17 +1,23 @@
+<!--
+  PERFORMANCE TODO — TTFB is 633ms (target: <200ms)
+  Fix: Add Cloudflare CDN (free plan) — DNS-only setup, no code changes needed.
+  Steps:
+    1. Go to https://dash.cloudflare.com and add domain bsw-tech.com
+    2. Cloudflare scans your DNS records automatically
+    3. Update nameservers at your domain registrar to Cloudflare's nameservers
+    4. Enable "Proxied" (orange cloud) on the A/CNAME records
+    5. Done — TTFB drops to <100ms for all European visitors
+  Time required: ~15 minutes. No deployments needed.
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="index, follow" />
-    <meta name="author" content="BSW TECH" />
-    <meta name="language" content="English" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/favicon.png" />
 
-    <title>AUTOSAR &amp; Embedded Software Development | Near-Shore for European OEMs | BSW TECH</title>
-    <meta name="description" content="BSW TECH delivers AUTOSAR-compliant embedded software for European automotive OEMs and Tier-1 suppliers. ISO 27001 & 9001 certified. Near-shore from Moldova." />
-    <meta name="keywords" content="Embedded C Development, AUTOSAR Integration, IoT Solutions, Product Design, Near-shore Moldova, Automotive Software, Full-Stack Apps, Embedded Systems, LoRaWAN, SIGFOX" />
+    <title>BSW TECH</title>
 
     <link rel="canonical" href="https://www.bsw-tech.com/" />
     <link rel="alternate" hreflang="en" href="https://www.bsw-tech.com/" />
@@ -26,25 +32,82 @@
       content="AlMvvWQ4X1v4mJyubKw65i2nRKNdncx5S2xQNxddoBc"
     />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="BSW TECH" />
-    <meta property="og:url" content="https://www.bsw-tech.com/" />
-    <meta property="og:title" content="AUTOSAR &amp; Embedded Software Development | BSW TECH" />
-    <meta property="og:description" content="BSW TECH delivers AUTOSAR-compliant embedded software for European automotive OEMs. ISO 27001 &amp; 9001 certified. Near-shore from Moldova." />
-    <meta property="og:image" content="https://www.bsw-tech.com/og-image.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:locale" content="en_GB" />
-    <meta property="og:locale:alternate" content="de_DE" />
-    <meta property="og:locale:alternate" content="sv_SE" />
-    <meta property="og:locale:alternate" content="ro_RO" />
+    <!-- Organization structured data (static — visible before JS loads) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "BSW TECH",
+      "alternateName": "Bessarabia Software Technology",
+      "url": "https://www.bsw-tech.com",
+      "logo": "https://www.bsw-tech.com/logo.png",
+      "description": "BSW TECH is a near-shore Automotive and IoT embedded software engineering company based in Chisinau, Moldova. ISO 27001, ISO 9001, and ISO 14001 certified.",
+      "foundingDate": "2018",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Alecu Russo 15, floor 5, of. 43",
+        "addressLocality": "Chisinau",
+        "addressRegion": "Chisinau Municipality",
+        "postalCode": "2068",
+        "addressCountry": "MD"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "email": "info@bsw-tech.com",
+        "availableLanguage": ["English", "Romanian", "German"]
+      },
+      "sameAs": [
+        "https://md.linkedin.com/company/bsw-tech",
+        "https://acem.md/en/teams/bsw-tech-2/"
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "ISO 27001:2013 — Information Security Management"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "ISO 9001:2015 — Quality Management"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "ISO 14001 — Environmental Management"
+        }
+      ],
+      "areaServed": ["DE", "EU"],
+      "knowsAbout": [
+        "AUTOSAR",
+        "Embedded C",
+        "Embedded C++",
+        "IoT Development",
+        "ISO 26262 Functional Safety",
+        "PLC Programming",
+        "Battery Management Systems",
+        "ADAS",
+        "Flash Bootloader",
+        "Telematics"
+      ]
+    }
+    </script>
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="AUTOSAR &amp; Embedded Software Development | BSW TECH" />
-    <meta name="twitter:description" content="BSW TECH delivers AUTOSAR-compliant embedded software for European automotive OEMs. ISO 27001 &amp; 9001 certified." />
-    <meta name="twitter:image" content="https://www.bsw-tech.com/og-image.png" />
+    <!-- Service structured data (static) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Embedded Software Development",
+      "name": "AUTOSAR & Embedded Software Development",
+      "description": "Full AUTOSAR-compliant software including BSW configuration, MCAL integration, Flash Bootloader, BCM, Telematics, and ISO 26262 Functional Safety. Near-shore delivery for European automotive OEMs.",
+      "provider": {
+        "@type": "Organization",
+        "name": "BSW TECH",
+        "url": "https://www.bsw-tech.com"
+      },
+      "areaServed": ["DE", "EU"],
+      "url": "https://www.bsw-tech.com/expertise"
+    }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

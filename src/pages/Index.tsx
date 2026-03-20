@@ -153,7 +153,7 @@ export default function Index() {
         <section className="relative overflow-hidden">
           <img
             src={heroImage}
-            alt="Automotive ECU embedded software development"
+            alt="Embedded automotive circuit board — BSW TECH near-shore engineering, Chisinau Moldova"
             width={1920}
             height={1080}
             fetchPriority="high"
