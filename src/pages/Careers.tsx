@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Briefcase,
   GraduationCap,
@@ -12,6 +13,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
+import JobApplicationForm from "@/components/JobApplicationForm";
 
 const benefits = [
   {
@@ -60,18 +62,18 @@ const openPositions = [
       "Develop firmware for automotive ECUs using C/C++ and AUTOSAR.",
   },
   {
-    title: "AUTOSAR Integration Engineer",
-    location: "Chișinău, Moldova",
-    type: "Full-time",
-    description:
-      "Integrate and configure AUTOSAR software components for automotive projects.",
-  },
-  {
-    title: "IoT Solutions Developer",
+    title: "Senior Java Developer",
     location: "Chișinău, Moldova / Remote",
     type: "Full-time",
     description:
-      "Design and implement IoT connectivity solutions using LoRaWAN and cloud platforms.",
+      "Design and build scalable backend services and microservices using Java, Spring Boot, and cloud-native architectures.",
+  },
+  {
+    title: "Scala Developer",
+    location: "Chișinău, Moldova / Remote",
+    type: "Full-time",
+    description:
+      "Develop high-performance, functional-style backend systems and data pipelines using Scala, Akka, and the JVM ecosystem.",
   },
   {
     title: "Full-Stack Developer",
@@ -80,52 +82,69 @@ const openPositions = [
     description:
       "Build mobile and web applications using React, Node.js, and modern frameworks.",
   },
+  {
+    title: "Go Developer",
+    location: "Chișinău, Moldova / Remote",
+    type: "Full-time",
+    description:
+      "Build high-performance backend services, APIs, and distributed systems using Go and cloud-native tooling.",
+  },
+  {
+    title: ".NET Developer with Angular",
+    location: "Chișinău, Moldova / Remote",
+    type: "Full-time",
+    description:
+      "Develop full-stack enterprise applications using .NET Core backend services and Angular front-end interfaces.",
+  },
 ];
 
 const SITE = "https://bsw-tech.com";
 
 export default function Careers() {
-  // const jobsLd = openPositions.map((p) => {
-  //   const isRemote = /remote/i.test(p.location);
-  //   const mainLoc = p.location.split("/")[0].trim();
-  //   const [city, country] = mainLoc.split(",").map((s) => s.trim());
+  const [applicationJob, setApplicationJob] = useState<string | null>(null);
 
-  //   return {
-  //     "@type": "JobPosting",
-  //     title: p.title,
-  //     description: p.description,
-  //     employmentType: (p.type || "Full-time").toUpperCase().replace("-", "_"),
-  //     ...(isRemote
-  //       ? {
-  //           jobLocationType: "TELECOMMUTE",
-  //           applicantLocationRequirements: {
-  //             "@type": "Country",
-  //             name: "Europe",
-  //           },
-  //         }
-  //       : {
-  //           jobLocation: {
-  //             "@type": "Place",
-  //             address: {
-  //               "@type": "PostalAddress",
-  //               ...(city ? { addressLocality: city } : {}),
-  //               ...(country ? { addressCountry: country } : {}),
-  //             },
-  //           },
-  //         }),
-  //     hiringOrganization: {
-  //       "@type": "Organization",
-  //       name: "BSW TECH",
-  //       sameAs: [
-  //         "https://linkedin.com/company/bsw-tech",
-  //         "https://github.com/bsw-tech",
-  //         "https://www.youtube.com/@BSWTech-h8q",
-  //         "https://www.instagram.com/bswtech/",
-  //       ],
-  //       url: SITE,
-  //     },
-  //   };
-  // });
+  const jobsLd = openPositions.map((p) => {
+    const isRemote = /remote/i.test(p.location);
+    const mainLoc = p.location.split("/")[0].trim();
+    const [city, country] = mainLoc.split(",").map((s) => s.trim());
+
+    return {
+      "@type": "JobPosting",
+      title: p.title,
+      description: p.description,
+      datePosted: "2025-03-01",
+      employmentType: (p.type || "Full-time").toUpperCase().replace("-", "_"),
+      ...(isRemote
+        ? {
+            jobLocationType: "TELECOMMUTE",
+            applicantLocationRequirements: {
+              "@type": "Country",
+              name: "Europe",
+            },
+          }
+        : {
+            jobLocation: {
+              "@type": "Place",
+              address: {
+                "@type": "PostalAddress",
+                ...(city ? { addressLocality: city } : {}),
+                ...(country ? { addressCountry: country } : {}),
+              },
+            },
+          }),
+      hiringOrganization: {
+        "@type": "Organization",
+        name: "BSW TECH",
+        sameAs: [
+          "https://linkedin.com/company/bsw-tech",
+          "https://github.com/bsw-tech",
+          "https://www.youtube.com/@BSWTech-h8q",
+          "https://www.instagram.com/bswtech/",
+        ],
+        url: SITE,
+      },
+    };
+  });
 
   return (
     <>
@@ -135,7 +154,7 @@ export default function Careers() {
         keywords="embedded jobs Moldova, AUTOSAR jobs, IoT developer jobs, careers BSW TECH"
       />
 
-      {/* <script
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -150,7 +169,7 @@ export default function Careers() {
             })),
           }),
         }}
-      /> */}
+      />
 
       <script
         type="application/ld+json"
@@ -177,13 +196,14 @@ export default function Careers() {
       />
       <div className="min-h-screen">
         <Navigation />
+        <main>
 
         {/* Hero */}
         <section className="pt-32 pb-16 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
           <div className="max-w-container mx-auto px-6 lg:px-20 text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Build Your Future at{" "}
-              <span className="text-gradient">BSW TECH</span>
+              <span className="text-primary">BSW TECH</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Join our team of engineers working on cutting-edge projects in
@@ -194,7 +214,7 @@ export default function Careers() {
         </section>
 
         {/* Why Join */}
-        <section className="py-24">
+        <section className="py-16 md:py-24">
           <div className="max-w-container mx-auto px-6 lg:px-20">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-6">Why Join BSW TECH?</h2>
@@ -223,7 +243,7 @@ export default function Careers() {
         </section>
 
         {/* Embedded School */}
-        <section className="py-24 bg-card">
+        <section className="py-16 md:py-24 bg-card">
           <div className="max-w-container mx-auto px-6 lg:px-20">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
@@ -284,7 +304,7 @@ export default function Careers() {
         </section>
 
         {/* Open Positions */}
-        <section className="py-24">
+        <section className="py-16 md:py-24">
           <div className="max-w-container mx-auto px-6 lg:px-20">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-6">Open Positions</h2>
@@ -314,11 +334,13 @@ export default function Careers() {
                         {position.location}
                       </p>
                     </div>
-                    <Link to="/contact">
-                      <Button variant="hero" className="whitespace-nowrap">
-                        Apply Now
-                      </Button>
-                    </Link>
+                    <Button
+                      variant="hero"
+                      className="whitespace-nowrap"
+                      onClick={() => setApplicationJob(position.title)}
+                    >
+                      Apply Now
+                    </Button>
                   </div>
                 </Card>
               ))}
@@ -327,9 +349,9 @@ export default function Careers() {
         </section>
 
         {/* CTA */}
-        <section className="py-24 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
+        <section className="py-16 md:py-24 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
           <div className="max-w-container mx-auto px-6 lg:px-20 text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">
               Ready to Start Your Journey?
             </h2>
             <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
@@ -343,9 +365,18 @@ export default function Careers() {
             </Link>
           </div>
         </section>
+        </main>
 
         <Footer />
       </div>
+
+      <JobApplicationForm
+        jobTitle={applicationJob ?? ""}
+        open={applicationJob !== null}
+        onOpenChange={(open) => {
+          if (!open) setApplicationJob(null);
+        }}
+      />
     </>
   );
 }

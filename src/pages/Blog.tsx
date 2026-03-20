@@ -1,4 +1,4 @@
-import { Calendar, Clock, ArrowRight } from "lucide-react";
+import { Calendar, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
@@ -74,15 +74,75 @@ export default function Blog() {
         description="Insights on embedded C/C++, AUTOSAR integration, IoT protocols (LoRaWAN/SIGFOX), and building reliable backends with React/Node.js. Updates on engineering culture and ISO 26262 practice."
         keywords="engineering blog, AUTOSAR, embedded C, IoT, LoRaWAN, SIGFOX, React, Node.js, ISO 26262"
       />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://bsw-tech.com/",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Blog",
+                item: "https://bsw-tech.com/blog",
+              },
+            ],
+          }),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            name: "BSW TECH Engineering Blog",
+            url: "https://bsw-tech.com/blog",
+            description:
+              "Insights on embedded C/C++, AUTOSAR integration, IoT protocols, and engineering culture.",
+            publisher: {
+              "@type": "Organization",
+              name: "BSW TECH",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://bsw-tech.com/og-image.png",
+              },
+            },
+            blogPost: blogPosts.map((post) => ({
+              "@type": "BlogPosting",
+              headline: post.title,
+              description: post.excerpt,
+              datePublished: post.date,
+              url: "https://bsw-tech.com/blog",
+              image: "https://bsw-tech.com/og-image.png",
+              author: {
+                "@type": "Organization",
+                name: "BSW TECH",
+                url: "https://bsw-tech.com",
+              },
+            })),
+          }),
+        }}
+      />
+
       <div className="min-h-screen">
         <Navigation />
+        <main>
 
         {/* Hero */}
         <section className="pt-32 pb-16 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
           <div className="max-w-container mx-auto px-6 lg:px-20 text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Insights on{" "}
-              <span className="text-gradient">Engineering Innovation</span>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              Insights on Engineering Innovation
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Read our latest articles on embedded development, AUTOSAR
@@ -110,7 +170,7 @@ export default function Blog() {
         </section>
 
         {/* Blog Posts */}
-        <section className="py-24">
+        <section className="py-16 md:py-24">
           <div className="max-w-container mx-auto px-6 lg:px-20">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {blogPosts.map((post, index) => (
@@ -137,21 +197,10 @@ export default function Blog() {
                         <span>{post.readTime}</span>
                       </div>
                     </div>
-                    <h3 className="text-xl font-bold mb-3 group-hover:text-gradient transition-all">
+                    <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
                       {post.title}
                     </h3>
-                    <p className="text-muted-foreground mb-4">{post.excerpt}</p>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="group/btn p-0 h-auto"
-                    >
-                      Read More
-                      <ArrowRight
-                        size={16}
-                        className="ml-2 group-hover/btn:translate-x-1 transition-transform"
-                      />
-                    </Button>
+                    <p className="text-muted-foreground">{post.excerpt}</p>
                   </div>
                 </Card>
               ))}
@@ -177,6 +226,7 @@ export default function Blog() {
             </div>
           </div>
         </section>
+        </main>
 
         <Footer />
       </div>

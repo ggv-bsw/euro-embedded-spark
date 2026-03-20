@@ -81,6 +81,7 @@ export default function Playground() {
       <SEO
         title="Playground | BSW TECH Open Source & Prototypes"
         description="Explore BSW TECH open-source projects and prototypes: embedded, AUTOSAR, IoT, and tooling."
+        noindex
       />
 
       <script
@@ -123,14 +124,14 @@ export default function Playground() {
 
       <div className="min-h-screen">
         <Navigation />
+        <main>
 
         {/* Hero */}
         <section className="pt-32 pb-16 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
           <div className="max-w-container mx-auto px-6 lg:px-20 text-center">
             <Code2 className="w-16 h-16 text-primary mx-auto mb-6" />
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Where Engineering{" "}
-              <span className="text-gradient">Meets Innovation</span>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              Where Engineering Meets Innovation
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Explore our open-source projects and prototypes that drive
@@ -141,7 +142,7 @@ export default function Playground() {
         </section>
 
         {/* Projects Grid */}
-        <section className="py-24">
+        <section className="py-16 md:py-24">
           <div className="max-w-container mx-auto px-6 lg:px-20">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {projects.map((project, index) => (
@@ -165,7 +166,7 @@ export default function Playground() {
                     </div>
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold mb-3 group-hover:text-gradient transition-all">
+                    <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-all">
                       {project.title}
                     </h3>
                     <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
@@ -210,7 +211,7 @@ export default function Playground() {
         </section>
 
         {/* Open Source Philosophy */}
-        <section className="py-24 bg-card">
+        <section className="py-16 md:py-24 bg-card">
           <div className="max-w-container mx-auto px-6 lg:px-20">
             <div className="max-w-3xl mx-auto text-center">
               <Github className="w-16 h-16 text-primary mx-auto mb-6" />
@@ -242,27 +243,27 @@ export default function Playground() {
         </section>
 
         {/* Stats */}
-        <section className="py-24">
+        <section className="py-16 md:py-24">
           <div className="max-w-container mx-auto px-6 lg:px-20">
             <div className="grid md:grid-cols-4 gap-8 text-center">
               <div>
-                <div className="text-5xl font-bold text-gradient mb-2">15+</div>
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">15+</div>
                 <div className="text-muted-foreground">
                   Open Source Projects
                 </div>
               </div>
               <div>
-                <div className="text-5xl font-bold text-gradient mb-2">
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
                   500+
                 </div>
                 <div className="text-muted-foreground">GitHub Stars</div>
               </div>
               <div>
-                <div className="text-5xl font-bold text-gradient mb-2">50+</div>
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">50+</div>
                 <div className="text-muted-foreground">Contributors</div>
               </div>
               <div>
-                <div className="text-5xl font-bold text-gradient mb-2">
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
                   10K+
                 </div>
                 <div className="text-muted-foreground">Downloads</div>
@@ -270,6 +271,7 @@ export default function Playground() {
             </div>
           </div>
         </section>
+        </main>
 
         <Footer />
       </div>

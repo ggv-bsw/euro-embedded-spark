@@ -4,6 +4,10 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import gheorghePhoto from "@/assets/gheorghe-photo.jpg";
+import photoIgor from "@/assets/Igor R.jpeg";
+import photoDaniel from "@/assets/Daniel V.jpg";
+import photoGrigore from "@/assets/Grigore C.jpg";
+import photoVlad from "@/assets/Vlad M.jpg";
 import SEO from "@/components/SEO";
 
 const certifications = [
@@ -68,7 +72,7 @@ export default function About() {
     <>
       <SEO
         title="About BSW TECH | European Near-Shore Engineering Partner"
-        description="BSW TECH — европейская инженерная компания из Молдовы (основана в 2021), специализируется на embedded, AUTOSAR, IoT и продуктовой разработке. ISO 9001/14001/27001/37001. Работаем с европейскими компаниями, совмещая качество и эффективность."
+        description="BSW TECH is a European engineering company from Moldova (est. 2021), specializing in embedded, AUTOSAR, IoT and product development. ISO 9001/14001/27001/37001 certified. Near-shore partner for Nordic and German companies."
         keywords="About BSW TECH, near-shore Moldova, embedded engineering, AUTOSAR, IoT, ISO 9001, ISO 27001"
       />
 
@@ -152,12 +156,13 @@ export default function About() {
 
       <div className="min-h-screen">
         <Navigation />
+        <main>
 
         {/* Hero */}
         <section className="pt-32 pb-16 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
           <div className="max-w-container mx-auto px-6 lg:px-20 text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              About <span className="text-gradient">BSW TECH</span>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              About BSW TECH
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               A European engineering company delivering embedded and software
@@ -167,7 +172,7 @@ export default function About() {
         </section>
 
         {/* Company Overview */}
-        <section className="py-24">
+        <section className="py-16 md:py-24">
           <div className="max-w-container mx-auto px-6 lg:px-20">
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div>
@@ -218,22 +223,24 @@ export default function About() {
           </div>
         </section>
 
-        {/* Leadership */}
-        <section className="py-24 bg-card">
+        {/* Leadership & Team */}
+        <section className="py-16 md:py-24 bg-card">
           <div className="max-w-container mx-auto px-6 lg:px-20">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6">Leadership</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Team</h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Experienced engineering leadership guiding innovation and
-                excellence.
+                30+ engineers led by experienced leaders across embedded, automotive, and IoT.
               </p>
             </div>
-            <div className="max-w-3xl mx-auto bg-gradient-to-br from-primary/10 to-secondary/10 p-8 rounded-2xl border border-primary/20">
+
+            {/* CEO spotlight */}
+            <div className="max-w-3xl mx-auto bg-gradient-to-br from-primary/10 to-secondary/10 p-8 rounded-2xl border border-primary/20 mb-12">
               <div className="text-center mb-6">
                 <img
                   src={gheorghePhoto}
                   alt="Gheorghe Ghirjev - CEO & Co-Founder"
                   className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-primary/20"
+                  loading="lazy"
                 />
                 <h3 className="text-2xl font-bold mb-2">Gheorghe Ghirjev</h3>
                 <p className="text-primary font-semibold">CEO & Founder</p>
@@ -250,11 +257,56 @@ export default function About() {
                 </p>
               </div>
             </div>
+
+            {/* Key team members */}
+            <div className="grid md:grid-cols-4 gap-6">
+              {[
+                {
+                  name: "Igor R.",
+                  role: "Engineering Lead",
+                  focus: "Firmware architecture in C/C++, AUTOSAR Classic integration, and real-time embedded systems for automotive and IoT products.",
+                  photo: photoIgor,
+                },
+                {
+                  name: "Daniel V.",
+                  role: "ML & AI Lead",
+                  focus: "Machine learning pipelines, computer vision, and AI-driven automation for industrial and IoT applications.",
+                  photo: photoDaniel,
+                },
+                {
+                  name: "Grigorie C.",
+                  role: "Backend & Database Lead",
+                  focus: "Scalable backend architectures, database design, and high-performance API development for connected systems.",
+                  photo: photoGrigore,
+                },
+                {
+                  name: "Vlad M.",
+                  role: "Hardware & PCB Layout Lead",
+                  focus: "Multi-layer PCB design, schematic capture, and DFM-optimized hardware from prototype to production.",
+                  photo: photoVlad,
+                },
+              ].map((member, index) => (
+                <div
+                  key={index}
+                  className="bg-background p-6 rounded-2xl border border-line text-center"
+                >
+                  <img
+                    src={member.photo}
+                    alt={member.name}
+                    className="w-24 h-24 rounded-full object-cover mx-auto mb-4 border-4 border-primary/20"
+                    loading="lazy"
+                  />
+                  <h4 className="font-semibold text-lg mb-1">{member.name}</h4>
+                  <p className="text-primary font-semibold text-sm mb-2">{member.role}</p>
+                  <p className="text-sm text-muted-foreground">{member.focus}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
         {/* Values */}
-        <section className="py-24">
+        <section className="py-16 md:py-24">
           <div className="max-w-container mx-auto px-6 lg:px-20">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-6">Our Values</h2>
@@ -279,7 +331,7 @@ export default function About() {
         </section>
 
         {/* Certifications */}
-        <section className="py-24 bg-card">
+        <section className="py-16 md:py-24 bg-card">
           <div className="max-w-container mx-auto px-6 lg:px-20">
             <div className="text-center mb-16">
               <Award className="w-16 h-16 text-primary mx-auto mb-6" />
@@ -308,7 +360,7 @@ export default function About() {
         </section>
 
         {/* Memberships */}
-        <section className="py-24">
+        <section className="py-16 md:py-24">
           <div className="max-w-container mx-auto px-6 lg:px-20">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-6">Industry Memberships</h2>
@@ -361,6 +413,7 @@ export default function About() {
             </div>
           </div>
         </section>
+        </main>
 
         <Footer />
       </div>

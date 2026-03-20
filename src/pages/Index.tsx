@@ -10,14 +10,29 @@ import {
   MapPin,
   CheckCircle2,
   Users,
+  Quote,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ServiceCard from "@/components/ServiceCard";
 import StoryCard from "@/components/StoryCard";
-import heroImage from "@/assets/hero-tech.jpg";
 import SEO from "@/components/SEO";
+import heroImage from "@/assets/hero-tech.jpg";
+import logoArobs from "@/assets/Arobs-logo.png";
+import logoCapgemini from "@/assets/Capgemini-Logo.wine.png";
+import logoElectra from "@/assets/electra-logo.png";
+import logoFyrqom from "@/assets/fyrqom_logotype.svg";
+import logoGefeetech from "@/assets/gefeetech.png";
+import logoAppsfactory from "@/assets/K81DAGrEQbRq8wtfWAZwBnqThiG1589182555932_200x200.png";
+import logoNttData from "@/assets/Logo_Global_NTT_DATA_Future_Blue_RGB.png";
+import logoBluesys from "@/assets/logo-141x65.png";
+import logoProcesio from "@/assets/PROCESIO_logo_white_800.png";
+import logoRandstad from "@/assets/Randstad_Logo.svg (1).png";
+import logoVivafem from "@/assets/vivafem-AoPWP9le0VUDovk2.svg";
+import photoMihai from "@/assets/Mihai Darzan .jpg";
+import photoChristoph from "@/assets/Cristoph Hiltl.jpg";
+import photoHani from "@/assets/Hani Ibrahim.webp";
 
 const services = [
   {
@@ -84,6 +99,44 @@ const stories = [
   },
 ];
 
+const clientLogos = [
+  { name: "Capgemini", src: logoCapgemini },
+  { name: "NTT DATA", src: logoNttData },
+  { name: "Randstad", src: logoRandstad },
+  { name: "AROBS", src: logoArobs },
+  { name: "Appsfactory", src: logoAppsfactory, className: "h-16 md:h-20" },
+  { name: "GeFEE Technologies", src: logoGefeetech },
+  { name: "Fyrqom AB", src: logoFyrqom },
+  { name: "Procesio", src: logoProcesio },
+  { name: "Electra Interphone", src: logoElectra, className: "h-5 md:h-6" },
+  { name: "Bluesys Electronics", src: logoBluesys },
+  { name: "Vivafem", src: logoVivafem },
+];
+
+const testimonials = [
+  {
+    quote:
+      "The Outsourcing service was exceptional, and the team was helpful throughout the entire process. Highly recommend BSW TECH.",
+    name: "Mihai Darzan",
+    market: "Romania",
+    photo: photoMihai,
+  },
+  {
+    quote:
+      "BSW TECH brought great motivation and innovation ideas to the project. A fantastic collaboration.",
+    name: "Christoph Hiltl",
+    market: "Germany",
+    photo: photoChristoph,
+  },
+  {
+    quote:
+      "All the design and software development of Praxis website has been done by BSW TECH in time at a high quality. Recommend.",
+    name: "Hani Ibrahim",
+    market: "Germany",
+    photo: photoHani,
+  },
+];
+
 const certifications = [
   "ISO 9001",
   "ISO 14001",
@@ -111,57 +164,130 @@ export default function Index() {
         keywords="Embedded C Development, AUTOSAR Integration, IoT Solutions, Product Design, Near-shore Moldova, Automotive Software, Full-Stack Apps, Embedded Systems, LoRaWAN, SIGFOX"
       />
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: "BSW TECH",
+            url: "https://bsw-tech.com/",
+            description:
+              "Cost-efficient near-shore embedded, AUTOSAR, and IoT development for European automotive and industrial companies.",
+            publisher: {
+              "@type": "Organization",
+              name: "BSW TECH",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://bsw-tech.com/og-image.png",
+              },
+            },
+          }),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://bsw-tech.com/",
+              },
+            ],
+          }),
+        }}
+      />
+
       <div className="min-h-screen">
         <Navigation />
+        <main>
 
         {/* Hero Section */}
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-          <div
-            className="absolute inset-0 z-0"
-            style={{
-              backgroundImage: `linear-gradient(rgba(14, 14, 17, 0.85), rgba(14, 14, 17, 0.9)), url(${heroImage})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
+        <section className="relative overflow-hidden">
+          <img
+            src={heroImage}
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover z-0"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background z-0" />
+          <div className="absolute inset-0 z-0 bg-background/75" />
+          <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary/20 via-transparent to-secondary/10" />
 
-          <div className="relative z-10 max-w-container mx-auto px-6 lg:px-20 py-32 text-center">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              Cost-Efficient{" "}
-              <span className="text-gradient">Near-Shore Engineering</span>
+          {/* Floating particles */}
+          <div className="absolute inset-0 z-0 pointer-events-none" aria-hidden="true">
+            <div className="absolute top-[15%] left-[10%] w-2 h-2 rounded-full bg-primary/20 animate-particle-1" />
+            <div className="absolute top-[25%] right-[15%] w-3 h-3 rounded-full bg-secondary/20 animate-particle-2" />
+            <div className="absolute bottom-[30%] left-[20%] w-1.5 h-1.5 rounded-full bg-primary/15 animate-particle-3" />
+            <div className="absolute top-[60%] right-[10%] w-2 h-2 rounded-full bg-primary/20 animate-particle-1" style={{ animationDelay: "2s" }} />
+            <div className="absolute top-[40%] left-[5%] w-1 h-1 rounded-full bg-secondary/25 animate-particle-2" style={{ animationDelay: "1s" }} />
+            <div className="absolute bottom-[20%] right-[25%] w-2.5 h-2.5 rounded-full bg-primary/10 animate-particle-3" style={{ animationDelay: "3s" }} />
+            <div className="absolute top-[20%] left-[45%] w-1 h-1 rounded-full bg-secondary/15 animate-particle-1" style={{ animationDelay: "4s" }} />
+            <div className="absolute bottom-[40%] right-[40%] w-1.5 h-1.5 rounded-full bg-primary/15 animate-particle-2" style={{ animationDelay: "2.5s" }} />
+            <div className="absolute top-[70%] left-[35%] w-3 h-3 rounded-full bg-secondary/10 animate-particle-3" style={{ animationDelay: "1.5s" }} />
+            <div className="absolute top-[10%] right-[35%] w-2 h-2 rounded-full bg-primary/10 animate-particle-1" style={{ animationDelay: "3.5s" }} />
+            {/* Larger blurred orbs */}
+            <div className="absolute top-[20%] left-[15%] w-32 h-32 rounded-full bg-primary/5 blur-3xl animate-particle-2" />
+            <div className="absolute bottom-[15%] right-[10%] w-40 h-40 rounded-full bg-secondary/5 blur-3xl animate-particle-3" />
+          </div>
+
+          <div className="relative z-10 max-w-container mx-auto px-6 lg:px-20 pt-32 pb-20 text-center">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              Accelerate Your R&D
               <br />
-              for Automotive, IoT & Embedded Systems
+              with{" "}
+              <span className="text-gradient">Near-Shore Engineers</span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
-              We design and develop Embedded C/C++ firmware, AUTOSAR ECUs, IoT
-              devices, and full-stack mobile apps for European partners in
-              Sweden, Denmark, Estonia and Germany.
+            <p className="text-base md:text-lg text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
+              Embedded C/C++, AUTOSAR, and IoT teams from Moldova — EU-aligned, ISO-certified, ready to ship.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/contact">
                 <Button variant="hero" size="lg" className="group">
-                  Discuss Your Project
+                  Book a Call
                   <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
-              <Link to="/expertise">
+              <Link to="/success-stories">
                 <Button variant="outline" size="lg">
-                  View Our Expertise
+                  See Our Work
                 </Button>
               </Link>
             </div>
           </div>
         </section>
 
+        {/* Trusted By */}
+        <section className="py-10 border-b border-line">
+          <div className="max-w-container mx-auto px-6 lg:px-20">
+            <p className="text-sm text-muted-foreground text-center mb-8 uppercase tracking-widest">
+              Trusted by European companies
+            </p>
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+              {clientLogos.map((client) => (
+                <img
+                  key={client.name}
+                  src={client.src}
+                  alt={client.name}
+                  className={`${client.className || "h-10 md:h-12"} w-auto object-contain brightness-0 invert opacity-70 hover:opacity-100 transition-opacity`}
+                  loading="lazy"
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Why BSW TECH */}
-        <section className="py-24 bg-card">
+        <section className="py-16 md:py-24 bg-card">
           <div className="max-w-container mx-auto px-6 lg:px-20">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                  Your <span className="text-gradient">Near-Shore</span>{" "}
-                  Engineering Partner in Europe
+                <h2 className="text-3xl md:text-5xl font-bold mb-6">
+                  Your Near-Shore Engineering Partner in Europe
                 </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-8">
                   BSW TECH bridges Eastern European talent with Western European
@@ -215,12 +341,11 @@ export default function Index() {
         </section>
 
         {/* Core Services */}
-        <section className="py-24">
+        <section className="py-16 md:py-24">
           <div className="max-w-container mx-auto px-6 lg:px-20">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Engineering Excellence{" "}
-                <span className="text-gradient">Across Domains</span>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6">
+                Engineering Excellence Across Domains
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 From embedded firmware to cloud-connected mobile apps, we
@@ -236,12 +361,11 @@ export default function Index() {
         </section>
 
         {/* Success Stories Preview */}
-        <section className="py-24 bg-card">
+        <section className="py-16 md:py-24 bg-card">
           <div className="max-w-container mx-auto px-6 lg:px-20">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Real Projects.{" "}
-                <span className="text-gradient">Real Impact.</span>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6">
+                Real Projects. Real Impact.
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 We've delivered complex engineering projects for leading
@@ -264,19 +388,53 @@ export default function Index() {
           </div>
         </section>
 
-        {/* Certifications */}
-        <section className="py-24">
+        {/* Testimonials */}
+        <section className="py-16 md:py-24">
           <div className="max-w-container mx-auto px-6 lg:px-20">
             <div className="text-center mb-16">
-              <Award className="w-16 h-16 text-primary mx-auto mb-6 animate-float" />
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in-up">
-                Quality & Trust{" "}
-                <span className="text-gradient">Recognized</span>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6">
+                What Our Partners Say
               </h2>
-              <p
-                className="text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in-up"
-                style={{ animationDelay: "0.1s" }}
-              >
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              {testimonials.map((t, index) => (
+                <div
+                  key={index}
+                  className="bg-card p-8 rounded-2xl border border-line relative"
+                >
+                  <Quote className="w-8 h-8 text-primary/30 mb-4" />
+                  <p className="text-foreground leading-relaxed mb-6 italic">
+                    "{t.quote}"
+                  </p>
+                  <div className="border-t border-line pt-4 flex items-center gap-4">
+                    <img
+                      src={t.photo}
+                      alt={t.name}
+                      className="w-20 h-20 rounded-full object-cover border-2 border-primary/20"
+                      loading="lazy"
+                    />
+                    <div>
+                      <p className="font-semibold text-foreground">{t.name}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {t.market}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Certifications */}
+        <section className="py-16 md:py-24 bg-card">
+          <div className="max-w-container mx-auto px-6 lg:px-20">
+            <div className="text-center mb-16">
+              <Award className="w-16 h-16 text-primary mx-auto mb-6" />
+              <h2 className="text-3xl md:text-5xl font-bold mb-6">
+                Quality & Trust Recognized
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 We operate under strict European standards and are proud members
                 of key industry organizations.
               </p>
@@ -285,8 +443,7 @@ export default function Index() {
               {certifications.map((cert, index) => (
                 <div
                   key={index}
-                  className="px-8 py-4 bg-card border border-primary/20 rounded-lg hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1 hover:scale-105 transition-all duration-300 animate-fade-in-up"
-                  style={{ animationDelay: `${0.2 + index * 0.1}s` }}
+                  className="px-8 py-4 bg-background border border-primary/20 rounded-lg hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1 hover:scale-105 transition-all duration-300"
                 >
                   <span className="font-semibold text-foreground">{cert}</span>
                 </div>
@@ -296,10 +453,10 @@ export default function Index() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-24 bg-gradient-to-br from-primary/10 via-background to-secondary/10 relative overflow-hidden">
+        <section className="py-16 md:py-24 bg-gradient-to-br from-primary/10 via-background to-secondary/10 relative overflow-hidden">
           <div className="absolute inset-0 bg-grid-pattern opacity-5" />
           <div className="relative z-10 max-w-container mx-auto px-6 lg:px-20 text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">
               Ready to accelerate your next project?
             </h2>
             <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
@@ -313,6 +470,7 @@ export default function Index() {
             </Link>
           </div>
         </section>
+        </main>
 
         <Footer />
       </div>

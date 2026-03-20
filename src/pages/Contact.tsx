@@ -6,6 +6,7 @@ import {
   Github,
   Youtube,
   Instagram,
+  ArrowRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -193,24 +194,37 @@ export default function Contact() {
 
       <div className="min-h-screen">
         <Navigation />
+        <main>
 
         {/* Hero */}
         <section className="pt-32 pb-16 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
           <div className="max-w-container mx-auto px-6 lg:px-20 text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Let's Build{" "}
-              <span className="text-gradient">Something Together</span>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              Let's Build Something Together
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
               We're ready to discuss your next Automotive, IoT or Embedded
-              project. Send us a message or book a meeting directly via
-              Calendly.
+              project.
             </p>
+            <Button
+              variant="hero"
+              size="lg"
+              asChild
+            >
+              <a
+                href="https://calendly.com/gheorghe-ghirjev-bsw-tech/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Book a 30-min Call
+                <ArrowRight className="ml-2" />
+              </a>
+            </Button>
           </div>
         </section>
 
         {/* Contact Section */}
-        <section className="py-24">
+        <section className="py-16 md:py-24">
           <div className="max-w-container mx-auto px-6 lg:px-20">
             <div className="grid md:grid-cols-2 gap-16">
               {/* Contact Info */}
@@ -293,13 +307,12 @@ export default function Contact() {
 
                 {/* Calendly CTA */}
                 <div className="mt-12 p-6 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl border border-primary/20">
-                  <h3 className="text-xl font-bold mb-3">Book a Call</h3>
+                  <h3 className="text-xl font-bold mb-3">Prefer a quick call?</h3>
                   <p className="text-muted-foreground mb-4">
-                    Schedule a meeting directly with our team to discuss your
-                    project requirements.
+                    Schedule a 30-minute meeting directly with our engineering team.
                   </p>
                   <Button
-                    variant="secondary"
+                    variant="hero"
                     size="lg"
                     className="w-full"
                     asChild
@@ -410,6 +423,7 @@ export default function Contact() {
             </div>
           </div>
         </section>
+        </main>
 
         <Footer />
       </div>

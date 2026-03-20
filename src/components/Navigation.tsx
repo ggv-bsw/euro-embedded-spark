@@ -2,13 +2,14 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import bswLogo from "@/assets/bsw-logo.png";
+
 
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "Expertise", path: "/expertise" },
   { name: "Success Stories", path: "/success-stories" },
   { name: "About", path: "/about" },
+  { name: "Careers", path: "/careers" },
   { name: "Contact", path: "/contact" },
 ];
 
@@ -18,10 +19,17 @@ export default function Navigation() {
   const location = useLocation();
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 20);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -38,9 +46,8 @@ export default function Navigation() {
       <div className="max-w-container mx-auto px-6 lg:px-20">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
-            <img src={bswLogo} alt="BSW TECH" className="h-14 w-auto" />
-            <span className="text-2xl font-heading font-bold text-primary">BSW</span>
+          <Link to="/" className="text-2xl font-heading font-bold text-primary">
+            BSW
           </Link>
 
           {/* Desktop Navigation */}

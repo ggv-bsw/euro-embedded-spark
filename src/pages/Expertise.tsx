@@ -1,4 +1,4 @@
-import { Cpu, Car, Wifi, Package, Smartphone } from "lucide-react";
+import { Cpu, Car, Wifi, Package, Smartphone, Layers, Landmark } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -84,6 +84,38 @@ const expertiseAreas = [
       "Secure authentication and authorization",
     ],
   },
+  {
+    id: "digital-twin",
+    icon: Layers,
+    title: "Digital Twin Philosophy",
+    description:
+      "We build it virtually before we build it physically — reducing risk, cost, and time-to-market.",
+    expertise: [
+      "Virtual prototyping and simulation",
+      "Model-based systems engineering (MBSE)",
+      "Hardware-in-the-loop (HIL) simulation",
+      "Real-time digital replicas of physical systems",
+      "Predictive analytics and performance optimization",
+      "Integration with CAD/CAE toolchains",
+      "Continuous validation through virtual testing",
+    ],
+  },
+  {
+    id: "public-services",
+    icon: Landmark,
+    title: "Public Services & GovTech",
+    description:
+      "Empowering public services through technology — making government more efficient, transparent, and citizen-friendly.",
+    expertise: [
+      "E-governance platforms and citizen portals",
+      "Digital document management and workflow automation",
+      "Secure data handling and GDPR compliance",
+      "Integration with national registries and databases",
+      "Smart city infrastructure and monitoring",
+      "Public transport and utility management systems",
+      "Accessibility-first design (WCAG compliance)",
+    ],
+  },
 ];
 
 export default function Expertise() {
@@ -94,14 +126,40 @@ export default function Expertise() {
         description="Development of embedded C/C++, AUTOSAR Classic/Adaptive, diagnostics, and safety software for European automotive programs."
         keywords="Embedded C, AUTOSAR Classic, AUTOSAR Adaptive, Bootloader, ISO 26262"
       />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://bsw-tech.com/",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Expertise",
+                item: "https://bsw-tech.com/expertise",
+              },
+            ],
+          }),
+        }}
+      />
+
       <div className="min-h-screen">
         <Navigation />
+        <main>
 
         {/* Hero */}
         <section className="pt-32 pb-16 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
           <div className="max-w-container mx-auto px-6 lg:px-20 text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Our <span className="text-gradient">Engineering Expertise</span>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              Our Engineering Expertise
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Deep technical knowledge across embedded systems, automotive, IoT,
@@ -115,7 +173,7 @@ export default function Expertise() {
           <section
             key={area.id}
             id={area.id}
-            className={index % 2 === 0 ? "py-24" : "py-24 bg-card"}
+            className={index % 2 === 0 ? "py-16 md:py-24" : "py-16 md:py-24 bg-card"}
           >
             <div className="max-w-container mx-auto px-6 lg:px-20">
               <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -156,9 +214,9 @@ export default function Expertise() {
         ))}
 
         {/* CTA */}
-        <section className="py-24 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
+        <section className="py-16 md:py-24 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
           <div className="max-w-container mx-auto px-6 lg:px-20 text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">
               Ready to Start Your Project?
             </h2>
             <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
@@ -172,6 +230,7 @@ export default function Expertise() {
             </Link>
           </div>
         </section>
+        </main>
 
         <Footer />
       </div>

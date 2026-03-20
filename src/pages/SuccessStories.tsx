@@ -69,14 +69,71 @@ export default function SuccessStories() {
         keywords="case studies, success stories, AUTOSAR, embedded C, IoT, LoRaWAN, SIGFOX, React, Kotlin, AWS IoT, ISO 26262"
       />
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://bsw-tech.com/",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Success Stories",
+                item: "https://bsw-tech.com/success-stories",
+              },
+            ],
+          }),
+        }}
+      />
+
+      {/* JSON-LD: Case Studies */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            name: "BSW TECH Success Stories",
+            url: "https://bsw-tech.com/success-stories",
+            itemListElement: allStories.map((story, i) => ({
+              "@type": "ListItem",
+              position: i + 1,
+              item: {
+                "@type": "CreativeWork",
+                name: story.title,
+                description: story.scope,
+                about: story.technologies.join(", "),
+                author: {
+                  "@type": "Organization",
+                  name: "BSW TECH",
+                  url: "https://bsw-tech.com",
+                },
+                provider: {
+                  "@type": "Organization",
+                  name: story.client,
+                },
+              },
+            })),
+          }),
+        }}
+      />
+
       <div className="min-h-screen">
         <Navigation />
+        <main>
 
         {/* Hero */}
         <section className="pt-32 pb-16 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
           <div className="max-w-container mx-auto px-6 lg:px-20 text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="text-gradient">Success Stories</span>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              Success Stories
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Real projects delivering real impact for European companies across
@@ -86,7 +143,7 @@ export default function SuccessStories() {
         </section>
 
         {/* Stories Grid */}
-        <section className="py-24">
+        <section className="py-16 md:py-24">
           <div className="max-w-container mx-auto px-6 lg:px-20">
             <div className="grid md:grid-cols-2 gap-8">
               {allStories.map((story, index) => (
@@ -97,28 +154,29 @@ export default function SuccessStories() {
         </section>
 
         {/* Stats */}
-        <section className="py-24 bg-card">
+        <section className="py-16 md:py-24 bg-card">
           <div className="max-w-container mx-auto px-6 lg:px-20">
             <div className="grid md:grid-cols-4 gap-8 text-center">
               <div>
-                <div className="text-5xl font-bold text-gradient mb-2">50+</div>
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">50+</div>
                 <div className="text-muted-foreground">Projects Delivered</div>
               </div>
               <div>
-                <div className="text-5xl font-bold text-gradient mb-2">7+</div>
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">7+</div>
                 <div className="text-muted-foreground">Years of Experience</div>
               </div>
               <div>
-                <div className="text-5xl font-bold text-gradient mb-2">15+</div>
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">15+</div>
                 <div className="text-muted-foreground">European Clients</div>
               </div>
               <div>
-                <div className="text-5xl font-bold text-gradient mb-2">95%</div>
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">95%</div>
                 <div className="text-muted-foreground">Client Satisfaction</div>
               </div>
             </div>
           </div>
         </section>
+        </main>
 
         <Footer />
       </div>
