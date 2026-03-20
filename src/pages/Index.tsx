@@ -19,7 +19,7 @@ import ServiceCard from "@/components/ServiceCard";
 import StoryCard from "@/components/StoryCard";
 import SEO from "@/components/SEO";
 import heroImage from "@/assets/hero-tech.jpg";
-import logoArobs from "@/assets/arobs-logo.png";
+import logoArobs from "@/assets/Arobs-logo.png";
 import logoCapgemini from "@/assets/capgemini-logo.png";
 import logoElectra from "@/assets/electra-logo.png";
 import logoFyrqom from "@/assets/fyrqom_logotype.svg";
