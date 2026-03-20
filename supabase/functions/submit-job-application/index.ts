@@ -115,9 +115,44 @@ const handler = async (req: Request): Promise<Response> => {
       );
     }
 
-    if (name.length > 100 || email.length > 255) {
+    if (name.length > 100 || email.length > 255 || jobTitle.length > 200) {
       return new Response(
         JSON.stringify({ error: "Input exceeds maximum length." }),
+        {
+          status: 400,
+          headers: { "Content-Type": "application/json", ...corsHeaders },
+        }
+      );
+    }
+
+    if ((phone ?? "").length > 20) {
+      return new Response(
+        JSON.stringify({ error: "Phone number exceeds maximum length." }),
+        {
+          status: 400,
+          headers: { "Content-Type": "application/json", ...corsHeaders },
+        }
+      );
+    }
+
+    if ((message ?? "").length > 2000) {
+      return new Response(
+        JSON.stringify({ error: "Cover letter exceeds 2000 character limit." }),
+        {
+          status: 400,
+          headers: { "Content-Type": "application/json", ...corsHeaders },
+        }
+      );
+    }
+
+    const ALLOWED_CONTENT_TYPES = [
+      "application/pdf",
+      "application/msword",
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    ];
+    if (!ALLOWED_CONTENT_TYPES.includes(cv.contentType)) {
+      return new Response(
+        JSON.stringify({ error: "Invalid file type. Only PDF, DOC, and DOCX are accepted." }),
         {
           status: 400,
           headers: { "Content-Type": "application/json", ...corsHeaders },
