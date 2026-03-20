@@ -25,7 +25,7 @@ export default function Blog() {
   const posts = t("posts", { returnObjects: true }) as { title: string; excerpt: string; readTime: string; category: string }[];
   const newsletter = t("newsletter", { returnObjects: true }) as Record<string, string>;
 
-  const SITE = "https://bsw-tech.com";
+  const SITE = "https://www.bsw-tech.com";
   const prefix = lang === "de" ? "/de" : "";
 
   return (

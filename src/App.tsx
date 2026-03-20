@@ -13,6 +13,8 @@ const Contact = React.lazy(() => import("./pages/Contact"));
 const Blog = React.lazy(() => import("./pages/Blog"));
 const Playground = React.lazy(() => import("./pages/Playground"));
 const Careers = React.lazy(() => import("./pages/Careers"));
+const SvLanding = React.lazy(() => import("./pages/SvLanding"));
+const RoLanding = React.lazy(() => import("./pages/RoLanding"));
 const NotFound = React.lazy(() => import("./pages/NotFound"));
 
 const ScrollToTop = () => {
@@ -56,6 +58,9 @@ const App = () => (
           <Route path="/de" element={<LanguageLayout />}>
             {renderPageRoutes()}
           </Route>
+          {/* Swedish & Romanian SEO landing pages */}
+          <Route path="/sv" element={<SvLanding />} />
+          <Route path="/ro" element={<RoLanding />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

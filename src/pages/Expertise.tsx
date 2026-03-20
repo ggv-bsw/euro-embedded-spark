@@ -18,7 +18,7 @@ export default function Expertise() {
   const areas = t("areas", { returnObjects: true }) as { title: string; description: string; expertise: string[] }[];
   const cta = t("cta", { returnObjects: true }) as { title: string; subtitle: string; button: string };
 
-  const SITE = "https://bsw-tech.com";
+  const SITE = "https://www.bsw-tech.com";
   const prefix = lang === "de" ? "/de" : "";
 
   return (
@@ -49,6 +49,26 @@ export default function Expertise() {
                 item: `${SITE}${prefix}/expertise`,
               },
             ],
+          }),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            serviceType: "AUTOSAR Software Development",
+            name: "AUTOSAR Embedded Software Development",
+            description: "Full AUTOSAR-compliant software development including BSW configuration, MCAL integration, Flash Bootloader, BCM, and Telematics modules. ISO 26262 and Automotive SPICE aligned.",
+            provider: {
+              "@type": "Organization",
+              name: "BSW TECH",
+              url: SITE,
+            },
+            areaServed: ["DE", "SE", "RO", "EU"],
+            url: `${SITE}${prefix}/expertise`,
           }),
         }}
       />

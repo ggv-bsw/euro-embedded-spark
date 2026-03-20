@@ -10,7 +10,7 @@ type Props = {
   noindex?: boolean;
 };
 
-const SITE = "https://bsw-tech.com";
+const SITE = "https://www.bsw-tech.com";
 
 export default function SEO({
   title,
@@ -27,9 +27,10 @@ export default function SEO({
   const basePath = pathname.replace(/^\/de(\/|$)/, "/");
   const url = `${SITE}${pathname || "/"}`;
   const enUrl = `${SITE}${basePath}`;
-  const deUrl = `${SITE}/de${basePath === "/" ? "" : basePath}`;
-  const ogLocale = lang === "de" ? "de_DE" : "en_US";
-  const altLocale = lang === "de" ? "en_US" : "de_DE";
+  const deUrl = `${SITE}/de${basePath === "/" ? "/" : basePath}`;
+  const svUrl = `${SITE}/sv/`;
+  const roUrl = `${SITE}/ro/`;
+  const ogLocale = lang === "de" ? "de_DE" : "en_GB";
 
   return (
     <Helmet>
@@ -37,7 +38,9 @@ export default function SEO({
       <title>{title}</title>
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
-      {noindex && <meta name="robots" content="noindex,nofollow" />}
+      <meta name="robots" content={noindex ? "noindex,nofollow" : "index, follow"} />
+      <meta name="author" content="BSW TECH" />
+      <meta name="language" content={lang === "de" ? "German" : "English"} />
 
       {/* Canonical */}
       <link rel="canonical" href={url} />
@@ -45,6 +48,8 @@ export default function SEO({
       {/* Hreflang */}
       <link rel="alternate" hrefLang="en" href={enUrl} />
       <link rel="alternate" hrefLang="de" href={deUrl} />
+      <link rel="alternate" hrefLang="sv" href={svUrl} />
+      <link rel="alternate" hrefLang="ro" href={roUrl} />
       <link rel="alternate" hrefLang="x-default" href={enUrl} />
 
       {/* Open Graph */}
@@ -57,12 +62,13 @@ export default function SEO({
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:locale" content={ogLocale} />
-      <meta property="og:locale:alternate" content={altLocale} />
+      <meta property="og:locale:alternate" content="de_DE" />
+      <meta property="og:locale:alternate" content="en_GB" />
+      <meta property="og:locale:alternate" content="sv_SE" />
+      <meta property="og:locale:alternate" content="ro_RO" />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@bsw_tech" />
-      <meta name="twitter:url" content={url} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={`${SITE}${ogImage}`} />

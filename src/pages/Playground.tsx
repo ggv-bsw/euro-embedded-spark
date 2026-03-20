@@ -32,7 +32,7 @@ export default function Playground() {
   const philosophy = t("philosophy", { returnObjects: true }) as { title: string; description: string; visitGithub: string };
   const stats = t("stats", { returnObjects: true }) as Record<string, string>;
 
-  const SITE = "https://bsw-tech.com";
+  const SITE = "https://www.bsw-tech.com";
   const prefix = lang === "de" ? "/de" : "";
 
   const softwareLd = projects.map((p, i) => ({

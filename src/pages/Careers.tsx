@@ -30,7 +30,7 @@ export default function Careers() {
   const positions = t("positions", { returnObjects: true }) as { title: string; subtitle: string; applyNow: string; items: { title: string; location: string; type: string; description: string }[] };
   const cta = t("cta", { returnObjects: true }) as { title: string; subtitle: string; button: string };
 
-  const SITE = "https://bsw-tech.com";
+  const SITE = "https://www.bsw-tech.com";
   const prefix = lang === "de" ? "/de" : "";
 
   const jobsLd = positions.items.map((p) => {

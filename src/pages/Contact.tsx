@@ -36,7 +36,7 @@ export default function Contact() {
   const form = t("form", { returnObjects: true }) as Record<string, string>;
   const validation = t("validation", { returnObjects: true }) as Record<string, string>;
 
-  const SITE = "https://bsw-tech.com";
+  const SITE = "https://www.bsw-tech.com";
   const prefix = lang === "de" ? "/de" : "";
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -119,16 +119,21 @@ export default function Contact() {
             name: "BSW TECH",
             url: `${SITE}/`,
             logo: `${SITE}/og-image.png`,
-            address: { "@type": "PostalAddress", addressLocality: "Chi\u0219in\u0103u", addressCountry: "MD" },
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "Alecu Russo 15, of. 43",
+              addressLocality: "Chisinau",
+              addressCountry: "MD",
+            },
             contactPoint: [{
               "@type": "ContactPoint",
-              contactType: "Sales",
-              email: "hr@bsw-tech.com",
-              areaServed: "EU",
-              availableLanguage: ["en", "de"],
+              contactType: "sales",
+              email: "info@bsw-tech.com",
+              areaServed: ["DE", "SE", "RO", "EU"],
+              availableLanguage: ["English", "Romanian", "Russian", "German"],
             }],
             sameAs: [
-              "https://linkedin.com/company/bsw-tech",
+              "https://md.linkedin.com/company/bsw-tech",
               "https://github.com/bsw-tech",
               "https://www.youtube.com/@BSWTech-h8q",
               "https://www.instagram.com/bswtech/",

@@ -27,7 +27,7 @@ export default function About() {
   const memberships = t("memberships", { returnObjects: true }) as { title: string; subtitle: string; items: { name: string; full: string; role: string }[] };
   const cta = t("cta", { returnObjects: true }) as { title: string; subtitle: string; partnerButton: string; careersButton: string };
 
-  const SITE = "https://bsw-tech.com";
+  const SITE = "https://www.bsw-tech.com";
   const prefix = lang === "de" ? "/de" : "";
 
   return (
@@ -43,20 +43,35 @@ export default function About() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Organization",
+            "@type": "LocalBusiness",
             name: "BSW TECH",
-            url: `${SITE}/`,
-            logo: `${SITE}/og-image.png`,
+            image: `${SITE}/og-image.png`,
+            url: SITE,
+            email: "info@bsw-tech.com",
             description: seo.description,
             foundingDate: "2021",
-            email: "hr@bsw-tech.com",
             address: {
               "@type": "PostalAddress",
-              addressLocality: "Chi\u0219in\u0103u",
+              streetAddress: "Alecu Russo 15, floor 5, of. 43",
+              addressLocality: "Chisinau",
+              addressRegion: "Chisinau Municipality",
+              postalCode: "2068",
               addressCountry: "MD",
             },
+            geo: {
+              "@type": "GeoCoordinates",
+              latitude: 47.0245,
+              longitude: 28.8322,
+            },
+            openingHoursSpecification: {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              opens: "09:00",
+              closes: "18:00",
+            },
+            priceRange: "$",
             sameAs: [
-              "https://linkedin.com/company/bsw-tech",
+              "https://md.linkedin.com/company/bsw-tech",
               "https://github.com/bsw-tech",
               "https://www.youtube.com/@BSWTech-h8q",
               "https://www.instagram.com/bswtech/",
@@ -165,7 +180,7 @@ export default function About() {
               <div className="text-center mb-6">
                 <img
                   src={gheorghePhoto}
-                  alt="Gheorghe Ghirjev"
+                  alt="Gheorghe Ghirjev — CEO and Founder of BSW TECH"
                   width={128}
                   height={128}
                   className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-primary/20"

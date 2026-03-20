@@ -71,7 +71,7 @@ export default function Index() {
   const certifications = t("certifications", { returnObjects: true }) as { title: string; subtitle: string; items: string[] };
   const cta = t("cta", { returnObjects: true }) as Record<string, string>;
 
-  const SITE = "https://bsw-tech.com";
+  const SITE = "https://www.bsw-tech.com";
   const prefix = lang === "de" ? "/de" : "";
 
   return (
@@ -87,18 +87,42 @@ export default function Index() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "WebSite",
+            "@type": "Organization",
             name: "BSW TECH",
-            url: `${SITE}${prefix}/`,
-            description: seo.description,
-            publisher: {
-              "@type": "Organization",
-              name: "BSW TECH",
-              logo: {
-                "@type": "ImageObject",
-                url: `${SITE}/og-image.png`,
-              },
+            alternateName: "Bessarabia Software Technology",
+            url: SITE,
+            logo: `${SITE}/og-image.png`,
+            description: "BSW TECH is a near-shore Automotive and IoT embedded software engineering company based in Chisinau, Moldova. ISO 27001, ISO 9001, and ISO 14001 certified.",
+            foundingDate: "2021",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "Alecu Russo 15, of. 43",
+              addressLocality: "Chisinau",
+              addressCountry: "MD",
             },
+            contactPoint: {
+              "@type": "ContactPoint",
+              contactType: "sales",
+              email: "info@bsw-tech.com",
+              availableLanguage: ["English", "Romanian", "Russian", "German"],
+            },
+            sameAs: [
+              "https://md.linkedin.com/company/bsw-tech",
+              "https://github.com/bsw-tech",
+              "https://www.youtube.com/@BSWTech-h8q",
+              "https://www.instagram.com/bswtech/",
+            ],
+            hasCredential: [
+              { "@type": "EducationalOccupationalCredential", name: "ISO 27001:2013 Information Security Management" },
+              { "@type": "EducationalOccupationalCredential", name: "ISO 9001:2015 Quality Management" },
+              { "@type": "EducationalOccupationalCredential", name: "ISO 14001 Environmental Management" },
+            ],
+            areaServed: ["DE", "SE", "RO", "EU"],
+            knowsAbout: [
+              "AUTOSAR", "Embedded C", "Embedded C++", "IoT Development",
+              "ISO 26262", "Functional Safety", "PLC Programming",
+              "Battery Management Systems", "ADAS", "Telematics",
+            ],
           }),
         }}
       />
@@ -129,7 +153,7 @@ export default function Index() {
         <section className="relative overflow-hidden">
           <img
             src={heroImage}
-            alt=""
+            alt="Automotive ECU embedded software development"
             width={1920}
             height={1080}
             fetchPriority="high"
