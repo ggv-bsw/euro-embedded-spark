@@ -41,6 +41,42 @@ export type Database = {
         }
         Relationships: []
       }
+      job_applications: {
+        Row: {
+          created_at: string
+          cv_filename: string
+          cv_storage_path: string
+          email: string
+          id: string
+          job_title: string
+          message: string | null
+          name: string
+          phone: string | null
+        }
+        Insert: {
+          created_at?: string
+          cv_filename: string
+          cv_storage_path: string
+          email: string
+          id?: string
+          job_title: string
+          message?: string | null
+          name: string
+          phone?: string | null
+        }
+        Update: {
+          created_at?: string
+          cv_filename?: string
+          cv_storage_path?: string
+          email?: string
+          id?: string
+          job_title?: string
+          message?: string | null
+          name?: string
+          phone?: string | null
+        }
+        Relationships: []
+      }
       rate_limit_tracking: {
         Row: {
           created_at: string
