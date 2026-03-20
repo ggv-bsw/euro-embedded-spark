@@ -19,7 +19,7 @@ import StoryCard from "@/components/StoryCard";
 import SEO from "@/components/SEO";
 import LocalizedLink from "@/components/LocalizedLink";
 import { useTranslation } from "react-i18next";
-import heroImage from "@/assets/hero-tech.jpg";
+import heroImage from "@/assets/hero-tech.webp";
 import logoArobs from "@/assets/Arobs-logo.png";
 import logoCapgemini from "@/assets/capgemini-logo.png";
 import logoElectra from "@/assets/electra-logo.png";
@@ -130,6 +130,11 @@ export default function Index() {
           <img
             src={heroImage}
             alt=""
+            width={1920}
+            height={1080}
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
             className="absolute inset-0 w-full h-full object-cover z-0"
           />
           <div className="absolute inset-0 z-0 bg-background/75" />
@@ -189,6 +194,8 @@ export default function Index() {
                   key={client.name}
                   src={client.src}
                   alt={client.name}
+                  width={120}
+                  height={48}
                   className={`${client.className || "h-10 md:h-12"} w-auto object-contain brightness-0 invert opacity-70 hover:opacity-100 transition-opacity`}
                   loading="lazy"
                 />
@@ -331,6 +338,8 @@ export default function Index() {
                     <img
                       src={testimonialPhotos[index]}
                       alt={item.name}
+                      width={80}
+                      height={80}
                       className="w-20 h-20 rounded-full object-cover border-2 border-primary/20"
                       loading="lazy"
                     />

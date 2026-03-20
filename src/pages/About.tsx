@@ -166,6 +166,8 @@ export default function About() {
                 <img
                   src={gheorghePhoto}
                   alt="Gheorghe Ghirjev"
+                  width={128}
+                  height={128}
                   className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-primary/20"
                   loading="lazy"
                 />
@@ -188,6 +190,8 @@ export default function About() {
                   <img
                     src={teamPhotos[index]}
                     alt={member.name}
+                    width={96}
+                    height={96}
                     className="w-24 h-24 rounded-full object-cover mx-auto mb-4 border-4 border-primary/20"
                     loading="lazy"
                   />

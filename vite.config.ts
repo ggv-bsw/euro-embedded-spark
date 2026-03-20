@@ -16,4 +16,18 @@ export default defineConfig(({ mode }) => ({
     },
     dedupe: ["react", "react-dom"],
   },
+  build: {
+    cssCodeSplit: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ["react", "react-dom"],
+          router: ["react-router-dom"],
+          i18n: ["i18next", "react-i18next", "i18next-http-backend", "i18next-browser-languagedetector"],
+          ui: ["@radix-ui/react-dialog", "@radix-ui/react-slot", "@radix-ui/react-toast", "@radix-ui/react-tooltip", "class-variance-authority", "clsx", "tailwind-merge"],
+        },
+        experimentalMinChunkSize: 10_000,
+      },
+    },
+  },
 }));
