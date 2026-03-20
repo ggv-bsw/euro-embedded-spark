@@ -24,6 +24,8 @@ i18n
       useSuspense: true,
     },
     interpolation: {
+      // React already escapes all output — double-escaping breaks rendered text.
+      // See: https://react.i18next.com/latest/i18next-instance
       escapeValue: false,
     },
   });

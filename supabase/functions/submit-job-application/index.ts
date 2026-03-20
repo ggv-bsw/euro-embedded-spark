@@ -4,11 +4,20 @@ import { Resend } from "https://esm.sh/resend@4.0.0";
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
-const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers":
-    "authorization, x-client-info, apikey, content-type",
-};
+const ALLOWED_ORIGINS = [
+  "https://www.bsw-tech.com",
+  "https://bsw-tech.com",
+];
+
+function getCorsHeaders(req: Request) {
+  const origin = req.headers.get("origin") ?? "";
+  const allowedOrigin = ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0];
+  return {
+    "Access-Control-Allow-Origin": allowedOrigin,
+    "Access-Control-Allow-Headers":
+      "authorization, x-client-info, apikey, content-type",
+  };
+}
 
 interface JobApplicationData {
   jobTitle: string;
@@ -43,7 +52,7 @@ function getClientIp(req: Request): string {
 
 const handler = async (req: Request): Promise<Response> => {
   if (req.method === "OPTIONS") {
-    return new Response(null, { headers: corsHeaders });
+    return new Response(null, { headers: getCorsHeaders(req) });
   }
 
   try {
@@ -51,32 +60,25 @@ const handler = async (req: Request): Promise<Response> => {
     const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
     const supabase = createClient(supabaseUrl, supabaseKey);
 
-    // Rate limiting (5 per hour)
+    // Atomic rate limit check-and-increment (prevents TOCTOU race condition)
     const clientIp = getClientIp(req);
-    const oneHourAgo = new Date(Date.now() - 3600000).toISOString();
-
-    const { data: rateLimitData, error: rateLimitError } = await supabase
-      .from("rate_limit_tracking")
-      .select("submission_count")
-      .eq("ip_address", clientIp)
-      .eq("endpoint", "job_application")
-      .gte("created_at", oneHourAgo)
-      .order("created_at", { ascending: false })
-      .limit(1)
-      .maybeSingle();
+    const { data: allowed, error: rateLimitError } = await supabase.rpc(
+      "check_rate_limit",
+      { p_ip: clientIp, p_endpoint: "job_application", p_max: 5, p_window_ms: 3600000 }
+    );
 
     if (rateLimitError) {
       console.error("Rate limit check error:", rateLimitError);
     }
 
-    if (rateLimitData && rateLimitData.submission_count >= 5) {
+    if (allowed === false) {
       return new Response(
         JSON.stringify({
           error: "Too many requests. Please try again later.",
         }),
         {
           status: 429,
-          headers: { "Content-Type": "application/json", ...corsHeaders },
+          headers: { "Content-Type": "application/json", ...getCorsHeaders(req) },
         }
       );
     }
@@ -98,7 +100,7 @@ const handler = async (req: Request): Promise<Response> => {
         }),
         {
           status: 400,
-          headers: { "Content-Type": "application/json", ...corsHeaders },
+          headers: { "Content-Type": "application/json", ...getCorsHeaders(req) },
         }
       );
     }
@@ -109,7 +111,7 @@ const handler = async (req: Request): Promise<Response> => {
         JSON.stringify({ error: "Invalid email format." }),
         {
           status: 400,
-          headers: { "Content-Type": "application/json", ...corsHeaders },
+          headers: { "Content-Type": "application/json", ...getCorsHeaders(req) },
         }
       );
     }
@@ -119,7 +121,7 @@ const handler = async (req: Request): Promise<Response> => {
         JSON.stringify({ error: "Input exceeds maximum length." }),
         {
           status: 400,
-          headers: { "Content-Type": "application/json", ...corsHeaders },
+          headers: { "Content-Type": "application/json", ...getCorsHeaders(req) },
         }
       );
     }
@@ -129,7 +131,7 @@ const handler = async (req: Request): Promise<Response> => {
         JSON.stringify({ error: "Phone number exceeds maximum length." }),
         {
           status: 400,
-          headers: { "Content-Type": "application/json", ...corsHeaders },
+          headers: { "Content-Type": "application/json", ...getCorsHeaders(req) },
         }
       );
     }
@@ -139,7 +141,7 @@ const handler = async (req: Request): Promise<Response> => {
         JSON.stringify({ error: "Cover letter exceeds 2000 character limit." }),
         {
           status: 400,
-          headers: { "Content-Type": "application/json", ...corsHeaders },
+          headers: { "Content-Type": "application/json", ...getCorsHeaders(req) },
         }
       );
     }
@@ -154,7 +156,7 @@ const handler = async (req: Request): Promise<Response> => {
         JSON.stringify({ error: "Invalid file type. Only PDF, DOC, and DOCX are accepted." }),
         {
           status: 400,
-          headers: { "Content-Type": "application/json", ...corsHeaders },
+          headers: { "Content-Type": "application/json", ...getCorsHeaders(req) },
         }
       );
     }
@@ -168,7 +170,7 @@ const handler = async (req: Request): Promise<Response> => {
         JSON.stringify({ error: "CV file exceeds 5 MB limit." }),
         {
           status: 400,
-          headers: { "Content-Type": "application/json", ...corsHeaders },
+          headers: { "Content-Type": "application/json", ...getCorsHeaders(req) },
         }
       );
     }
@@ -194,7 +196,7 @@ const handler = async (req: Request): Promise<Response> => {
         }),
         {
           status: 500,
-          headers: { "Content-Type": "application/json", ...corsHeaders },
+          headers: { "Content-Type": "application/json", ...getCorsHeaders(req) },
         }
       );
     }
@@ -227,31 +229,12 @@ const handler = async (req: Request): Promise<Response> => {
         }),
         {
           status: 500,
-          headers: { "Content-Type": "application/json", ...corsHeaders },
+          headers: { "Content-Type": "application/json", ...getCorsHeaders(req) },
         }
       );
     }
 
     console.log("Application saved to database - ID:", dbData.id);
-
-    // Update rate limit tracking
-    if (rateLimitData) {
-      await supabase
-        .from("rate_limit_tracking")
-        .update({
-          submission_count: rateLimitData.submission_count + 1,
-          updated_at: new Date().toISOString(),
-        })
-        .eq("ip_address", clientIp)
-        .eq("endpoint", "job_application")
-        .gte("created_at", oneHourAgo);
-    } else {
-      await supabase.from("rate_limit_tracking").insert({
-        ip_address: clientIp,
-        endpoint: "job_application",
-        submission_count: 1,
-      });
-    }
 
     // Send email notification with CV attachment
     const emailResponse = await resend.emails.send({
@@ -291,7 +274,7 @@ const handler = async (req: Request): Promise<Response> => {
       }),
       {
         status: 200,
-        headers: { "Content-Type": "application/json", ...corsHeaders },
+        headers: { "Content-Type": "application/json", ...getCorsHeaders(req) },
       }
     );
   } catch (error: any) {
@@ -308,7 +291,7 @@ const handler = async (req: Request): Promise<Response> => {
       }),
       {
         status: 500,
-        headers: { "Content-Type": "application/json", ...corsHeaders },
+        headers: { "Content-Type": "application/json", ...getCorsHeaders(req) },
       }
     );
   }
