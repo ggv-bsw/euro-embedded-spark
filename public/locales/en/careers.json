@@ -1,0 +1,108 @@
+{
+  "seo": {
+    "title": "Careers at BSW TECH | Embedded, AUTOSAR, IoT & Full-Stack Roles",
+    "description": "Join BSW TECH in Chi\u0219in\u0103u (EU presence: Romania, Estonia). Open roles: Senior Embedded, AUTOSAR Integration, IoT Solutions Developer, Full-Stack Developer. Embedded School, mentorship, modern tooling.",
+    "keywords": "embedded jobs Moldova, AUTOSAR jobs, IoT developer jobs, careers BSW TECH"
+  },
+  "hero": {
+    "title": "Build Your Future at",
+    "titleHighlight": "BSW TECH",
+    "subtitle": "Join our team of engineers working on cutting-edge projects in Automotive and IoT. Grow through our Embedded School and real-world mentorship."
+  },
+  "whyJoin": {
+    "title": "Why Join BSW TECH?",
+    "subtitle": "We invest in our people and create an environment where engineers can thrive.",
+    "benefits": [
+      {
+        "title": "Continuous Learning",
+        "description": "Access to our Embedded School and mentorship from senior engineers."
+      },
+      {
+        "title": "Career Growth",
+        "description": "Clear career paths and opportunities to work on cutting-edge projects."
+      },
+      {
+        "title": "Collaborative Culture",
+        "description": "Work with talented engineers in a supportive team environment."
+      },
+      {
+        "title": "Latest Technologies",
+        "description": "Work with European clients using modern tools and methodologies."
+      },
+      {
+        "title": "Work-Life Balance",
+        "description": "Flexible work arrangements and supportive management."
+      },
+      {
+        "title": "International Exposure",
+        "description": "Collaborate with clients from Sweden, Germany, Denmark, and Estonia."
+      }
+    ]
+  },
+  "school": {
+    "title": "BSW TECH Embedded School",
+    "description": "Our unique Embedded School program helps junior engineers grow into senior specialists through:",
+    "items": [
+      "Hands-on training with real automotive projects",
+      "Mentorship from experienced embedded engineers",
+      "AUTOSAR and functional safety certification paths",
+      "Modern development tools and methodologies",
+      "Collaborative learning environment"
+    ],
+    "highlights": "Program Highlights",
+    "duration": "12 weeks",
+    "durationLabel": "Intensive training program",
+    "conversion": "90%",
+    "conversionLabel": "Conversion to full-time",
+    "trained": "30+",
+    "trainedLabel": "Engineers trained"
+  },
+  "positions": {
+    "title": "Open Positions",
+    "subtitle": "Explore opportunities to join our engineering team.",
+    "applyNow": "Apply Now",
+    "items": [
+      {
+        "title": "Senior Embedded Software Engineer",
+        "location": "Chi\u0219in\u0103u, Moldova",
+        "type": "Full-time",
+        "description": "Develop firmware for automotive ECUs using C/C++ and AUTOSAR."
+      },
+      {
+        "title": "Senior Java Developer",
+        "location": "Chi\u0219in\u0103u, Moldova / Remote",
+        "type": "Full-time",
+        "description": "Design and build scalable backend services and microservices using Java, Spring Boot, and cloud-native architectures."
+      },
+      {
+        "title": "Scala Developer",
+        "location": "Chi\u0219in\u0103u, Moldova / Remote",
+        "type": "Full-time",
+        "description": "Develop high-performance, functional-style backend systems and data pipelines using Scala, Akka, and the JVM ecosystem."
+      },
+      {
+        "title": "Full-Stack Developer",
+        "location": "Chi\u0219in\u0103u, Moldova / Remote",
+        "type": "Full-time",
+        "description": "Build mobile and web applications using React, Node.js, and modern frameworks."
+      },
+      {
+        "title": "Go Developer",
+        "location": "Chi\u0219in\u0103u, Moldova / Remote",
+        "type": "Full-time",
+        "description": "Build high-performance backend services, APIs, and distributed systems using Go and cloud-native tooling."
+      },
+      {
+        "title": ".NET Developer with Angular",
+        "location": "Chi\u0219in\u0103u, Moldova / Remote",
+        "type": "Full-time",
+        "description": "Develop full-stack enterprise applications using .NET Core backend services and Angular front-end interfaces."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to Start Your Journey?",
+    "subtitle": "Don't see a position that fits? Send us your CV and we'll keep you in mind for future opportunities.",
+    "button": "Get in Touch"
+  }
+}

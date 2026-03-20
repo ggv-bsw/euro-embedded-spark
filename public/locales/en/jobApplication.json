@@ -1,0 +1,37 @@
+{
+  "applyFor": "Apply for {{jobTitle}}",
+  "description": "Fill out the form below and attach your CV to apply.",
+  "name": "Name *",
+  "namePlaceholder": "Your full name",
+  "email": "Email *",
+  "emailPlaceholder": "your.email@example.com",
+  "phone": "Phone",
+  "phonePlaceholder": "+373 ...",
+  "coverLetter": "Cover Letter / Message",
+  "coverLetterPlaceholder": "Tell us why you're a great fit...",
+  "cvLabel": "CV / Resume *",
+  "cvHint": "PDF, DOC, or DOCX (max 5 MB)",
+  "removeFile": "Remove file",
+  "submit": "Submit Application",
+  "submitting": "Submitting...",
+  "validation": {
+    "requiredFields": "Please fill in all required fields.",
+    "nameTooLong": "Name must be less than 100 characters.",
+    "emailTooLong": "Email must be less than 255 characters.",
+    "invalidEmail": "Please enter a valid email address.",
+    "coverLetterTooLong": "Cover letter must be less than 2000 characters.",
+    "attachCv": "Please attach your CV.",
+    "invalidFileType": "Please upload a PDF, DOC, or DOCX file.",
+    "fileTooLarge": "CV must be less than 5 MB.",
+    "invalidFileTitle": "Invalid file type",
+    "fileTooLargeTitle": "File too large",
+    "error": "Error"
+  },
+  "success": {
+    "title": "Application Sent!",
+    "description": "Thank you for applying. We'll review your application and get back to you soon."
+  },
+  "error": {
+    "default": "Failed to submit application. Please try again."
+  }
+}

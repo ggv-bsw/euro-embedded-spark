@@ -1,0 +1,55 @@
+{
+  "seo": {
+    "title": "Referenzen & Fallstudien | BSW TECH",
+    "description": "Praxisnahe Fallstudien: Embedded C/C++, AUTOSAR-ECU-Integration, IoT (LoRaWAN/SIGFOX) und Full-Stack-/Mobile-Apps f\u00fcr europ\u00e4ische OEMs und Industriekunden. Ergebnisse: 40% weniger Ausfallzeiten, produktionsreife Apps f\u00fcr Volvo/Scania, ISO-26262-Programme.",
+    "keywords": "Fallstudien, Referenzen, AUTOSAR, Embedded C, IoT, LoRaWAN, SIGFOX, React, Kotlin, AWS IoT, ISO 26262"
+  },
+  "hero": {
+    "title": "Referenzen",
+    "subtitle": "Echte Projekte mit echter Wirkung f\u00fcr europ\u00e4ische Unternehmen in Automotive, IoT und Embedded-Systemen."
+  },
+  "stories": [
+    {
+      "client": "Fyrqom AB",
+      "title": "Enterprise Mobile- & Web-Anwendungen",
+      "scope": "Komplettentwicklung von Mobile- & Web-Anwendungen f\u00fcr Volvo und Scania f\u00fcr Reifendruck-Automatisierungssysteme.",
+      "result": "Produktionsreife Apps f\u00fcr Reifendruck-Automatisierungssysteme bei f\u00fchrenden Automobilherstellern geliefert."
+    },
+    {
+      "client": "Smart Metering Projekt",
+      "title": "LoRaWAN- & SIGFOX-Impulszähler",
+      "scope": "Produkt von Grund auf entwickelt \u2014 Hardware-Design, Firmware-Entwicklung und IoT-Konnektivit\u00e4t f\u00fcr Smart Metering.",
+      "result": "Smart-Metering-L\u00f6sung in realen Wohnungen in Chi\u0219in\u0103u eingesetzt, erm\u00f6glicht Fern\u00fcberwachung von Wasser und Energie."
+    },
+    {
+      "client": "Procesio",
+      "title": "Low-Code-Plattformentwicklung",
+      "scope": "Outstaffing von BSW-TECH-Entwicklern zur Erweiterung der Procesio-Workflow-Automatisierungsplattform mit neuen Features und Integrationen.",
+      "result": "Beschleunigte Lieferung und Kostenreduktion f\u00fcr Kernprodukt-Features, schnellere Markteinf\u00fchrung erm\u00f6glicht."
+    },
+    {
+      "client": "Electra Interphone",
+      "title": "Smart-Intercom-Mobilanwendung",
+      "scope": "Komplette Mobile-App-Entwicklung f\u00fcr Smart-Intercom-System mit Video-Streaming und Zugangskontrolle.",
+      "result": "Echtzeit-Videokommunikation und Fernzugangskontrolle f\u00fcr Wohngeb\u00e4ude in Osteuropa."
+    },
+    {
+      "client": "Nordischer Automotive-OEM",
+      "title": "AUTOSAR-ECU-Integration",
+      "scope": "AUTOSAR-Classic-Stack-Integration f\u00fcr Karosserie-Steuermodul mit CAN-Kommunikation und Diagnoseprotokollen.",
+      "result": "Erfolgreich integriertes und validiertes ECU f\u00fcr Serienproduktion, ISO-26262-Sicherheitsanforderungen erf\u00fcllt."
+    },
+    {
+      "client": "Industrieller IoT-Kunde",
+      "title": "Predictive-Maintenance-System",
+      "scope": "Entwicklung von IoT-Sensoren und Cloud-Plattform f\u00fcr industrielle Ger\u00e4te\u00fcberwachung und vorausschauende Wartung.",
+      "result": "Ger\u00e4teausfallzeiten um 40% reduziert durch Echtzeit-\u00dcberwachung und Predictive Analytics."
+    }
+  ],
+  "stats": {
+    "projects": "Projekte geliefert",
+    "experience": "Jahre Erfahrung",
+    "clients": "Europ\u00e4ische Kunden",
+    "satisfaction": "Kundenzufriedenheit"
+  }
+}

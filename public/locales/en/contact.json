@@ -1,0 +1,51 @@
+{
+  "seo": {
+    "title": "Contact BSW TECH | Automotive, IoT & Embedded Engineering",
+    "description": "Contact BSW TECH to discuss embedded C/C++, AUTOSAR, and IoT projects. Headquarters in Chi\u0219in\u0103u, Moldova with EU presence (Romania, Estonia). Book a call or send us a message.",
+    "keywords": "contact BSW TECH, embedded engineering contact, AUTOSAR partner, IoT development contact"
+  },
+  "hero": {
+    "title": "Let's Build Something Together",
+    "subtitle": "We're ready to discuss your next Automotive, IoT or Embedded project.",
+    "bookCall": "Book a 30-min Call"
+  },
+  "info": {
+    "title": "Get in Touch",
+    "headquarters": "Headquarters",
+    "headquartersAddress": "Chi\u0219in\u0103u, Moldova",
+    "headquartersPresence": "EU Presence: Romania, Estonia",
+    "email": "Email",
+    "followUs": "Follow Us",
+    "preferCall": "Prefer a quick call?",
+    "preferCallDescription": "Schedule a 30-minute meeting directly with our engineering team.",
+    "scheduleCalendly": "Schedule via Calendly"
+  },
+  "form": {
+    "title": "Send Us a Message",
+    "name": "Name *",
+    "namePlaceholder": "Your name",
+    "email": "Email *",
+    "emailPlaceholder": "your.email@company.com",
+    "company": "Company",
+    "companyPlaceholder": "Your company name",
+    "message": "Message *",
+    "messagePlaceholder": "Tell us about your project...",
+    "submit": "Send Message",
+    "submitting": "Sending..."
+  },
+  "validation": {
+    "requiredFields": "Please fill in all required fields.",
+    "nameTooLong": "Name must be less than 100 characters.",
+    "emailTooLong": "Email must be less than 255 characters.",
+    "messageTooLong": "Message must be less than 1000 characters.",
+    "invalidEmail": "Please enter a valid email address.",
+    "error": "Error"
+  },
+  "success": {
+    "title": "Message Sent!",
+    "description": "We'll get back to you within 24 hours."
+  },
+  "error": {
+    "default": "Failed to send message. Please try again."
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "seo": {
+    "title": "Engineering Blog | Embedded, AUTOSAR, IoT & Product Development",
+    "description": "Insights on embedded C/C++, AUTOSAR integration, IoT protocols (LoRaWAN/SIGFOX), and building reliable backends with React/Node.js. Updates on engineering culture and ISO 26262 practice.",
+    "keywords": "engineering blog, AUTOSAR, embedded C, IoT, LoRaWAN, SIGFOX, React, Node.js, ISO 26262"
+  },
+  "hero": {
+    "title": "Insights on Engineering Innovation",
+    "subtitle": "Read our latest articles on embedded development, AUTOSAR integration, IoT connectivity and digital product design."
+  },
+  "categories": ["All", "Automotive", "Embedded Systems", "IoT", "Full-Stack", "Company"],
+  "posts": [
+    {
+      "title": "How AUTOSAR Accelerates Automotive Innovation",
+      "excerpt": "Exploring how AUTOSAR standardization reduces development time and improves software reusability in modern vehicles.",
+      "readTime": "8 min read",
+      "category": "Automotive"
+    },
+    {
+      "title": "The Power of Embedded C in Next-Gen Devices",
+      "excerpt": "Why C/C++ remains the language of choice for embedded systems development and real-time applications.",
+      "readTime": "6 min read",
+      "category": "Embedded Systems"
+    },
+    {
+      "title": "LoRaWAN vs SIGFOX: Choosing the Right IoT Protocol",
+      "excerpt": "A comprehensive comparison of low-power wide-area network protocols for IoT applications.",
+      "readTime": "10 min read",
+      "category": "IoT"
+    },
+    {
+      "title": "Building Reliable IoT Backends with React and Node.js",
+      "excerpt": "Best practices for creating scalable and secure backend systems for connected devices.",
+      "readTime": "7 min read",
+      "category": "Full-Stack"
+    },
+    {
+      "title": "Engineering Culture in Eastern Europe: The BSW TECH Approach",
+      "excerpt": "How we build and maintain a world-class engineering team in Moldova while serving European clients.",
+      "readTime": "5 min read",
+      "category": "Company"
+    },
+    {
+      "title": "ISO 26262 Functional Safety in Practice",
+      "excerpt": "Real-world insights on implementing functional safety standards in automotive software development.",
+      "readTime": "9 min read",
+      "category": "Automotive"
+    }
+  ],
+  "newsletter": {
+    "title": "Stay Updated",
+    "subtitle": "Subscribe to our newsletter for the latest insights on embedded systems and automotive engineering.",
+    "placeholder": "your.email@company.com",
+    "subscribe": "Subscribe"
+  }
+}

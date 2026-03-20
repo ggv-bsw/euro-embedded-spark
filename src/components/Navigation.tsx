@@ -1,22 +1,28 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
+import LocalizedLink from "@/components/LocalizedLink";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
-
-const navLinks = [
-  { name: "Home", path: "/" },
-  { name: "Expertise", path: "/expertise" },
-  { name: "Success Stories", path: "/success-stories" },
-  { name: "About", path: "/about" },
-  { name: "Careers", path: "/careers" },
-  { name: "Contact", path: "/contact" },
+const navKeys = [
+  { key: "home", path: "/" },
+  { key: "expertise", path: "/expertise" },
+  { key: "successStories", path: "/success-stories" },
+  { key: "about", path: "/about" },
+  { key: "careers", path: "/careers" },
+  { key: "contact", path: "/contact" },
 ];
 
 export default function Navigation() {
+  const { t } = useTranslation("common");
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+
+  // Strip /de prefix for active-link comparison
+  const bare = location.pathname.replace(/^\/de(\/|$)/, "/");
 
   useEffect(() => {
     let ticking = false;
@@ -46,28 +52,29 @@ export default function Navigation() {
       <div className="max-w-container mx-auto px-6 lg:px-20">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="text-2xl font-heading font-bold text-primary">
+          <LocalizedLink to="/" className="text-2xl font-heading font-bold text-primary">
             BSW
-          </Link>
+          </LocalizedLink>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <Link
+            {navKeys.map((link) => (
+              <LocalizedLink
                 key={link.path}
                 to={link.path}
                 className={`text-sm font-medium transition-colors hover:text-primary ${
-                  location.pathname === link.path ? "text-primary" : "text-muted-foreground"
+                  bare === link.path ? "text-primary" : "text-muted-foreground"
                 }`}
               >
-                {link.name}
-              </Link>
+                {t(`nav.${link.key}`)}
+              </LocalizedLink>
             ))}
-            <Link to="/contact">
+            <LanguageSwitcher />
+            <LocalizedLink to="/contact">
               <Button variant="hero" size="sm">
-                Get Started
+                {t("nav.getStarted")}
               </Button>
-            </Link>
+            </LocalizedLink>
           </div>
 
           {/* Mobile Menu Button */}
@@ -85,22 +92,25 @@ export default function Navigation() {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-card border-t border-line">
           <div className="px-6 py-4 space-y-3">
-            {navLinks.map((link) => (
-              <Link
+            {navKeys.map((link) => (
+              <LocalizedLink
                 key={link.path}
                 to={link.path}
                 className={`block py-2 text-base font-medium transition-colors hover:text-primary ${
-                  location.pathname === link.path ? "text-primary" : "text-muted-foreground"
+                  bare === link.path ? "text-primary" : "text-muted-foreground"
                 }`}
               >
-                {link.name}
-              </Link>
+                {t(`nav.${link.key}`)}
+              </LocalizedLink>
             ))}
-            <Link to="/contact" className="block pt-2">
+            <div className="py-2">
+              <LanguageSwitcher />
+            </div>
+            <LocalizedLink to="/contact" className="block pt-2">
               <Button variant="hero" size="sm" className="w-full">
-                Get Started
+                {t("nav.getStarted")}
               </Button>
-            </Link>
+            </LocalizedLink>
           </div>
         </div>
       )}

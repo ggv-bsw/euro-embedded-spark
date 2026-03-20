@@ -2,78 +2,40 @@ import { Award, Users, MapPin, Target } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import LocalizedLink from "@/components/LocalizedLink";
 import gheorghePhoto from "@/assets/gheorghe-photo.jpg";
 import photoIgor from "@/assets/igor-r.jpeg";
 import photoDaniel from "@/assets/daniel-v.jpg";
 import photoGrigore from "@/assets/grigore-c.jpg";
 import photoVlad from "@/assets/vlad-m.jpg";
 import SEO from "@/components/SEO";
+import { useTranslation } from "react-i18next";
 
-const certifications = [
-  { name: "ISO 9001", description: "Quality Management Systems" },
-  { name: "ISO 14001", description: "Environmental Management" },
-  { name: "ISO 27001", description: "Information Security" },
-  { name: "ISO 37001", description: "Anti-Bribery Management" },
-];
-
-const memberships = [
-  {
-    name: "ACEM",
-    full: "Association of Electronic Companies of Moldova",
-    role: "Board Member",
-  },
-  {
-    name: "IT Park Moldova",
-    full: "IT Park Resident",
-    role: "Resident Company",
-  },
-  {
-    name: "AHK",
-    full: "German Chamber of Commerce",
-    role: "Member",
-  },
-  {
-    name: "Swedish-Polish Chamber",
-    full: "Swedish-Polish Chamber of Commerce",
-    role: "Member",
-  },
-];
-
-const values = [
-  {
-    icon: Target,
-    title: "Technical Excellence",
-    description:
-      "We pursue the highest standards in embedded and software engineering, continuously learning and improving.",
-  },
-  {
-    icon: Users,
-    title: "Collaborative Partnership",
-    description:
-      "We work as an extension of your team, adapting to your processes and communicating transparently.",
-  },
-  {
-    icon: Award,
-    title: "Quality First",
-    description:
-      "ISO-certified processes ensure consistent quality across all projects, from prototype to production.",
-  },
-  {
-    icon: MapPin,
-    title: "Near-Shore Advantage",
-    description:
-      "Strategic location in Moldova provides EU time-zone alignment with cost efficiency and cultural fit.",
-  },
-];
+const valueIcons = [Target, Users, Award, MapPin];
+const teamPhotos = [photoIgor, photoDaniel, photoGrigore, photoVlad];
 
 export default function About() {
+  const { t, i18n } = useTranslation("about");
+  const lang = i18n.language;
+
+  const seo = t("seo", { returnObjects: true }) as { title: string; description: string; keywords: string };
+  const hero = t("hero", { returnObjects: true }) as { title: string; subtitle: string };
+  const overview = t("overview", { returnObjects: true }) as { title: string; paragraphs: string[]; founded: string; engineers: string; projectsDelivered: string };
+  const team = t("team", { returnObjects: true }) as { title: string; subtitle: string; ceoTitle: string; ceoQuote: string; ceoDescription: string; members: { name: string; role: string; focus: string }[] };
+  const values = t("values", { returnObjects: true }) as { title: string; subtitle: string; items: { title: string; description: string }[] };
+  const certs = t("certifications", { returnObjects: true }) as { title: string; subtitle: string; items: { name: string; description: string }[] };
+  const memberships = t("memberships", { returnObjects: true }) as { title: string; subtitle: string; items: { name: string; full: string; role: string }[] };
+  const cta = t("cta", { returnObjects: true }) as { title: string; subtitle: string; partnerButton: string; careersButton: string };
+
+  const SITE = "https://bsw-tech.com";
+  const prefix = lang === "de" ? "/de" : "";
+
   return (
     <>
       <SEO
-        title="About BSW TECH | European Near-Shore Engineering Partner"
-        description="BSW TECH is a European engineering company from Moldova (est. 2021), specializing in embedded, AUTOSAR, IoT and product development. ISO 9001/14001/27001/37001 certified. Near-shore partner for Nordic and German companies."
-        keywords="About BSW TECH, near-shore Moldova, embedded engineering, AUTOSAR, IoT, ISO 9001, ISO 27001"
+        title={seo.title}
+        description={seo.description}
+        keywords={seo.keywords}
       />
 
       <script
@@ -83,15 +45,14 @@ export default function About() {
             "@context": "https://schema.org",
             "@type": "Organization",
             name: "BSW TECH",
-            url: "https://bsw-tech.com/",
-            logo: "https://bsw-tech.com/og-image.png",
-            description:
-              "European near-shore engineering company delivering embedded, AUTOSAR, IoT and product development.",
+            url: `${SITE}/`,
+            logo: `${SITE}/og-image.png`,
+            description: seo.description,
             foundingDate: "2021",
             email: "hr@bsw-tech.com",
             address: {
               "@type": "PostalAddress",
-              addressLocality: "Chișinău",
+              addressLocality: "Chi\u0219in\u0103u",
               addressCountry: "MD",
             },
             sameAs: [
@@ -99,19 +60,6 @@ export default function About() {
               "https://github.com/bsw-tech",
               "https://www.youtube.com/@BSWTech-h8q",
               "https://www.instagram.com/bswtech/",
-            ],
-            makesOffer: [
-              { "@type": "Service", name: "Embedded Systems (C/C++)" },
-              {
-                "@type": "Service",
-                name: "AUTOSAR Integration (Classic/Adaptive)",
-              },
-              {
-                "@type": "Service",
-                name: "IoT Solutions (LoRaWAN, SIGFOX, Cloud)",
-              },
-              { "@type": "Service", name: "Product Design & Prototyping" },
-              { "@type": "Service", name: "Mobile & Full-Stack Development" },
             ],
           }),
         }}
@@ -128,13 +76,13 @@ export default function About() {
                 "@type": "ListItem",
                 position: 1,
                 name: "Home",
-                item: "https://bsw-tech.com/",
+                item: `${SITE}${prefix}/`,
               },
               {
                 "@type": "ListItem",
                 position: 2,
-                name: "About",
-                item: "https://bsw-tech.com/about",
+                name: hero.title,
+                item: `${SITE}${prefix}/about`,
               },
             ],
           }),
@@ -148,7 +96,7 @@ export default function About() {
             "@context": "https://schema.org",
             "@type": "Person",
             name: "Gheorghe Ghirjev",
-            jobTitle: "CEO & Founder",
+            jobTitle: team.ceoTitle,
             worksFor: { "@type": "Organization", name: "BSW TECH" },
           }),
         }}
@@ -162,11 +110,10 @@ export default function About() {
         <section className="pt-32 pb-16 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
           <div className="max-w-container mx-auto px-6 lg:px-20 text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              About BSW TECH
+              {hero.title}
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              A European engineering company delivering embedded and software
-              solutions for Automotive, IoT, and Product Design sectors.
+              {hero.subtitle}
             </p>
           </div>
         </section>
@@ -177,46 +124,26 @@ export default function About() {
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div>
                 <h2 className="text-4xl font-bold mb-6">
-                  Engineering Partner You Can Trust
+                  {overview.title}
                 </h2>
                 <div className="space-y-4 text-lg text-muted-foreground">
-                  <p>
-                    BSW TECH SRL is a European engineering company from Moldova
-                    delivering embedded and software solutions for Automotive,
-                    IoT and Product Design sectors.
-                  </p>
-                  <p>
-                    We combine hardware design, firmware development, and
-                    software engineering under one roof, enabling us to deliver
-                    complete product solutions from concept to production.
-                  </p>
-                  <p>
-                    Since 2021, we've been helping Nordic and German companies
-                    accelerate their R&D capacity with cost-efficient near-shore
-                    engineering that doesn't compromise on quality.
-                  </p>
+                  {overview.paragraphs.map((p, i) => (
+                    <p key={i}>{p}</p>
+                  ))}
                 </div>
               </div>
               <div className="space-y-8">
                 <div className="bg-card p-8 rounded-2xl border border-line">
-                  <div className="text-4xl font-bold text-primary mb-2">
-                    2021
-                  </div>
-                  <div className="text-muted-foreground">Founded</div>
+                  <div className="text-4xl font-bold text-primary mb-2">2021</div>
+                  <div className="text-muted-foreground">{overview.founded}</div>
                 </div>
                 <div className="bg-card p-8 rounded-2xl border border-line">
-                  <div className="text-4xl font-bold text-primary mb-2">
-                    30+
-                  </div>
-                  <div className="text-muted-foreground">Engineers</div>
+                  <div className="text-4xl font-bold text-primary mb-2">30+</div>
+                  <div className="text-muted-foreground">{overview.engineers}</div>
                 </div>
                 <div className="bg-card p-8 rounded-2xl border border-line">
-                  <div className="text-4xl font-bold text-primary mb-2">
-                    50+
-                  </div>
-                  <div className="text-muted-foreground">
-                    Projects Delivered
-                  </div>
+                  <div className="text-4xl font-bold text-primary mb-2">50+</div>
+                  <div className="text-muted-foreground">{overview.projectsDelivered}</div>
                 </div>
               </div>
             </div>
@@ -227,9 +154,9 @@ export default function About() {
         <section className="py-16 md:py-24 bg-card">
           <div className="max-w-container mx-auto px-6 lg:px-20">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Team</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">{team.title}</h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                30+ engineers led by experienced leaders across embedded, automotive, and IoT.
+                {team.subtitle}
               </p>
             </div>
 
@@ -238,60 +165,28 @@ export default function About() {
               <div className="text-center mb-6">
                 <img
                   src={gheorghePhoto}
-                  alt="Gheorghe Ghirjev - CEO & Co-Founder"
+                  alt="Gheorghe Ghirjev"
                   className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-primary/20"
                   loading="lazy"
                 />
                 <h3 className="text-2xl font-bold mb-2">Gheorghe Ghirjev</h3>
-                <p className="text-primary font-semibold">CEO & Founder</p>
+                <p className="text-primary font-semibold">{team.ceoTitle}</p>
               </div>
               <div className="text-muted-foreground text-center space-y-4">
-                <p className="font-bold text-lg">
-                  Technology knows no borders — and neither do we.
-                </p>
-                <p>
-                  In a world where speed defines success, nearshoring with BSW
-                  TECH turns distance into advantage — accelerating innovation,
-                  reducing costs, and transforming bold ideas into real
-                  products.
-                </p>
+                <p className="font-bold text-lg">{team.ceoQuote}</p>
+                <p>{team.ceoDescription}</p>
               </div>
             </div>
 
             {/* Key team members */}
             <div className="grid md:grid-cols-4 gap-6">
-              {[
-                {
-                  name: "Igor R.",
-                  role: "Engineering Lead",
-                  focus: "Firmware architecture in C/C++, AUTOSAR Classic integration, and real-time embedded systems for automotive and IoT products.",
-                  photo: photoIgor,
-                },
-                {
-                  name: "Daniel V.",
-                  role: "ML & AI Lead",
-                  focus: "Machine learning pipelines, computer vision, and AI-driven automation for industrial and IoT applications.",
-                  photo: photoDaniel,
-                },
-                {
-                  name: "Grigorie C.",
-                  role: "Backend & Database Lead",
-                  focus: "Scalable backend architectures, database design, and high-performance API development for connected systems.",
-                  photo: photoGrigore,
-                },
-                {
-                  name: "Vlad M.",
-                  role: "Hardware & PCB Layout Lead",
-                  focus: "Multi-layer PCB design, schematic capture, and DFM-optimized hardware from prototype to production.",
-                  photo: photoVlad,
-                },
-              ].map((member, index) => (
+              {team.members.map((member, index) => (
                 <div
                   key={index}
                   className="bg-background p-6 rounded-2xl border border-line text-center"
                 >
                   <img
-                    src={member.photo}
+                    src={teamPhotos[index]}
                     alt={member.name}
                     className="w-24 h-24 rounded-full object-cover mx-auto mb-4 border-4 border-primary/20"
                     loading="lazy"
@@ -309,23 +204,25 @@ export default function About() {
         <section className="py-16 md:py-24">
           <div className="max-w-container mx-auto px-6 lg:px-20">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6">Our Values</h2>
+              <h2 className="text-4xl font-bold mb-6">{values.title}</h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                The principles that guide our work and relationships with
-                clients.
+                {values.subtitle}
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {values.map((value, index) => (
-                <div
-                  key={index}
-                  className="bg-card p-6 rounded-2xl border border-line hover:border-primary/50 transition-all"
-                >
-                  <value.icon className="w-10 h-10 text-primary mb-4" />
-                  <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
-                  <p className="text-muted-foreground">{value.description}</p>
-                </div>
-              ))}
+              {values.items.map((value, index) => {
+                const Icon = valueIcons[index];
+                return (
+                  <div
+                    key={index}
+                    className="bg-card p-6 rounded-2xl border border-line hover:border-primary/50 transition-all"
+                  >
+                    <Icon className="w-10 h-10 text-primary mb-4" />
+                    <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
+                    <p className="text-muted-foreground">{value.description}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -335,24 +232,19 @@ export default function About() {
           <div className="max-w-container mx-auto px-6 lg:px-20">
             <div className="text-center mb-16">
               <Award className="w-16 h-16 text-primary mx-auto mb-6" />
-              <h2 className="text-4xl font-bold mb-6">Certifications</h2>
+              <h2 className="text-4xl font-bold mb-6">{certs.title}</h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                ISO-certified processes ensuring quality, security, and
-                compliance.
+                {certs.subtitle}
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {certifications.map((cert, index) => (
+              {certs.items.map((cert, index) => (
                 <div
                   key={index}
                   className="bg-gradient-to-br from-primary/10 to-secondary/10 p-6 rounded-2xl border border-primary/20 text-center hover:shadow-lg hover:shadow-primary/20 transition-all"
                 >
-                  <div className="text-3xl font-bold text-primary mb-2">
-                    {cert.name}
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    {cert.description}
-                  </div>
+                  <div className="text-3xl font-bold text-primary mb-2">{cert.name}</div>
+                  <div className="text-sm text-muted-foreground">{cert.description}</div>
                 </div>
               ))}
             </div>
@@ -363,21 +255,19 @@ export default function About() {
         <section className="py-16 md:py-24">
           <div className="max-w-container mx-auto px-6 lg:px-20">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6">Industry Memberships</h2>
+              <h2 className="text-4xl font-bold mb-6">{memberships.title}</h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Active members of leading technology and business organizations.
+                {memberships.subtitle}
               </p>
             </div>
             <div className="grid md:grid-cols-2 gap-6">
-              {memberships.map((membership, index) => (
+              {memberships.items.map((membership, index) => (
                 <div
                   key={index}
                   className="bg-card p-6 rounded-2xl border border-line hover:border-primary/50 transition-all"
                 >
                   <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-2xl font-bold text-primary">
-                      {membership.name}
-                    </h3>
+                    <h3 className="text-2xl font-bold text-primary">{membership.name}</h3>
                     <span className="text-xs px-3 py-1 bg-primary/10 text-primary rounded-full">
                       {membership.role}
                     </span>
@@ -392,24 +282,17 @@ export default function About() {
         {/* CTA */}
         <section className="py-24 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
           <div className="max-w-container mx-auto px-6 lg:px-20 text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Join Our Engineering Journey
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">{cta.title}</h2>
             <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
-              Whether you're looking for a technology partner or want to join
-              our team, we'd love to hear from you.
+              {cta.subtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/contact">
-                <Button variant="hero" size="lg">
-                  Partner With Us
-                </Button>
-              </Link>
-              <Link to="/careers">
-                <Button variant="outline" size="lg">
-                  View Careers
-                </Button>
-              </Link>
+              <LocalizedLink to="/contact">
+                <Button variant="hero" size="lg">{cta.partnerButton}</Button>
+              </LocalizedLink>
+              <LocalizedLink to="/careers">
+                <Button variant="outline" size="lg">{cta.careersButton}</Button>
+              </LocalizedLink>
             </div>
           </div>
         </section>

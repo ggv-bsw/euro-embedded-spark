@@ -1,0 +1,125 @@
+{
+  "seo": {
+    "title": "BSW TECH \u2013 Near-Shore Automotive- & IoT-Engineering",
+    "description": "BSW TECH bietet kosteneffizientes Near-Shore Embedded-, AUTOSAR- und IoT-Engineering f\u00fcr europ\u00e4ische Automobil- und Industrieunternehmen.",
+    "keywords": "Embedded-C-Entwicklung, AUTOSAR-Integration, IoT-L\u00f6sungen, Produktdesign, Near-Shore Moldau, Automotive-Software, Full-Stack-Apps, Embedded Systeme, LoRaWAN, SIGFOX"
+  },
+  "hero": {
+    "titleLine1": "Beschleunigen Sie Ihre F&E",
+    "titleLine2": "mit",
+    "titleHighlight": "Near-Shore-Ingenieuren",
+    "subtitle": "Embedded C/C++, AUTOSAR und IoT-Teams aus Moldau \u2014 EU-konform, ISO-zertifiziert, lieferbereit.",
+    "bookCall": "Gespr\u00e4ch buchen",
+    "seeWork": "Unsere Projekte"
+  },
+  "trustedBy": "Vertraut von europ\u00e4ischen Unternehmen",
+  "why": {
+    "title": "Ihr Near-Shore-Engineering-Partner in Europa",
+    "description": "BSW TECH verbindet osteurop\u00e4isches Talent mit westeurop\u00e4ischer Pr\u00e4zision. Mit Sitz in Moldau \u2014 EU-Zeitzone und kulturelle N\u00e4he zu den nordischen L\u00e4ndern \u2014 liefern wir Embedded- und Softwareprojekte, die Kosten senken, ohne Qualit\u00e4t zu kompromittieren.",
+    "points": [
+      "EU-Zeitzone & Engineering-Standards",
+      "ISO 9001 \u00b7 14001 \u00b7 27001 \u00b7 37001 zertifiziert",
+      "End-to-End Design \u2192 Prototyping \u2192 Markteinf\u00fchrung",
+      "Automotive- & IoT-Expertise seit 11.11.2021"
+    ],
+    "locationTitle": "Strategischer Standort",
+    "locationDescription": "Hauptsitz in Chi\u0219in\u0103u, Moldau mit Pr\u00e4senz in Rum\u00e4nien und Estland. Perfekte Zeitzonenausrichtung f\u00fcr nordische und deutsche M\u00e4rkte.",
+    "timeZone": "Zeitzone",
+    "languages": "Sprachen",
+    "mainMarkets": "Hauptm\u00e4rkte"
+  },
+  "services": {
+    "title": "Engineering-Exzellenz \u00fcber alle Dom\u00e4nen",
+    "subtitle": "Von Embedded-Firmware bis zu cloud-verbundenen mobilen Apps liefern wir komplette Engineering-L\u00f6sungen.",
+    "items": [
+      {
+        "title": "Embedded-Systementwicklung",
+        "description": "Firmware-Architektur in C/C++, RTOS-Integration, CAN/LIN-Protokolle und Diagnose-Tools.",
+        "keywords": "Embedded C, Mikrocontroller, RTOS, CAN, LIN"
+      },
+      {
+        "title": "Automotive Engineering",
+        "description": "AUTOSAR-ECU-Integration, ADAS, Funktionale Sicherheit und Cyber Security. Wir entwickeln, testen und validieren Automotive-Software f\u00fcr OEMs und Tier-1-Zulieferer.",
+        "keywords": "AUTOSAR, ISO 26262, Cyber Security, Funktionale Sicherheit, ADAS"
+      },
+      {
+        "title": "IoT-L\u00f6sungen",
+        "description": "Konnektivit\u00e4t \u00fcber LoRaWAN, SIGFOX und MQTT mit Cloud-Integration f\u00fcr Smart Homes, St\u00e4dte und industrielle Automatisierung.",
+        "keywords": "IoT, Konnektivit\u00e4t, Cloud, MQTT, LoRa, SIGFOX"
+      },
+      {
+        "title": "Produktdesign & Prototyping",
+        "description": "Elektronikdesign, PCB-Layout, mechanisches Geh\u00e4use und DFM-Optimierung f\u00fcr die Fertigung.",
+        "keywords": "PCB, Hardware-Design, Prototyp, Produktdesign"
+      },
+      {
+        "title": "Mobile & Full-Stack-Entwicklung",
+        "description": "Native Apps in Kotlin und Swift, React-basierte Frontends und sichere Backend-APIs f\u00fcr vernetzte Ger\u00e4te.",
+        "keywords": "Full-Stack, React, Swift, Kotlin, Backend, API"
+      },
+      {
+        "title": "Outsourcing / Outstaffing",
+        "description": "Wir stellen ein Team von Fachleuten f\u00fcr Sie zusammen, die gemeinsam schnelle und kosteneffiziente digitale Erlebnisse liefern.",
+        "keywords": "Outsourcing, Projektmanagement, Outstaffing, Body Leasing"
+      }
+    ]
+  },
+  "stories": {
+    "title": "Echte Projekte. Echte Wirkung.",
+    "subtitle": "Wir haben komplexe Engineering-Projekte f\u00fcr f\u00fchrende europ\u00e4ische Unternehmen geliefert.",
+    "viewAll": "Alle Referenzen ansehen",
+    "items": [
+      {
+        "client": "Fyrqom AB",
+        "title": "Enterprise Mobile- & Web-Anwendungen",
+        "scope": "Komplettentwicklung von Mobile- & Web-Anwendungen f\u00fcr Volvo und Scania.",
+        "result": "Produktionsreife Apps f\u00fcr Reifendruck-Automatisierungssysteme geliefert."
+      },
+      {
+        "client": "Smart Metering",
+        "title": "LoRaWAN- & SIGFOX-Impulszähler",
+        "scope": "Produkt von Grund auf entwickelt \u2014 Hardware, Firmware und IoT-Konnektivit\u00e4t.",
+        "result": "Smart-Metering-L\u00f6sung in realen Wohnungen in Chi\u0219in\u0103u eingesetzt."
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Was unsere Partner sagen",
+    "items": [
+      {
+        "quote": "Der Outsourcing-Service war au\u00dfergew\u00f6hnlich und das Team war w\u00e4hrend des gesamten Prozesses hilfsbereit. BSW TECH sehr empfehlenswert.",
+        "name": "Mihai Darzan",
+        "market": "Rum\u00e4nien"
+      },
+      {
+        "quote": "BSW TECH brachte gro\u00dfe Motivation und innovative Ideen in das Projekt ein. Eine fantastische Zusammenarbeit.",
+        "name": "Christoph Hiltl",
+        "market": "Deutschland"
+      },
+      {
+        "quote": "Das gesamte Design und die Softwareentwicklung der Praxis-Website wurde von BSW TECH termingerecht und in hoher Qualit\u00e4t umgesetzt. Empfehlenswert.",
+        "name": "Hani Ibrahim",
+        "market": "Deutschland"
+      }
+    ]
+  },
+  "certifications": {
+    "title": "Qualit\u00e4t & Vertrauen anerkannt",
+    "subtitle": "Wir arbeiten nach strengen europ\u00e4ischen Standards und sind stolze Mitglieder wichtiger Branchenorganisationen.",
+    "items": [
+      "ISO 9001",
+      "ISO 14001",
+      "ISO 27001",
+      "ISO 37001",
+      "ACEM-Mitglied",
+      "IT Park Resident",
+      "AHK-Mitglied",
+      "MDW Community"
+    ]
+  },
+  "cta": {
+    "title": "Bereit, Ihr n\u00e4chstes Projekt zu beschleunigen?",
+    "subtitle": "Buchen Sie ein Gespr\u00e4ch und erfahren Sie, wie unsere Ingenieure Ihr Team erweitern k\u00f6nnen.",
+    "bookCall": "Gespr\u00e4ch buchen"
+  }
+}

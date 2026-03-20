@@ -1,0 +1,56 @@
+{
+  "seo": {
+    "title": "Engineering-Blog | Embedded, AUTOSAR, IoT & Produktentwicklung",
+    "description": "Einblicke in Embedded C/C++, AUTOSAR-Integration, IoT-Protokolle (LoRaWAN/SIGFOX) und zuverl\u00e4ssige Backends mit React/Node.js. Updates zu Engineering-Kultur und ISO 26262 in der Praxis.",
+    "keywords": "Engineering-Blog, AUTOSAR, Embedded C, IoT, LoRaWAN, SIGFOX, React, Node.js, ISO 26262"
+  },
+  "hero": {
+    "title": "Einblicke in Engineering-Innovation",
+    "subtitle": "Lesen Sie unsere neuesten Artikel \u00fcber Embedded-Entwicklung, AUTOSAR-Integration, IoT-Konnektivit\u00e4t und digitales Produktdesign."
+  },
+  "categories": ["Alle", "Automotive", "Embedded Systeme", "IoT", "Full-Stack", "Unternehmen"],
+  "posts": [
+    {
+      "title": "Wie AUTOSAR die Automobilinnovation beschleunigt",
+      "excerpt": "Wie die AUTOSAR-Standardisierung die Entwicklungszeit verk\u00fcrzt und die Software-Wiederverwendbarkeit in modernen Fahrzeugen verbessert.",
+      "readTime": "8 Min. Lesezeit",
+      "category": "Automotive"
+    },
+    {
+      "title": "Die St\u00e4rke von Embedded C in Ger\u00e4ten der n\u00e4chsten Generation",
+      "excerpt": "Warum C/C++ die bevorzugte Sprache f\u00fcr Embedded-Systementwicklung und Echtzeitanwendungen bleibt.",
+      "readTime": "6 Min. Lesezeit",
+      "category": "Embedded Systeme"
+    },
+    {
+      "title": "LoRaWAN vs. SIGFOX: Das richtige IoT-Protokoll w\u00e4hlen",
+      "excerpt": "Ein umfassender Vergleich von Low-Power-Wide-Area-Netzwerkprotokollen f\u00fcr IoT-Anwendungen.",
+      "readTime": "10 Min. Lesezeit",
+      "category": "IoT"
+    },
+    {
+      "title": "Zuverl\u00e4ssige IoT-Backends mit React und Node.js bauen",
+      "excerpt": "Best Practices f\u00fcr skalierbare und sichere Backend-Systeme f\u00fcr vernetzte Ger\u00e4te.",
+      "readTime": "7 Min. Lesezeit",
+      "category": "Full-Stack"
+    },
+    {
+      "title": "Engineering-Kultur in Osteuropa: Der BSW-TECH-Ansatz",
+      "excerpt": "Wie wir ein erstklassiges Engineering-Team in Moldau aufbauen und pflegen und europ\u00e4ische Kunden bedienen.",
+      "readTime": "5 Min. Lesezeit",
+      "category": "Unternehmen"
+    },
+    {
+      "title": "ISO 26262 Funktionale Sicherheit in der Praxis",
+      "excerpt": "Praxisnahe Einblicke in die Implementierung von funktionalen Sicherheitsstandards in der Automotive-Softwareentwicklung.",
+      "readTime": "9 Min. Lesezeit",
+      "category": "Automotive"
+    }
+  ],
+  "newsletter": {
+    "title": "Bleiben Sie auf dem Laufenden",
+    "subtitle": "Abonnieren Sie unseren Newsletter f\u00fcr die neuesten Einblicke in Embedded-Systeme und Automotive Engineering.",
+    "placeholder": "ihre.email@firma.com",
+    "subscribe": "Abonnieren"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "seo": {
+    "title": "Kontakt BSW TECH | Automotive, IoT & Embedded Engineering",
+    "description": "Kontaktieren Sie BSW TECH f\u00fcr Embedded C/C++-, AUTOSAR- und IoT-Projekte. Hauptsitz in Chi\u0219in\u0103u, Moldau mit EU-Pr\u00e4senz (Rum\u00e4nien, Estland). Buchen Sie ein Gespr\u00e4ch oder senden Sie uns eine Nachricht.",
+    "keywords": "Kontakt BSW TECH, Embedded Engineering Kontakt, AUTOSAR-Partner, IoT-Entwicklung Kontakt"
+  },
+  "hero": {
+    "title": "Lassen Sie uns gemeinsam etwas aufbauen",
+    "subtitle": "Wir sind bereit, Ihr n\u00e4chstes Automotive-, IoT- oder Embedded-Projekt zu besprechen.",
+    "bookCall": "30-min Gespr\u00e4ch buchen"
+  },
+  "info": {
+    "title": "Kontakt aufnehmen",
+    "headquarters": "Hauptsitz",
+    "headquartersAddress": "Chi\u0219in\u0103u, Moldau",
+    "headquartersPresence": "EU-Pr\u00e4senz: Rum\u00e4nien, Estland",
+    "email": "E-Mail",
+    "followUs": "Folgen Sie uns",
+    "preferCall": "Lieber ein kurzes Gespr\u00e4ch?",
+    "preferCallDescription": "Vereinbaren Sie ein 30-min\u00fctiges Meeting direkt mit unserem Engineering-Team.",
+    "scheduleCalendly": "\u00dcber Calendly planen"
+  },
+  "form": {
+    "title": "Nachricht senden",
+    "name": "Name *",
+    "namePlaceholder": "Ihr Name",
+    "email": "E-Mail *",
+    "emailPlaceholder": "ihre.email@firma.com",
+    "company": "Unternehmen",
+    "companyPlaceholder": "Ihr Firmenname",
+    "message": "Nachricht *",
+    "messagePlaceholder": "Erz\u00e4hlen Sie uns von Ihrem Projekt...",
+    "submit": "Nachricht senden",
+    "submitting": "Wird gesendet..."
+  },
+  "validation": {
+    "requiredFields": "Bitte f\u00fcllen Sie alle Pflichtfelder aus.",
+    "nameTooLong": "Name darf maximal 100 Zeichen lang sein.",
+    "emailTooLong": "E-Mail darf maximal 255 Zeichen lang sein.",
+    "messageTooLong": "Nachricht darf maximal 1000 Zeichen lang sein.",
+    "invalidEmail": "Bitte geben Sie eine g\u00fcltige E-Mail-Adresse ein.",
+    "error": "Fehler"
+  },
+  "success": {
+    "title": "Nachricht gesendet!",
+    "description": "Wir melden uns innerhalb von 24 Stunden bei Ihnen."
+  },
+  "error": {
+    "default": "Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut."
+  }
+}

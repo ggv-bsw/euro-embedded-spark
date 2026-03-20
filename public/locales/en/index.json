@@ -1,0 +1,125 @@
+{
+  "seo": {
+    "title": "BSW TECH - Near-Shore Automotive & IoT Engineering",
+    "description": "BSW TECH offers cost-efficient near-shore embedded, AUTOSAR, and IoT development for European automotive and industrial companies.",
+    "keywords": "Embedded C Development, AUTOSAR Integration, IoT Solutions, Product Design, Near-shore Moldova, Automotive Software, Full-Stack Apps, Embedded Systems, LoRaWAN, SIGFOX"
+  },
+  "hero": {
+    "titleLine1": "Accelerate Your R&D",
+    "titleLine2": "with",
+    "titleHighlight": "Near-Shore Engineers",
+    "subtitle": "Embedded C/C++, AUTOSAR, and IoT teams from Moldova \u2014 EU-aligned, ISO-certified, ready to ship.",
+    "bookCall": "Book a Call",
+    "seeWork": "See Our Work"
+  },
+  "trustedBy": "Trusted by European companies",
+  "why": {
+    "title": "Your Near-Shore Engineering Partner in Europe",
+    "description": "BSW TECH bridges Eastern European talent with Western European precision. Located in Moldova \u2014 EU-time zone aligned and culturally close to the Nordics \u2014 we deliver embedded & software projects that reduce costs without compromising quality.",
+    "points": [
+      "EU Time-Zone & Engineering Standards",
+      "ISO 9001 \u00b7 14001 \u00b7 27001 \u00b7 37001 Certified",
+      "End-to-End Design \u2192 Prototyping \u2192 Launch",
+      "Automotive & IoT Expertise Since 11.11.2021"
+    ],
+    "locationTitle": "Strategic Location",
+    "locationDescription": "Headquartered in Chi\u0219in\u0103u, Moldova with presence in Romania and Estonia. Perfect timezone alignment for Nordic and German markets.",
+    "timeZone": "Time Zone",
+    "languages": "Languages",
+    "mainMarkets": "Main Markets"
+  },
+  "services": {
+    "title": "Engineering Excellence Across Domains",
+    "subtitle": "From embedded firmware to cloud-connected mobile apps, we deliver complete engineering solutions.",
+    "items": [
+      {
+        "title": "Embedded Systems Development",
+        "description": "Firmware architecture in C/C++, RTOS integration, CAN/LIN protocols and diagnostics tools.",
+        "keywords": "Embedded C, Microcontrollers, RTOS, CAN, LIN"
+      },
+      {
+        "title": "Automotive Engineering",
+        "description": "AUTOSAR ECU Integration, ADAS, Functional Safety and Cyber Security. We design, test and validate automotive software for OEMs and Tier-1 suppliers.",
+        "keywords": "AUTOSAR, ISO 26262, Cyber Security, Functional Safety, ADAS"
+      },
+      {
+        "title": "IoT Solutions",
+        "description": "Connectivity via LoRaWAN, SIGFOX and MQTT with cloud integration for smart homes, cities and industrial automation.",
+        "keywords": "IoT, Connectivity, Cloud, MQTT, LoRa, SIGFOX"
+      },
+      {
+        "title": "Product Design & Prototyping",
+        "description": "Electronics design, PCB layout, mechanical enclosure and DFM optimization for manufacturing.",
+        "keywords": "PCB, Hardware Design, Prototype, Product Design"
+      },
+      {
+        "title": "Mobile & Full-Stack Development",
+        "description": "Native apps in Kotlin and Swift, React-based front-ends and secure backend APIs built for connected devices.",
+        "keywords": "Full-Stack, React, Swift, Kotlin, Backend, API"
+      },
+      {
+        "title": "Outsourcing / Out Staffing",
+        "description": "We build a team of professionals for you, all working together to deliver fast and cost efficient digital experiences.",
+        "keywords": "Outsourcing, Project Management, Out Staffing, Body Leasing"
+      }
+    ]
+  },
+  "stories": {
+    "title": "Real Projects. Real Impact.",
+    "subtitle": "We've delivered complex engineering projects for leading European companies.",
+    "viewAll": "View All Success Stories",
+    "items": [
+      {
+        "client": "Fyrqom AB",
+        "title": "Enterprise Mobile & Web Applications",
+        "scope": "Full development of mobile & web applications used by Volvo and Scania.",
+        "result": "Delivered production-ready apps powering tire-pressure automation systems."
+      },
+      {
+        "client": "Smart Metering",
+        "title": "LoRaWAN & SIGFOX Pulse Counter",
+        "scope": "Product developed from scratch \u2014 hardware, firmware, and IoT connectivity.",
+        "result": "Smart metering solution deployed in real apartments in Chi\u0219in\u0103u."
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "What Our Partners Say",
+    "items": [
+      {
+        "quote": "The Outsourcing service was exceptional, and the team was helpful throughout the entire process. Highly recommend BSW TECH.",
+        "name": "Mihai Darzan",
+        "market": "Romania"
+      },
+      {
+        "quote": "BSW TECH brought great motivation and innovation ideas to the project. A fantastic collaboration.",
+        "name": "Christoph Hiltl",
+        "market": "Germany"
+      },
+      {
+        "quote": "All the design and software development of Praxis website has been done by BSW TECH in time at a high quality. Recommend.",
+        "name": "Hani Ibrahim",
+        "market": "Germany"
+      }
+    ]
+  },
+  "certifications": {
+    "title": "Quality & Trust Recognized",
+    "subtitle": "We operate under strict European standards and are proud members of key industry organizations.",
+    "items": [
+      "ISO 9001",
+      "ISO 14001",
+      "ISO 27001",
+      "ISO 37001",
+      "ACEM Member",
+      "IT Park Resident",
+      "AHK Member",
+      "MDW Community"
+    ]
+  },
+  "cta": {
+    "title": "Ready to accelerate your next project?",
+    "subtitle": "Book a call and discover how our engineers can extend your team.",
+    "bookCall": "Book a Call"
+  }
+}

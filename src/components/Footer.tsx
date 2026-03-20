@@ -1,26 +1,7 @@
-import { Link } from "react-router-dom";
-import { Linkedin, Github, Youtube, Mail, MapPin, Phone, Instagram } from "lucide-react";
+import { Linkedin, Github, Youtube, Mail, MapPin, Instagram } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import LocalizedLink from "@/components/LocalizedLink";
 import bswLogo from "@/assets/bsw-logo.png";
-
-const footerLinks = {
-  company: [
-    { name: "About Us", path: "/about" },
-    { name: "Success Stories", path: "/success-stories" },
-    { name: "Careers", path: "/careers" },
-    { name: "Contact", path: "/contact" },
-  ],
-  services: [
-    { name: "Embedded Systems", path: "/expertise#embedded" },
-    { name: "Automotive Engineering", path: "/expertise#automotive" },
-    { name: "IoT Solutions", path: "/expertise#iot" },
-    { name: "Product Design", path: "/expertise#product-design" },
-    { name: "Mobile Development", path: "/expertise#mobile" },
-  ],
-  resources: [
-    { name: "Blog", path: "/blog" },
-    { name: "Playground", path: "/playground" },
-  ],
-};
 
 const socialLinks = [
   { icon: Linkedin, url: "https://linkedin.com/company/bsw-tech", label: "LinkedIn" },
@@ -30,24 +11,45 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+  const { t } = useTranslation("common");
+
+  const footerLinks = {
+    company: [
+      { name: t("footer.aboutUs"), path: "/about" },
+      { name: t("footer.successStories"), path: "/success-stories" },
+      { name: t("footer.careers"), path: "/careers" },
+      { name: t("footer.contact"), path: "/contact" },
+    ],
+    services: [
+      { name: t("footer.embeddedSystems"), path: "/expertise#embedded" },
+      { name: t("footer.automotiveEngineering"), path: "/expertise#automotive" },
+      { name: t("footer.iotSolutions"), path: "/expertise#iot" },
+      { name: t("footer.productDesign"), path: "/expertise#product-design" },
+      { name: t("footer.mobileDevelopment"), path: "/expertise#mobile" },
+    ],
+    resources: [
+      { name: t("footer.blog"), path: "/blog" },
+      { name: t("footer.playground"), path: "/playground" },
+    ],
+  };
+
   return (
     <footer className="bg-card border-t border-line">
       <div className="max-w-container mx-auto px-6 lg:px-20 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link to="/" className="inline-flex items-center gap-3 mb-4">
+            <LocalizedLink to="/" className="inline-flex items-center gap-3 mb-4">
               <img src={bswLogo} alt="BSW TECH" className="h-16 w-auto" loading="lazy" />
               <span className="text-2xl font-heading font-bold text-primary">BSW</span>
-            </Link>
+            </LocalizedLink>
             <p className="text-muted-foreground mb-6 max-w-sm">
-              Cost-efficient near-shore engineering for Automotive, IoT & Embedded Systems. Bridging Eastern European
-              talent with Western European precision.
+              {t("footer.tagline")}
             </p>
             <div className="space-y-3 text-sm text-muted-foreground">
               <div className="flex items-start gap-2">
                 <MapPin size={16} className="mt-1 flex-shrink-0" />
-                <span>Chișinău, Moldova | EU Presence in Romania, Estonia</span>
+                <span>{t("footer.address")}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail size={16} className="flex-shrink-0" />
@@ -60,13 +62,13 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Company</h3>
+            <h3 className="font-semibold text-foreground mb-4">{t("footer.company")}</h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.path}>
-                  <Link to={link.path} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <LocalizedLink to={link.path} className="text-sm text-muted-foreground hover:text-primary transition-colors">
                     {link.name}
-                  </Link>
+                  </LocalizedLink>
                 </li>
               ))}
             </ul>
@@ -74,13 +76,13 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Services</h3>
+            <h3 className="font-semibold text-foreground mb-4">{t("footer.services")}</h3>
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.path}>
-                  <Link to={link.path} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <LocalizedLink to={link.path} className="text-sm text-muted-foreground hover:text-primary transition-colors">
                     {link.name}
-                  </Link>
+                  </LocalizedLink>
                 </li>
               ))}
             </ul>
@@ -88,13 +90,13 @@ export default function Footer() {
 
           {/* Resources */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Resources</h3>
+            <h3 className="font-semibold text-foreground mb-4">{t("footer.resources")}</h3>
             <ul className="space-y-3">
               {footerLinks.resources.map((link) => (
                 <li key={link.path}>
-                  <Link to={link.path} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <LocalizedLink to={link.path} className="text-sm text-muted-foreground hover:text-primary transition-colors">
                     {link.name}
-                  </Link>
+                  </LocalizedLink>
                 </li>
               ))}
             </ul>
@@ -104,7 +106,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-line flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} BSW TECH SRL. All rights reserved. ISO 9001 · 14001 · 27001 · 37001 Certified
+            {t("footer.copyright", { year: new Date().getFullYear() })}
           </p>
           <div className="flex items-center gap-4">
             {socialLinks.map((social) => (

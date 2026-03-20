@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useTranslation } from "react-i18next";
 
 interface StoryCardProps {
   client: string;
@@ -10,6 +11,8 @@ interface StoryCardProps {
 }
 
 export default function StoryCard({ client, title, scope, technologies, result }: StoryCardProps) {
+  const { t } = useTranslation("common");
+
   return (
     <Card className="group p-8 bg-card hover:bg-gradient-to-br hover:from-card hover:to-muted border-line hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20">
       <div className="mb-4">
@@ -20,11 +23,11 @@ export default function StoryCard({ client, title, scope, technologies, result }
       </div>
       <div className="space-y-4">
         <div>
-          <h4 className="text-sm font-semibold text-muted-foreground mb-2">Scope</h4>
+          <h4 className="text-sm font-semibold text-muted-foreground mb-2">{t("storyCard.scope")}</h4>
           <p className="text-foreground">{scope}</p>
         </div>
         <div>
-          <h4 className="text-sm font-semibold text-muted-foreground mb-2">Technologies</h4>
+          <h4 className="text-sm font-semibold text-muted-foreground mb-2">{t("storyCard.technologies")}</h4>
           <div className="flex flex-wrap gap-2">
             {technologies.map((tech, index) => (
               <Badge key={index} variant="secondary" className="bg-primary/10 text-primary border-0">
@@ -34,7 +37,7 @@ export default function StoryCard({ client, title, scope, technologies, result }
           </div>
         </div>
         <div>
-          <h4 className="text-sm font-semibold text-muted-foreground mb-2">Result</h4>
+          <h4 className="text-sm font-semibold text-muted-foreground mb-2">{t("storyCard.result")}</h4>
           <p className="text-foreground">{result}</p>
         </div>
       </div>

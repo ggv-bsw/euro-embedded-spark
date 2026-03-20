@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/dialog";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { useTranslation } from "react-i18next";
 
 const ACCEPTED_FILE_TYPES = [
   "application/pdf",
@@ -31,6 +32,7 @@ export default function JobApplicationForm({
   open,
   onOpenChange,
 }: JobApplicationFormProps) {
+  const { t } = useTranslation("jobApplication");
   const { toast } = useToast();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [formData, setFormData] = useState({
@@ -60,8 +62,8 @@ export default function JobApplicationForm({
 
     if (!ACCEPTED_FILE_TYPES.includes(file.type)) {
       toast({
-        title: "Invalid file type",
-        description: "Please upload a PDF, DOC, or DOCX file.",
+        title: t("validation.invalidFileTitle"),
+        description: t("validation.invalidFileType"),
         variant: "destructive",
       });
       e.target.value = "";
@@ -70,8 +72,8 @@ export default function JobApplicationForm({
 
     if (file.size > MAX_FILE_SIZE) {
       toast({
-        title: "File too large",
-        description: "CV must be less than 5 MB.",
+        title: t("validation.fileTooLargeTitle"),
+        description: t("validation.fileTooLarge"),
         variant: "destructive",
       });
       e.target.value = "";
@@ -91,7 +93,7 @@ export default function JobApplicationForm({
       const reader = new FileReader();
       reader.onload = () => {
         const result = reader.result as string;
-        resolve(result.split(",")[1]); // strip data-url prefix
+        resolve(result.split(",")[1]);
       };
       reader.onerror = reject;
       reader.readAsDataURL(file);
@@ -100,59 +102,34 @@ export default function JobApplicationForm({
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Required fields
     if (!formData.name.trim() || !formData.email.trim()) {
-      toast({
-        title: "Error",
-        description: "Please fill in all required fields.",
-        variant: "destructive",
-      });
+      toast({ title: t("validation.error"), description: t("validation.requiredFields"), variant: "destructive" });
       return;
     }
 
     if (formData.name.length > 100) {
-      toast({
-        title: "Error",
-        description: "Name must be less than 100 characters.",
-        variant: "destructive",
-      });
+      toast({ title: t("validation.error"), description: t("validation.nameTooLong"), variant: "destructive" });
       return;
     }
 
     if (formData.email.length > 255) {
-      toast({
-        title: "Error",
-        description: "Email must be less than 255 characters.",
-        variant: "destructive",
-      });
+      toast({ title: t("validation.error"), description: t("validation.emailTooLong"), variant: "destructive" });
       return;
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
-      toast({
-        title: "Error",
-        description: "Please enter a valid email address.",
-        variant: "destructive",
-      });
+      toast({ title: t("validation.error"), description: t("validation.invalidEmail"), variant: "destructive" });
       return;
     }
 
     if (formData.message.length > 2000) {
-      toast({
-        title: "Error",
-        description: "Cover letter must be less than 2000 characters.",
-        variant: "destructive",
-      });
+      toast({ title: t("validation.error"), description: t("validation.coverLetterTooLong"), variant: "destructive" });
       return;
     }
 
     if (!cvFile) {
-      toast({
-        title: "Error",
-        description: "Please attach your CV.",
-        variant: "destructive",
-      });
+      toast({ title: t("validation.error"), description: t("validation.attachCv"), variant: "destructive" });
       return;
     }
 
@@ -182,9 +159,8 @@ export default function JobApplicationForm({
       if (error) throw error;
 
       toast({
-        title: "Application Sent!",
-        description:
-          "Thank you for applying. We'll review your application and get back to you soon.",
+        title: t("success.title"),
+        description: t("success.description"),
       });
 
       resetForm();
@@ -192,9 +168,8 @@ export default function JobApplicationForm({
     } catch (error: any) {
       console.error("Error submitting application:", error);
       toast({
-        title: "Error",
-        description:
-          error.message || "Failed to submit application. Please try again.",
+        title: t("validation.error"),
+        description: error.message || t("error.default"),
         variant: "destructive",
       });
     } finally {
@@ -206,16 +181,14 @@ export default function JobApplicationForm({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle>Apply for {jobTitle}</DialogTitle>
-          <DialogDescription>
-            Fill out the form below and attach your CV to apply.
-          </DialogDescription>
+          <DialogTitle>{t("applyFor", { jobTitle })}</DialogTitle>
+          <DialogDescription>{t("description")}</DialogDescription>
         </DialogHeader>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label htmlFor="app-name" className="block text-sm font-medium mb-2">
-              Name *
+              {t("name")}
             </label>
             <Input
               id="app-name"
@@ -224,14 +197,14 @@ export default function JobApplicationForm({
               required
               value={formData.name}
               onChange={handleChange}
-              placeholder="Your full name"
+              placeholder={t("namePlaceholder")}
               className="bg-background"
             />
           </div>
 
           <div>
             <label htmlFor="app-email" className="block text-sm font-medium mb-2">
-              Email *
+              {t("email")}
             </label>
             <Input
               id="app-email"
@@ -240,14 +213,14 @@ export default function JobApplicationForm({
               required
               value={formData.email}
               onChange={handleChange}
-              placeholder="your.email@example.com"
+              placeholder={t("emailPlaceholder")}
               className="bg-background"
             />
           </div>
 
           <div>
             <label htmlFor="app-phone" className="block text-sm font-medium mb-2">
-              Phone
+              {t("phone")}
             </label>
             <Input
               id="app-phone"
@@ -255,7 +228,7 @@ export default function JobApplicationForm({
               type="tel"
               value={formData.phone}
               onChange={handleChange}
-              placeholder="+373 ..."
+              placeholder={t("phonePlaceholder")}
               className="bg-background"
             />
           </div>
@@ -265,21 +238,21 @@ export default function JobApplicationForm({
               htmlFor="app-message"
               className="block text-sm font-medium mb-2"
             >
-              Cover Letter / Message
+              {t("coverLetter")}
             </label>
             <Textarea
               id="app-message"
               name="message"
               value={formData.message}
               onChange={handleChange}
-              placeholder="Tell us why you're a great fit..."
+              placeholder={t("coverLetterPlaceholder")}
               rows={4}
               className="bg-background resize-none"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium mb-2">CV / Resume *</label>
+            <label className="block text-sm font-medium mb-2">{t("cvLabel")}</label>
             {cvFile ? (
               <div className="flex items-center gap-2 rounded-md border border-input bg-background px-3 py-2 text-sm">
                 <Upload className="h-4 w-4 text-muted-foreground flex-shrink-0" />
@@ -290,7 +263,7 @@ export default function JobApplicationForm({
                   className="rounded-sm opacity-70 hover:opacity-100"
                 >
                   <X className="h-4 w-4" />
-                  <span className="sr-only">Remove file</span>
+                  <span className="sr-only">{t("removeFile")}</span>
                 </button>
               </div>
             ) : (
@@ -303,7 +276,7 @@ export default function JobApplicationForm({
               />
             )}
             <p className="text-xs text-muted-foreground mt-1">
-              PDF, DOC, or DOCX (max 5 MB)
+              {t("cvHint")}
             </p>
           </div>
 
@@ -314,7 +287,7 @@ export default function JobApplicationForm({
             disabled={isSubmitting}
             className="w-full"
           >
-            {isSubmitting ? "Submitting..." : "Submit Application"}
+            {isSubmitting ? t("submitting") : t("submit")}
           </Button>
         </form>
       </DialogContent>

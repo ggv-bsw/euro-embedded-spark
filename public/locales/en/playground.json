@@ -1,0 +1,48 @@
+{
+  "seo": {
+    "title": "Playground | BSW TECH Open Source & Prototypes",
+    "description": "Explore BSW TECH open-source projects and prototypes: embedded, AUTOSAR, IoT, and tooling."
+  },
+  "hero": {
+    "title": "Where Engineering Meets Innovation",
+    "subtitle": "Explore our open-source projects and prototypes that drive innovation at BSW TECH. From IoT devices to automotive tools, we share our work with the community."
+  },
+  "projects": [
+    {
+      "title": "LoRaWAN Pulse Counter",
+      "description": "Smart metering hardware prototype with LoRaWAN connectivity. Complete hardware design, firmware, and cloud integration for remote water and energy monitoring."
+    },
+    {
+      "title": "ThermoSmart IoT Thermostat",
+      "description": "Connected heating system with mobile app control. ESP32-based thermostat with React Native mobile app and real-time temperature monitoring."
+    },
+    {
+      "title": "Embedded Tools Kit",
+      "description": "Internal firmware testing framework shared with the community. Includes unit testing tools, mock libraries, and CI/CD templates for embedded projects."
+    },
+    {
+      "title": "AUTOSAR BSW Components",
+      "description": "Open-source AUTOSAR Basic Software components for educational purposes. Includes examples of CAN communication, diagnostics, and memory management."
+    },
+    {
+      "title": "IoT Device Manager",
+      "description": "Web dashboard for managing IoT devices at scale. Built with React and Node.js, supports multiple connectivity protocols and real-time monitoring."
+    },
+    {
+      "title": "CAN Bus Analyzer",
+      "description": "Real-time CAN bus monitoring and analysis tool. Desktop application for automotive diagnostics with DBC file support and live data visualization."
+    }
+  ],
+  "viewOnGithub": "View on GitHub",
+  "philosophy": {
+    "title": "Open Source Philosophy",
+    "description": "We believe in giving back to the engineering community. Our open-source projects help developers learn embedded systems, IoT, and automotive software development while showcasing our technical capabilities.",
+    "visitGithub": "Visit Our GitHub"
+  },
+  "stats": {
+    "projects": "Open Source Projects",
+    "stars": "GitHub Stars",
+    "contributors": "Contributors",
+    "downloads": "Downloads"
+  }
+}

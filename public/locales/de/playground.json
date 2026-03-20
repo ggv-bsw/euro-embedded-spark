@@ -1,0 +1,48 @@
+{
+  "seo": {
+    "title": "Playground | BSW TECH Open Source & Prototypen",
+    "description": "Entdecken Sie BSW TECH Open-Source-Projekte und Prototypen: Embedded, AUTOSAR, IoT und Tooling."
+  },
+  "hero": {
+    "title": "Wo Engineering auf Innovation trifft",
+    "subtitle": "Entdecken Sie unsere Open-Source-Projekte und Prototypen, die Innovation bei BSW TECH vorantreiben. Von IoT-Ger\u00e4ten bis zu Automotive-Tools teilen wir unsere Arbeit mit der Community."
+  },
+  "projects": [
+    {
+      "title": "LoRaWAN-Impulszähler",
+      "description": "Smart-Metering-Hardware-Prototyp mit LoRaWAN-Konnektivit\u00e4t. Komplettes Hardware-Design, Firmware und Cloud-Integration f\u00fcr Fern\u00fcberwachung von Wasser und Energie."
+    },
+    {
+      "title": "ThermoSmart IoT-Thermostat",
+      "description": "Vernetztes Heizsystem mit mobiler App-Steuerung. ESP32-basierter Thermostat mit React-Native-App und Echtzeit-Temperatur\u00fcberwachung."
+    },
+    {
+      "title": "Embedded Tools Kit",
+      "description": "Internes Firmware-Test-Framework, das mit der Community geteilt wird. Enth\u00e4lt Unit-Test-Tools, Mock-Bibliotheken und CI/CD-Templates f\u00fcr Embedded-Projekte."
+    },
+    {
+      "title": "AUTOSAR-BSW-Komponenten",
+      "description": "Open-Source AUTOSAR Basic Software Komponenten f\u00fcr Bildungszwecke. Enth\u00e4lt Beispiele f\u00fcr CAN-Kommunikation, Diagnose und Speicherverwaltung."
+    },
+    {
+      "title": "IoT Device Manager",
+      "description": "Web-Dashboard zur Verwaltung von IoT-Ger\u00e4ten im gro\u00dfen Ma\u00dfstab. Erstellt mit React und Node.js, unterst\u00fctzt mehrere Konnektivit\u00e4tsprotokolle und Echtzeit-\u00dcberwachung."
+    },
+    {
+      "title": "CAN-Bus-Analysator",
+      "description": "Echtzeit-CAN-Bus-\u00dcberwachungs- und Analysetool. Desktop-Anwendung f\u00fcr Automotive-Diagnose mit DBC-Datei-Unterst\u00fctzung und Live-Datenvisualisierung."
+    }
+  ],
+  "viewOnGithub": "Auf GitHub ansehen",
+  "philosophy": {
+    "title": "Open-Source-Philosophie",
+    "description": "Wir glauben daran, der Engineering-Community etwas zur\u00fcckzugeben. Unsere Open-Source-Projekte helfen Entwicklern, Embedded-Systeme, IoT und Automotive-Softwareentwicklung zu erlernen und zeigen gleichzeitig unsere technischen F\u00e4higkeiten.",
+    "visitGithub": "Unser GitHub besuchen"
+  },
+  "stats": {
+    "projects": "Open-Source-Projekte",
+    "stars": "GitHub-Sterne",
+    "contributors": "Mitwirkende",
+    "downloads": "Downloads"
+  }
+}

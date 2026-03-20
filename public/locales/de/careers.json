@@ -1,0 +1,108 @@
+{
+  "seo": {
+    "title": "Karriere bei BSW TECH | Embedded, AUTOSAR, IoT & Full-Stack Stellen",
+    "description": "Treten Sie BSW TECH in Chi\u0219in\u0103u bei (EU-Pr\u00e4senz: Rum\u00e4nien, Estland). Offene Stellen: Senior Embedded, AUTOSAR-Integration, IoT-Entwickler, Full-Stack-Entwickler. Embedded School, Mentoring, moderne Tools.",
+    "keywords": "Embedded Jobs Moldau, AUTOSAR Jobs, IoT-Entwickler Jobs, Karriere BSW TECH"
+  },
+  "hero": {
+    "title": "Gestalten Sie Ihre Zukunft bei",
+    "titleHighlight": "BSW TECH",
+    "subtitle": "Werden Sie Teil unseres Ingenieurteams, das an innovativen Projekten in Automotive und IoT arbeitet. Wachsen Sie durch unsere Embedded School und praxisnahes Mentoring."
+  },
+  "whyJoin": {
+    "title": "Warum BSW TECH?",
+    "subtitle": "Wir investieren in unsere Mitarbeiter und schaffen ein Umfeld, in dem Ingenieure sich entfalten k\u00f6nnen.",
+    "benefits": [
+      {
+        "title": "Kontinuierliches Lernen",
+        "description": "Zugang zu unserer Embedded School und Mentoring durch erfahrene Ingenieure."
+      },
+      {
+        "title": "Karrierewachstum",
+        "description": "Klare Karrierewege und M\u00f6glichkeiten, an innovativen Projekten zu arbeiten."
+      },
+      {
+        "title": "Teamkultur",
+        "description": "Arbeiten Sie mit talentierten Ingenieuren in einem unterst\u00fctzenden Teamumfeld."
+      },
+      {
+        "title": "Neueste Technologien",
+        "description": "Arbeiten Sie mit europ\u00e4ischen Kunden unter Einsatz moderner Tools und Methoden."
+      },
+      {
+        "title": "Work-Life-Balance",
+        "description": "Flexible Arbeitsmodelle und unterst\u00fctzendes Management."
+      },
+      {
+        "title": "Internationale Erfahrung",
+        "description": "Zusammenarbeit mit Kunden aus Schweden, Deutschland, D\u00e4nemark und Estland."
+      }
+    ]
+  },
+  "school": {
+    "title": "BSW TECH Embedded School",
+    "description": "Unser einzigartiges Embedded-School-Programm hilft Junior-Ingenieuren, sich zu Senior-Spezialisten zu entwickeln durch:",
+    "items": [
+      "Praxisnahe Schulung mit realen Automotive-Projekten",
+      "Mentoring durch erfahrene Embedded-Ingenieure",
+      "AUTOSAR- und Funktionale-Sicherheit-Zertifizierungspfade",
+      "Moderne Entwicklungstools und Methoden",
+      "Kollaborative Lernumgebung"
+    ],
+    "highlights": "Programm-Highlights",
+    "duration": "12 Wochen",
+    "durationLabel": "Intensives Schulungsprogramm",
+    "conversion": "90%",
+    "conversionLabel": "Übernahme in Vollzeit",
+    "trained": "30+",
+    "trainedLabel": "Ausgebildete Ingenieure"
+  },
+  "positions": {
+    "title": "Offene Stellen",
+    "subtitle": "Entdecken Sie M\u00f6glichkeiten, unserem Engineering-Team beizutreten.",
+    "applyNow": "Jetzt bewerben",
+    "items": [
+      {
+        "title": "Senior Embedded Software Engineer",
+        "location": "Chi\u0219in\u0103u, Moldau",
+        "type": "Vollzeit",
+        "description": "Entwicklung von Firmware f\u00fcr Automotive-ECUs mit C/C++ und AUTOSAR."
+      },
+      {
+        "title": "Senior Java Developer",
+        "location": "Chi\u0219in\u0103u, Moldau / Remote",
+        "type": "Vollzeit",
+        "description": "Design und Entwicklung skalierbarer Backend-Services und Microservices mit Java, Spring Boot und Cloud-nativen Architekturen."
+      },
+      {
+        "title": "Scala Developer",
+        "location": "Chi\u0219in\u0103u, Moldau / Remote",
+        "type": "Vollzeit",
+        "description": "Entwicklung hochleistungsf\u00e4higer, funktionaler Backend-Systeme und Datenpipelines mit Scala, Akka und dem JVM-\u00d6kosystem."
+      },
+      {
+        "title": "Full-Stack Developer",
+        "location": "Chi\u0219in\u0103u, Moldau / Remote",
+        "type": "Vollzeit",
+        "description": "Entwicklung von Mobile- und Webanwendungen mit React, Node.js und modernen Frameworks."
+      },
+      {
+        "title": "Go Developer",
+        "location": "Chi\u0219in\u0103u, Moldau / Remote",
+        "type": "Vollzeit",
+        "description": "Entwicklung hochleistungsf\u00e4higer Backend-Services, APIs und verteilter Systeme mit Go und Cloud-nativem Tooling."
+      },
+      {
+        "title": ".NET Developer mit Angular",
+        "location": "Chi\u0219in\u0103u, Moldau / Remote",
+        "type": "Vollzeit",
+        "description": "Entwicklung von Full-Stack-Enterprise-Anwendungen mit .NET Core Backend-Services und Angular-Frontend-Interfaces."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Bereit, Ihre Reise zu starten?",
+    "subtitle": "Keine passende Stelle gefunden? Senden Sie uns Ihren Lebenslauf und wir behalten Sie f\u00fcr zuk\u00fcnftige Chancen im Blick.",
+    "button": "Kontakt aufnehmen"
+  }
+}

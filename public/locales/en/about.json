@@ -1,0 +1,99 @@
+{
+  "seo": {
+    "title": "About BSW TECH | European Near-Shore Engineering Partner",
+    "description": "BSW TECH is a European engineering company from Moldova (est. 2021), specializing in embedded, AUTOSAR, IoT and product development. ISO 9001/14001/27001/37001 certified. Near-shore partner for Nordic and German companies.",
+    "keywords": "About BSW TECH, near-shore Moldova, embedded engineering, AUTOSAR, IoT, ISO 9001, ISO 27001"
+  },
+  "hero": {
+    "title": "About BSW TECH",
+    "subtitle": "A European engineering company delivering embedded and software solutions for Automotive, IoT, and Product Design sectors."
+  },
+  "overview": {
+    "title": "Engineering Partner You Can Trust",
+    "paragraphs": [
+      "BSW TECH SRL is a European engineering company from Moldova delivering embedded and software solutions for Automotive, IoT and Product Design sectors.",
+      "We combine hardware design, firmware development, and software engineering under one roof, enabling us to deliver complete product solutions from concept to production.",
+      "Since 2021, we've been helping Nordic and German companies accelerate their R&D capacity with cost-efficient near-shore engineering that doesn't compromise on quality."
+    ],
+    "founded": "Founded",
+    "engineers": "Engineers",
+    "projectsDelivered": "Projects Delivered"
+  },
+  "team": {
+    "title": "Our Team",
+    "subtitle": "30+ engineers led by experienced leaders across embedded, automotive, and IoT.",
+    "ceoTitle": "CEO & Founder",
+    "ceoQuote": "Technology knows no borders \u2014 and neither do we.",
+    "ceoDescription": "In a world where speed defines success, nearshoring with BSW TECH turns distance into advantage \u2014 accelerating innovation, reducing costs, and transforming bold ideas into real products.",
+    "members": [
+      {
+        "name": "Igor R.",
+        "role": "Engineering Lead",
+        "focus": "Firmware architecture in C/C++, AUTOSAR Classic integration, and real-time embedded systems for automotive and IoT products."
+      },
+      {
+        "name": "Daniel V.",
+        "role": "ML & AI Lead",
+        "focus": "Machine learning pipelines, computer vision, and AI-driven automation for industrial and IoT applications."
+      },
+      {
+        "name": "Grigorie C.",
+        "role": "Backend & Database Lead",
+        "focus": "Scalable backend architectures, database design, and high-performance API development for connected systems."
+      },
+      {
+        "name": "Vlad M.",
+        "role": "Hardware & PCB Layout Lead",
+        "focus": "Multi-layer PCB design, schematic capture, and DFM-optimized hardware from prototype to production."
+      }
+    ]
+  },
+  "values": {
+    "title": "Our Values",
+    "subtitle": "The principles that guide our work and relationships with clients.",
+    "items": [
+      {
+        "title": "Technical Excellence",
+        "description": "We pursue the highest standards in embedded and software engineering, continuously learning and improving."
+      },
+      {
+        "title": "Collaborative Partnership",
+        "description": "We work as an extension of your team, adapting to your processes and communicating transparently."
+      },
+      {
+        "title": "Quality First",
+        "description": "ISO-certified processes ensure consistent quality across all projects, from prototype to production."
+      },
+      {
+        "title": "Near-Shore Advantage",
+        "description": "Strategic location in Moldova provides EU time-zone alignment with cost efficiency and cultural fit."
+      }
+    ]
+  },
+  "certifications": {
+    "title": "Certifications",
+    "subtitle": "ISO-certified processes ensuring quality, security, and compliance.",
+    "items": [
+      { "name": "ISO 9001", "description": "Quality Management Systems" },
+      { "name": "ISO 14001", "description": "Environmental Management" },
+      { "name": "ISO 27001", "description": "Information Security" },
+      { "name": "ISO 37001", "description": "Anti-Bribery Management" }
+    ]
+  },
+  "memberships": {
+    "title": "Industry Memberships",
+    "subtitle": "Active members of leading technology and business organizations.",
+    "items": [
+      { "name": "ACEM", "full": "Association of Electronic Companies of Moldova", "role": "Board Member" },
+      { "name": "IT Park Moldova", "full": "IT Park Resident", "role": "Resident Company" },
+      { "name": "AHK", "full": "German Chamber of Commerce", "role": "Member" },
+      { "name": "Swedish-Polish Chamber", "full": "Swedish-Polish Chamber of Commerce", "role": "Member" }
+    ]
+  },
+  "cta": {
+    "title": "Join Our Engineering Journey",
+    "subtitle": "Whether you're looking for a technology partner or want to join our team, we'd love to hear from you.",
+    "partnerButton": "Partner With Us",
+    "careersButton": "View Careers"
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "seo": {
+    "title": "Embedded & AUTOSAR Expertise | BSW TECH",
+    "description": "Development of embedded C/C++, AUTOSAR Classic/Adaptive, diagnostics, and safety software for European automotive programs.",
+    "keywords": "Embedded C, AUTOSAR Classic, AUTOSAR Adaptive, Bootloader, ISO 26262"
+  },
+  "hero": {
+    "title": "Our Engineering Expertise",
+    "subtitle": "Deep technical knowledge across embedded systems, automotive, IoT, and full-stack development."
+  },
+  "whatWeDeliver": "What We Deliver:",
+  "discussExpertise": "Discuss This Expertise",
+  "areas": [
+    {
+      "title": "Embedded Systems (C/C++)",
+      "description": "We build low-level software for microcontrollers and electronic control units (ECUs).",
+      "expertise": [
+        "Firmware in C/C++ for ARM Cortex, STM32, and other MCUs",
+        "RTOS integration (FreeRTOS, Zephyr, ThreadX)",
+        "CAN/LIN communication protocols",
+        "Bootloaders and firmware updates (OTA)",
+        "Diagnostic protocols (UDS, J1939)",
+        "Memory management and optimization",
+        "Unit testing and CI/CD pipelines"
+      ]
+    },
+    {
+      "title": "Automotive Engineering",
+      "description": "We deliver safe and reliable automotive software solutions.",
+      "expertise": [
+        "AUTOSAR Classic & Adaptive Integration",
+        "ADAS (Advanced Driver Assistance Systems)",
+        "Functional Safety (ISO 26262)",
+        "Cyber Security & Secure Bootloaders",
+        "Diagnostics (UDS, DoIP) & ECU testing",
+        "V-Model development processes",
+        "HIL/SIL testing and validation"
+      ]
+    },
+    {
+      "title": "IoT Solutions",
+      "description": "We connect devices to the cloud and bring data to life.",
+      "expertise": [
+        "Smart home & city solutions",
+        "Industrial sensors and monitoring",
+        "LoRaWAN/SIGFOX connectivity modules",
+        "MQTT broker integration",
+        "Cloud dashboards (AWS IoT, Azure IoT, Google Cloud)",
+        "Edge computing and data processing",
+        "Battery-powered low-power design"
+      ]
+    },
+    {
+      "title": "Product Design & Prototyping",
+      "description": "From idea to industrialization \u2014 we design and prototype complete electronic products.",
+      "expertise": [
+        "Circuit design and schematic capture",
+        "PCB layout (multi-layer, high-speed)",
+        "3D mechanical enclosures (CAD modeling)",
+        "Hardware validation and testing",
+        "EMC/EMI compliance support",
+        "Supply-chain and DFM optimization",
+        "Certification support (CE, FCC)"
+      ]
+    },
+    {
+      "title": "Mobile & Full-Stack Development",
+      "description": "We create connected mobile apps and backend systems that bridge devices with users.",
+      "expertise": [
+        "Native iOS (Swift) and Android (Kotlin) apps",
+        "React and Next.js web applications",
+        "Node.js and TypeScript backend APIs",
+        "PostgreSQL and MongoDB databases",
+        "Firebase and cloud services integration",
+        "Real-time device monitoring dashboards",
+        "Secure authentication and authorization"
+      ]
+    },
+    {
+      "title": "Digital Twin Philosophy",
+      "description": "We build it virtually before we build it physically \u2014 reducing risk, cost, and time-to-market.",
+      "expertise": [
+        "Virtual prototyping and simulation",
+        "Model-based systems engineering (MBSE)",
+        "Hardware-in-the-loop (HIL) simulation",
+        "Real-time digital replicas of physical systems",
+        "Predictive analytics and performance optimization",
+        "Integration with CAD/CAE toolchains",
+        "Continuous validation through virtual testing"
+      ]
+    },
+    {
+      "title": "Public Services & GovTech",
+      "description": "Empowering public services through technology \u2014 making government more efficient, transparent, and citizen-friendly.",
+      "expertise": [
+        "E-governance platforms and citizen portals",
+        "Digital document management and workflow automation",
+        "Secure data handling and GDPR compliance",
+        "Integration with national registries and databases",
+        "Smart city infrastructure and monitoring",
+        "Public transport and utility management systems",
+        "Accessibility-first design (WCAG compliance)"
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Ready to Start Your Project?",
+    "subtitle": "Let's discuss how our engineering expertise can help you achieve your goals.",
+    "button": "Get in Touch"
+  }
+}

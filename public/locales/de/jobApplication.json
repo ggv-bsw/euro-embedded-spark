@@ -1,0 +1,37 @@
+{
+  "applyFor": "Bewerbung f\u00fcr {{jobTitle}}",
+  "description": "F\u00fcllen Sie das Formular aus und h\u00e4ngen Sie Ihren Lebenslauf an.",
+  "name": "Name *",
+  "namePlaceholder": "Ihr vollst\u00e4ndiger Name",
+  "email": "E-Mail *",
+  "emailPlaceholder": "ihre.email@beispiel.com",
+  "phone": "Telefon",
+  "phonePlaceholder": "+373 ...",
+  "coverLetter": "Anschreiben / Nachricht",
+  "coverLetterPlaceholder": "Erz\u00e4hlen Sie uns, warum Sie gut zu uns passen...",
+  "cvLabel": "Lebenslauf *",
+  "cvHint": "PDF, DOC oder DOCX (max. 5 MB)",
+  "removeFile": "Datei entfernen",
+  "submit": "Bewerbung absenden",
+  "submitting": "Wird gesendet...",
+  "validation": {
+    "requiredFields": "Bitte f\u00fcllen Sie alle Pflichtfelder aus.",
+    "nameTooLong": "Name darf maximal 100 Zeichen lang sein.",
+    "emailTooLong": "E-Mail darf maximal 255 Zeichen lang sein.",
+    "invalidEmail": "Bitte geben Sie eine g\u00fcltige E-Mail-Adresse ein.",
+    "coverLetterTooLong": "Anschreiben darf maximal 2000 Zeichen lang sein.",
+    "attachCv": "Bitte h\u00e4ngen Sie Ihren Lebenslauf an.",
+    "invalidFileType": "Bitte laden Sie eine PDF-, DOC- oder DOCX-Datei hoch.",
+    "fileTooLarge": "Lebenslauf darf maximal 5 MB gro\u00df sein.",
+    "invalidFileTitle": "Ung\u00fcltiger Dateityp",
+    "fileTooLargeTitle": "Datei zu gro\u00df",
+    "error": "Fehler"
+  },
+  "success": {
+    "title": "Bewerbung gesendet!",
+    "description": "Vielen Dank f\u00fcr Ihre Bewerbung. Wir pr\u00fcfen Ihre Unterlagen und melden uns bald bei Ihnen."
+  },
+  "error": {
+    "default": "Bewerbung konnte nicht gesendet werden. Bitte versuchen Sie es erneut."
+  }
+}

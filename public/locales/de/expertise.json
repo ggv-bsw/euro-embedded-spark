@@ -1,0 +1,111 @@
+{
+  "seo": {
+    "title": "Embedded- & AUTOSAR-Expertise | BSW TECH",
+    "description": "Entwicklung von Embedded C/C++, AUTOSAR Classic/Adaptive, Diagnose und Sicherheitssoftware f\u00fcr europ\u00e4ische Automobilprogramme.",
+    "keywords": "Embedded C, AUTOSAR Classic, AUTOSAR Adaptive, Bootloader, ISO 26262"
+  },
+  "hero": {
+    "title": "Unsere Engineering-Expertise",
+    "subtitle": "Tiefes technisches Know-how in Embedded-Systemen, Automotive, IoT und Full-Stack-Entwicklung."
+  },
+  "whatWeDeliver": "Was wir liefern:",
+  "discussExpertise": "Diese Expertise besprechen",
+  "areas": [
+    {
+      "title": "Embedded Systeme (C/C++)",
+      "description": "Wir entwickeln Low-Level-Software f\u00fcr Mikrocontroller und Steuerger\u00e4te (ECUs).",
+      "expertise": [
+        "Firmware in C/C++ f\u00fcr ARM Cortex, STM32 und andere MCUs",
+        "RTOS-Integration (FreeRTOS, Zephyr, ThreadX)",
+        "CAN/LIN-Kommunikationsprotokolle",
+        "Bootloader und Firmware-Updates (OTA)",
+        "Diagnoseprotokolle (UDS, J1939)",
+        "Speicherverwaltung und Optimierung",
+        "Unit-Tests und CI/CD-Pipelines"
+      ]
+    },
+    {
+      "title": "Automotive Engineering",
+      "description": "Wir liefern sichere und zuverl\u00e4ssige Automotive-Softwarel\u00f6sungen.",
+      "expertise": [
+        "AUTOSAR Classic & Adaptive Integration",
+        "ADAS (Fahrerassistenzsysteme)",
+        "Funktionale Sicherheit (ISO 26262)",
+        "Cyber Security & sichere Bootloader",
+        "Diagnose (UDS, DoIP) & ECU-Tests",
+        "V-Modell-Entwicklungsprozesse",
+        "HIL/SIL-Tests und Validierung"
+      ]
+    },
+    {
+      "title": "IoT-L\u00f6sungen",
+      "description": "Wir verbinden Ger\u00e4te mit der Cloud und erwecken Daten zum Leben.",
+      "expertise": [
+        "Smart-Home- & Smart-City-L\u00f6sungen",
+        "Industrielle Sensoren und \u00dcberwachung",
+        "LoRaWAN/SIGFOX-Konnektivit\u00e4tsmodule",
+        "MQTT-Broker-Integration",
+        "Cloud-Dashboards (AWS IoT, Azure IoT, Google Cloud)",
+        "Edge Computing und Datenverarbeitung",
+        "Batteriebetriebenes Low-Power-Design"
+      ]
+    },
+    {
+      "title": "Produktdesign & Prototyping",
+      "description": "Von der Idee bis zur Industrialisierung \u2014 wir entwerfen und prototypen komplette elektronische Produkte.",
+      "expertise": [
+        "Schaltungsentwurf und Schaltplanerfassung",
+        "PCB-Layout (Multilayer, High-Speed)",
+        "3D-mechanische Geh\u00e4use (CAD-Modellierung)",
+        "Hardware-Validierung und -Tests",
+        "EMV/EMI-Konformit\u00e4tsunterst\u00fctzung",
+        "Lieferketten- und DFM-Optimierung",
+        "Zertifizierungsunterst\u00fctzung (CE, FCC)"
+      ]
+    },
+    {
+      "title": "Mobile & Full-Stack-Entwicklung",
+      "description": "Wir erstellen vernetzte mobile Apps und Backend-Systeme, die Ger\u00e4te mit Nutzern verbinden.",
+      "expertise": [
+        "Native iOS (Swift) und Android (Kotlin) Apps",
+        "React- und Next.js-Webanwendungen",
+        "Node.js- und TypeScript-Backend-APIs",
+        "PostgreSQL- und MongoDB-Datenbanken",
+        "Firebase- und Cloud-Services-Integration",
+        "Echtzeit-Ger\u00e4te\u00fcberwachungs-Dashboards",
+        "Sichere Authentifizierung und Autorisierung"
+      ]
+    },
+    {
+      "title": "Digital-Twin-Philosophie",
+      "description": "Wir bauen es virtuell, bevor wir es physisch bauen \u2014 um Risiko, Kosten und Time-to-Market zu reduzieren.",
+      "expertise": [
+        "Virtuelles Prototyping und Simulation",
+        "Modellbasiertes Systems Engineering (MBSE)",
+        "Hardware-in-the-Loop (HIL) Simulation",
+        "Digitale Echtzeit-Repliken physischer Systeme",
+        "Predictive Analytics und Leistungsoptimierung",
+        "Integration mit CAD/CAE-Toolchains",
+        "Kontinuierliche Validierung durch virtuelle Tests"
+      ]
+    },
+    {
+      "title": "\u00d6ffentliche Dienste & GovTech",
+      "description": "\u00d6ffentliche Dienste durch Technologie st\u00e4rken \u2014 Verwaltung effizienter, transparenter und b\u00fcrgerfreundlicher machen.",
+      "expertise": [
+        "E-Government-Plattformen und B\u00fcrgerportale",
+        "Digitales Dokumentenmanagement und Workflow-Automatisierung",
+        "Sichere Datenverarbeitung und DSGVO-Konformit\u00e4t",
+        "Integration mit nationalen Registern und Datenbanken",
+        "Smart-City-Infrastruktur und \u00dcberwachung",
+        "\u00d6PNV- und Versorgungsmanagement-Systeme",
+        "Barrierefreiheit (WCAG-Konformit\u00e4t)"
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Bereit, Ihr Projekt zu starten?",
+    "subtitle": "Lassen Sie uns besprechen, wie unsere Engineering-Expertise Ihnen helfen kann, Ihre Ziele zu erreichen.",
+    "button": "Kontakt aufnehmen"
+  }
+}

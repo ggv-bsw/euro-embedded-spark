@@ -16,8 +16,11 @@ import { supabase } from "@/integrations/supabase/client";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import { useTranslation } from "react-i18next";
 
 export default function Contact() {
+  const { t, i18n } = useTranslation("contact");
+  const lang = i18n.language;
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
@@ -27,84 +30,51 @@ export default function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const seo = t("seo", { returnObjects: true }) as { title: string; description: string; keywords: string };
+  const hero = t("hero", { returnObjects: true }) as Record<string, string>;
+  const info = t("info", { returnObjects: true }) as Record<string, string>;
+  const form = t("form", { returnObjects: true }) as Record<string, string>;
+  const validation = t("validation", { returnObjects: true }) as Record<string, string>;
+
+  const SITE = "https://bsw-tech.com";
+  const prefix = lang === "de" ? "/de" : "";
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Client-side validation
-    if (
-      !formData.name.trim() ||
-      !formData.email.trim() ||
-      !formData.message.trim()
-    ) {
-      toast({
-        title: "Error",
-        description: "Please fill in all required fields.",
-        variant: "destructive",
-      });
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+      toast({ title: validation.error, description: validation.requiredFields, variant: "destructive" });
       return;
     }
-
     if (formData.name.length > 100) {
-      toast({
-        title: "Error",
-        description: "Name must be less than 100 characters.",
-        variant: "destructive",
-      });
+      toast({ title: validation.error, description: validation.nameTooLong, variant: "destructive" });
       return;
     }
-
     if (formData.email.length > 255) {
-      toast({
-        title: "Error",
-        description: "Email must be less than 255 characters.",
-        variant: "destructive",
-      });
+      toast({ title: validation.error, description: validation.emailTooLong, variant: "destructive" });
       return;
     }
-
     if (formData.message.length > 1000) {
-      toast({
-        title: "Error",
-        description: "Message must be less than 1000 characters.",
-        variant: "destructive",
-      });
+      toast({ title: validation.error, description: validation.messageTooLong, variant: "destructive" });
       return;
     }
-
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
-      toast({
-        title: "Error",
-        description: "Please enter a valid email address.",
-        variant: "destructive",
-      });
+      toast({ title: validation.error, description: validation.invalidEmail, variant: "destructive" });
       return;
     }
 
     setIsSubmitting(true);
-
     try {
-      const { data, error } = await supabase.functions.invoke(
-        "submit-contact-form",
-        {
-          body: formData,
-        }
-      );
-
+      const { data, error } = await supabase.functions.invoke("submit-contact-form", { body: formData });
       if (error) throw error;
-
-      toast({
-        title: "Message Sent!",
-        description: "We'll get back to you within 24 hours.",
-      });
-
+      toast({ title: t("success.title"), description: t("success.description") });
       setFormData({ name: "", email: "", company: "", message: "" });
     } catch (error: any) {
       console.error("Error submitting form:", error);
       toast({
-        title: "Error",
-        description:
-          error.message || "Failed to send message. Please try again.",
+        title: validation.error,
+        description: error.message || t("error.default"),
         variant: "destructive",
       });
     } finally {
@@ -112,53 +82,34 @@ export default function Contact() {
     }
   };
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (
     <>
-      <SEO
-        title="Contact BSW TECH | Automotive, IoT & Embedded Engineering"
-        description="Contact BSW TECH to discuss embedded C/C++, AUTOSAR, and IoT projects. Headquarters in Chișinău, Moldova with EU presence (Romania, Estonia). Book a call or send us a message."
-        keywords="contact BSW TECH, embedded engineering contact, AUTOSAR partner, IoT development contact"
-      />
+      <SEO title={seo.title} description={seo.description} keywords={seo.keywords} />
 
-      {/* JSON-LD: ContactPage */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ContactPage",
-            name: "Contact BSW TECH",
-            url: "https://bsw-tech.com/contact",
-            description:
-              "Contact page for BSW TECH — embedded, AUTOSAR, and IoT engineering partner in Europe.",
+            name: seo.title,
+            url: `${SITE}${prefix}/contact`,
+            description: seo.description,
             breadcrumb: {
               "@type": "BreadcrumbList",
               itemListElement: [
-                {
-                  "@type": "ListItem",
-                  position: 1,
-                  name: "Home",
-                  item: "https://bsw-tech.com/",
-                },
-                {
-                  "@type": "ListItem",
-                  position: 2,
-                  name: "Contact",
-                  item: "https://bsw-tech.com/contact",
-                },
+                { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}${prefix}/` },
+                { "@type": "ListItem", position: 2, name: hero.title, item: `${SITE}${prefix}/contact` },
               ],
             },
           }),
         }}
       />
 
-      {/* JSON-LD: Organization + ContactPoint */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -166,22 +117,16 @@ export default function Contact() {
             "@context": "https://schema.org",
             "@type": "Organization",
             name: "BSW TECH",
-            url: "https://bsw-tech.com/",
-            logo: "https://bsw-tech.com/og-image.png",
-            address: {
-              "@type": "PostalAddress",
-              addressLocality: "Chișinău",
-              addressCountry: "MD",
-            },
-            contactPoint: [
-              {
-                "@type": "ContactPoint",
-                contactType: "Sales",
-                email: "hr@bsw-tech.com",
-                areaServed: "EU",
-                availableLanguage: ["en"],
-              },
-            ],
+            url: `${SITE}/`,
+            logo: `${SITE}/og-image.png`,
+            address: { "@type": "PostalAddress", addressLocality: "Chi\u0219in\u0103u", addressCountry: "MD" },
+            contactPoint: [{
+              "@type": "ContactPoint",
+              contactType: "Sales",
+              email: "hr@bsw-tech.com",
+              areaServed: "EU",
+              availableLanguage: ["en", "de"],
+            }],
             sameAs: [
               "https://linkedin.com/company/bsw-tech",
               "https://github.com/bsw-tech",
@@ -199,24 +144,11 @@ export default function Contact() {
         {/* Hero */}
         <section className="pt-32 pb-16 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
           <div className="max-w-container mx-auto px-6 lg:px-20 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Let's Build Something Together
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              We're ready to discuss your next Automotive, IoT or Embedded
-              project.
-            </p>
-            <Button
-              variant="hero"
-              size="lg"
-              asChild
-            >
-              <a
-                href="https://calendly.com/gheorghe-ghirjev-bsw-tech/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Book a 30-min Call
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">{hero.title}</h1>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">{hero.subtitle}</p>
+            <Button variant="hero" size="lg" asChild>
+              <a href="https://calendly.com/gheorghe-ghirjev-bsw-tech/30min" target="_blank" rel="noopener noreferrer">
+                {hero.bookCall}
                 <ArrowRight className="ml-2" />
               </a>
             </Button>
@@ -229,100 +161,59 @@ export default function Contact() {
             <div className="grid md:grid-cols-2 gap-16">
               {/* Contact Info */}
               <div>
-                <h2 className="text-3xl font-bold mb-8">Get in Touch</h2>
-
+                <h2 className="text-3xl font-bold mb-8">{info.title}</h2>
                 <div className="space-y-6 mb-12">
                   <div className="flex items-start gap-4">
                     <div className="p-3 bg-primary/10 rounded-lg">
                       <MapPin className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-1">Headquarters</h3>
+                      <h3 className="font-semibold mb-1">{info.headquarters}</h3>
                       <p className="text-muted-foreground">
-                        Chișinău, Moldova
-                        <br />
-                        EU Presence: Romania, Estonia
+                        {info.headquartersAddress}<br />{info.headquartersPresence}
                       </p>
                     </div>
                   </div>
-
                   <div className="flex items-start gap-4">
                     <div className="p-3 bg-primary/10 rounded-lg">
                       <Mail className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-1">Email</h3>
-                      <a
-                        href="mailto:hr@bsw-tech.com"
-                        className="text-primary hover:underline"
-                      >
-                        hr@bsw-tech.com
-                      </a>
+                      <h3 className="font-semibold mb-1">{info.email}</h3>
+                      <a href="mailto:hr@bsw-tech.com" className="text-primary hover:underline">hr@bsw-tech.com</a>
                     </div>
                   </div>
                 </div>
 
-                {/* Social Links */}
                 <div>
-                  <h3 className="font-semibold mb-4">Follow Us</h3>
+                  <h3 className="font-semibold mb-4">{info.followUs}</h3>
                   <div className="flex gap-4">
-                    <a
-                      href="https://linkedin.com/company/bsw-tech"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 bg-card border border-line rounded-lg hover:border-primary/50 hover:bg-primary/10 transition-all"
-                      aria-label="LinkedIn"
-                    >
-                      <Linkedin className="w-6 h-6 text-primary" />
-                    </a>
-                    <a
-                      href="https://github.com/bsw-tech"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 bg-card border border-line rounded-lg hover:border-primary/50 hover:bg-primary/10 transition-all"
-                      aria-label="GitHub"
-                    >
-                      <Github className="w-6 h-6 text-primary" />
-                    </a>
-                    <a
-                      href="https://www.youtube.com/@BSWTech-h8q"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 bg-card border border-line rounded-lg hover:border-primary/50 hover:bg-primary/10 transition-all"
-                      aria-label="YouTube"
-                    >
-                      <Youtube className="w-6 h-6 text-primary" />
-                    </a>
-                    <a
-                      href="https://www.instagram.com/bswtech/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 bg-card border border-line rounded-lg hover:border-primary/50 hover:bg-primary/10 transition-all"
-                      aria-label="Instagram"
-                    >
-                      <Instagram className="w-6 h-6 text-primary" />
-                    </a>
+                    {[
+                      { icon: Linkedin, url: "https://linkedin.com/company/bsw-tech", label: "LinkedIn" },
+                      { icon: Github, url: "https://github.com/bsw-tech", label: "GitHub" },
+                      { icon: Youtube, url: "https://www.youtube.com/@BSWTech-h8q", label: "YouTube" },
+                      { icon: Instagram, url: "https://www.instagram.com/bswtech/", label: "Instagram" },
+                    ].map((social) => (
+                      <a
+                        key={social.label}
+                        href={social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-3 bg-card border border-line rounded-lg hover:border-primary/50 hover:bg-primary/10 transition-all"
+                        aria-label={social.label}
+                      >
+                        <social.icon className="w-6 h-6 text-primary" />
+                      </a>
+                    ))}
                   </div>
                 </div>
 
-                {/* Calendly CTA */}
                 <div className="mt-12 p-6 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl border border-primary/20">
-                  <h3 className="text-xl font-bold mb-3">Prefer a quick call?</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Schedule a 30-minute meeting directly with our engineering team.
-                  </p>
-                  <Button
-                    variant="hero"
-                    size="lg"
-                    className="w-full"
-                    asChild
-                  >
-                    <a
-                      href="https://calendly.com/gheorghe-ghirjev-bsw-tech/30min"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Schedule via Calendly
+                  <h3 className="text-xl font-bold mb-3">{info.preferCall}</h3>
+                  <p className="text-muted-foreground mb-4">{info.preferCallDescription}</p>
+                  <Button variant="hero" size="lg" className="w-full" asChild>
+                    <a href="https://calendly.com/gheorghe-ghirjev-bsw-tech/30min" target="_blank" rel="noopener noreferrer">
+                      {info.scheduleCalendly}
                     </a>
                   </Button>
                 </div>
@@ -331,91 +222,26 @@ export default function Contact() {
               {/* Contact Form */}
               <div>
                 <div className="bg-card p-8 rounded-2xl border border-line">
-                  <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
+                  <h2 className="text-2xl font-bold mb-6">{form.title}</h2>
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
-                      <label
-                        htmlFor="name"
-                        className="block text-sm font-medium mb-2"
-                      >
-                        Name *
-                      </label>
-                      <Input
-                        id="name"
-                        name="name"
-                        type="text"
-                        required
-                        value={formData.name}
-                        onChange={handleChange}
-                        placeholder="Your name"
-                        className="bg-background"
-                      />
+                      <label htmlFor="name" className="block text-sm font-medium mb-2">{form.name}</label>
+                      <Input id="name" name="name" type="text" required value={formData.name} onChange={handleChange} placeholder={form.namePlaceholder} className="bg-background" />
                     </div>
-
                     <div>
-                      <label
-                        htmlFor="email"
-                        className="block text-sm font-medium mb-2"
-                      >
-                        Email *
-                      </label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        required
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="your.email@company.com"
-                        className="bg-background"
-                      />
+                      <label htmlFor="email" className="block text-sm font-medium mb-2">{form.email}</label>
+                      <Input id="email" name="email" type="email" required value={formData.email} onChange={handleChange} placeholder={form.emailPlaceholder} className="bg-background" />
                     </div>
-
                     <div>
-                      <label
-                        htmlFor="company"
-                        className="block text-sm font-medium mb-2"
-                      >
-                        Company
-                      </label>
-                      <Input
-                        id="company"
-                        name="company"
-                        type="text"
-                        value={formData.company}
-                        onChange={handleChange}
-                        placeholder="Your company name"
-                        className="bg-background"
-                      />
+                      <label htmlFor="company" className="block text-sm font-medium mb-2">{form.company}</label>
+                      <Input id="company" name="company" type="text" value={formData.company} onChange={handleChange} placeholder={form.companyPlaceholder} className="bg-background" />
                     </div>
-
                     <div>
-                      <label
-                        htmlFor="message"
-                        className="block text-sm font-medium mb-2"
-                      >
-                        Message *
-                      </label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        required
-                        value={formData.message}
-                        onChange={handleChange}
-                        placeholder="Tell us about your project..."
-                        rows={6}
-                        className="bg-background resize-none"
-                      />
+                      <label htmlFor="message" className="block text-sm font-medium mb-2">{form.message}</label>
+                      <Textarea id="message" name="message" required value={formData.message} onChange={handleChange} placeholder={form.messagePlaceholder} rows={6} className="bg-background resize-none" />
                     </div>
-
-                    <Button
-                      type="submit"
-                      variant="hero"
-                      size="lg"
-                      disabled={isSubmitting}
-                      className="w-full"
-                    >
-                      {isSubmitting ? "Sending..." : "Send Message"}
+                    <Button type="submit" variant="hero" size="lg" disabled={isSubmitting} className="w-full">
+                      {isSubmitting ? form.submitting : form.submit}
                     </Button>
                   </form>
                 </div>

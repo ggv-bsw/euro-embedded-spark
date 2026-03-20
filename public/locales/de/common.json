@@ -1,0 +1,40 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "expertise": "Kompetenz",
+    "successStories": "Referenzen",
+    "about": "\u00dcber uns",
+    "careers": "Karriere",
+    "contact": "Kontakt",
+    "getStarted": "Loslegen"
+  },
+  "footer": {
+    "tagline": "Kosteneffizientes Near-Shore-Engineering f\u00fcr Automotive, IoT & Embedded Systems. Osteurop\u00e4isches Talent mit westeurop\u00e4ischer Pr\u00e4zision.",
+    "address": "Chi\u0219in\u0103u, Moldau | EU-Pr\u00e4senz in Rum\u00e4nien, Estland",
+    "company": "Unternehmen",
+    "services": "Leistungen",
+    "resources": "Ressourcen",
+    "aboutUs": "\u00dcber uns",
+    "successStories": "Referenzen",
+    "careers": "Karriere",
+    "contact": "Kontakt",
+    "embeddedSystems": "Embedded Systeme",
+    "automotiveEngineering": "Automotive Engineering",
+    "iotSolutions": "IoT-L\u00f6sungen",
+    "productDesign": "Produktdesign",
+    "mobileDevelopment": "Mobile Entwicklung",
+    "blog": "Blog",
+    "playground": "Playground",
+    "copyright": "\u00a9 {{year}} BSW TECH SRL. Alle Rechte vorbehalten. ISO 9001 \u00b7 14001 \u00b7 27001 \u00b7 37001 zertifiziert"
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Seite nicht gefunden",
+    "link": "Zur\u00fcck zur Startseite"
+  },
+  "storyCard": {
+    "scope": "Umfang",
+    "technologies": "Technologien",
+    "result": "Ergebnis"
+  }
+}

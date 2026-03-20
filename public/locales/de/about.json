@@ -1,0 +1,99 @@
+{
+  "seo": {
+    "title": "\u00dcber BSW TECH | Europ\u00e4ischer Near-Shore-Engineering-Partner",
+    "description": "BSW TECH ist ein europ\u00e4isches Engineering-Unternehmen aus Moldau (gegr. 2021), spezialisiert auf Embedded, AUTOSAR, IoT und Produktentwicklung. ISO 9001/14001/27001/37001 zertifiziert. Near-Shore-Partner f\u00fcr nordische und deutsche Unternehmen.",
+    "keywords": "\u00dcber BSW TECH, Near-Shore Moldau, Embedded Engineering, AUTOSAR, IoT, ISO 9001, ISO 27001"
+  },
+  "hero": {
+    "title": "\u00dcber BSW TECH",
+    "subtitle": "Ein europ\u00e4isches Engineering-Unternehmen, das Embedded- und Softwarel\u00f6sungen f\u00fcr Automotive, IoT und Produktdesign liefert."
+  },
+  "overview": {
+    "title": "Engineering-Partner, dem Sie vertrauen k\u00f6nnen",
+    "paragraphs": [
+      "BSW TECH SRL ist ein europ\u00e4isches Engineering-Unternehmen aus Moldau, das Embedded- und Softwarel\u00f6sungen f\u00fcr Automotive, IoT und Produktdesign liefert.",
+      "Wir vereinen Hardwaredesign, Firmwareentwicklung und Software-Engineering unter einem Dach und erm\u00f6glichen so komplette Produktl\u00f6sungen vom Konzept bis zur Produktion.",
+      "Seit 2021 helfen wir nordischen und deutschen Unternehmen, ihre F&E-Kapazit\u00e4ten mit kosteneffizientem Near-Shore-Engineering zu beschleunigen \u2014 ohne Qualit\u00e4tskompromisse."
+    ],
+    "founded": "Gegr\u00fcndet",
+    "engineers": "Ingenieure",
+    "projectsDelivered": "Projekte geliefert"
+  },
+  "team": {
+    "title": "Unser Team",
+    "subtitle": "30+ Ingenieure unter erfahrener F\u00fchrung in Embedded, Automotive und IoT.",
+    "ceoTitle": "CEO & Gr\u00fcnder",
+    "ceoQuote": "Technologie kennt keine Grenzen \u2014 und wir auch nicht.",
+    "ceoDescription": "In einer Welt, in der Geschwindigkeit den Erfolg bestimmt, verwandelt Nearshoring mit BSW TECH Distanz in einen Vorteil \u2014 Innovation beschleunigen, Kosten senken und mutige Ideen in reale Produkte verwandeln.",
+    "members": [
+      {
+        "name": "Igor R.",
+        "role": "Engineering Lead",
+        "focus": "Firmware-Architektur in C/C++, AUTOSAR-Classic-Integration und Echtzeit-Embedded-Systeme f\u00fcr Automotive und IoT."
+      },
+      {
+        "name": "Daniel V.",
+        "role": "ML & AI Lead",
+        "focus": "Machine-Learning-Pipelines, Computer Vision und KI-gesteuerte Automatisierung f\u00fcr industrielle und IoT-Anwendungen."
+      },
+      {
+        "name": "Grigorie C.",
+        "role": "Backend & Datenbank Lead",
+        "focus": "Skalierbare Backend-Architekturen, Datenbankdesign und Hochleistungs-API-Entwicklung f\u00fcr vernetzte Systeme."
+      },
+      {
+        "name": "Vlad M.",
+        "role": "Hardware & PCB Layout Lead",
+        "focus": "Multilayer-PCB-Design, Schaltplanerfassung und DFM-optimierte Hardware vom Prototyp bis zur Produktion."
+      }
+    ]
+  },
+  "values": {
+    "title": "Unsere Werte",
+    "subtitle": "Die Prinzipien, die unsere Arbeit und Kundenbeziehungen leiten.",
+    "items": [
+      {
+        "title": "Technische Exzellenz",
+        "description": "Wir streben die h\u00f6chsten Standards in Embedded- und Software-Engineering an und lernen kontinuierlich dazu."
+      },
+      {
+        "title": "Partnerschaftliche Zusammenarbeit",
+        "description": "Wir arbeiten als Erweiterung Ihres Teams, passen uns Ihren Prozessen an und kommunizieren transparent."
+      },
+      {
+        "title": "Qualit\u00e4t zuerst",
+        "description": "ISO-zertifizierte Prozesse gew\u00e4hrleisten konsistente Qualit\u00e4t \u00fcber alle Projekte, vom Prototyp bis zur Produktion."
+      },
+      {
+        "title": "Near-Shore-Vorteil",
+        "description": "Strategischer Standort in Moldau bietet EU-Zeitzonenausrichtung mit Kosteneffizienz und kultureller Passung."
+      }
+    ]
+  },
+  "certifications": {
+    "title": "Zertifizierungen",
+    "subtitle": "ISO-zertifizierte Prozesse f\u00fcr Qualit\u00e4t, Sicherheit und Compliance.",
+    "items": [
+      { "name": "ISO 9001", "description": "Qualit\u00e4tsmanagementsysteme" },
+      { "name": "ISO 14001", "description": "Umweltmanagement" },
+      { "name": "ISO 27001", "description": "Informationssicherheit" },
+      { "name": "ISO 37001", "description": "Anti-Korruptionsmanagement" }
+    ]
+  },
+  "memberships": {
+    "title": "Branchenmitgliedschaften",
+    "subtitle": "Aktive Mitglieder f\u00fchrender Technologie- und Wirtschaftsorganisationen.",
+    "items": [
+      { "name": "ACEM", "full": "Verband der Elektronikunternehmen Moldaus", "role": "Vorstandsmitglied" },
+      { "name": "IT Park Moldova", "full": "IT Park Resident", "role": "Ansässiges Unternehmen" },
+      { "name": "AHK", "full": "Deutsche Handelskammer", "role": "Mitglied" },
+      { "name": "Schwedisch-Polnische Kammer", "full": "Schwedisch-Polnische Handelskammer", "role": "Mitglied" }
+    ]
+  },
+  "cta": {
+    "title": "Begleiten Sie unsere Engineering-Reise",
+    "subtitle": "Ob Sie einen Technologiepartner suchen oder unserem Team beitreten m\u00f6chten \u2014 wir freuen uns von Ihnen zu h\u00f6ren.",
+    "partnerButton": "Partner werden",
+    "careersButton": "Karriere ansehen"
+  }
+}
