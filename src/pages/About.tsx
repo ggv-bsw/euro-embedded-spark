@@ -4,10 +4,10 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import gheorghePhoto from "@/assets/gheorghe-photo.jpg";
-import photoIgor from "@/assets/Igor R.jpeg";
-import photoDaniel from "@/assets/Daniel V.jpg";
-import photoGrigore from "@/assets/Grigore C.jpg";
-import photoVlad from "@/assets/Vlad M.jpg";
+import photoIgor from "@/assets/igor-r.jpeg";
+import photoDaniel from "@/assets/daniel-v.jpg";
+import photoGrigore from "@/assets/grigore-c.jpg";
+import photoVlad from "@/assets/vlad-m.jpg";
 import SEO from "@/components/SEO";
 
 const certifications = [

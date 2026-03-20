@@ -19,20 +19,20 @@ import ServiceCard from "@/components/ServiceCard";
 import StoryCard from "@/components/StoryCard";
 import SEO from "@/components/SEO";
 import heroImage from "@/assets/hero-tech.jpg";
-import logoArobs from "@/assets/Arobs-logo.png";
-import logoCapgemini from "@/assets/Capgemini-Logo.wine.png";
+import logoArobs from "@/assets/arobs-logo.png";
+import logoCapgemini from "@/assets/capgemini-logo.png";
 import logoElectra from "@/assets/electra-logo.png";
 import logoFyrqom from "@/assets/fyrqom_logotype.svg";
 import logoGefeetech from "@/assets/gefeetech.png";
-import logoAppsfactory from "@/assets/K81DAGrEQbRq8wtfWAZwBnqThiG1589182555932_200x200.png";
-import logoNttData from "@/assets/Logo_Global_NTT_DATA_Future_Blue_RGB.png";
+import logoAppsfactory from "@/assets/appsfactory-logo.png";
+import logoNttData from "@/assets/ntt-data-logo.png";
 import logoBluesys from "@/assets/logo-141x65.png";
-import logoProcesio from "@/assets/PROCESIO_logo_white_800.png";
-import logoRandstad from "@/assets/Randstad_Logo.svg (1).png";
+import logoProcesio from "@/assets/procesio-logo.png";
+import logoRandstad from "@/assets/randstad-logo.png";
 import logoVivafem from "@/assets/vivafem-AoPWP9le0VUDovk2.svg";
-import photoMihai from "@/assets/Mihai Darzan .jpg";
-import photoChristoph from "@/assets/Cristoph Hiltl.jpg";
-import photoHani from "@/assets/Hani Ibrahim.webp";
+import photoMihai from "@/assets/mihai-darzan.jpg";
+import photoChristoph from "@/assets/cristoph-hiltl.jpg";
+import photoHani from "@/assets/hani-ibrahim.webp";
 
 const services = [
   {
