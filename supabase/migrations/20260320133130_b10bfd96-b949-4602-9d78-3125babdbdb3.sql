@@ -1,0 +1,1 @@
+DROP POLICY "Anyone can submit contact messages" ON public.contact_messages;

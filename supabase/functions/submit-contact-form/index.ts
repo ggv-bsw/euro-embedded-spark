@@ -31,9 +31,10 @@ function escapeHtml(text: string): string {
 
 // Extract client IP from request
 function getClientIp(req: Request): string {
-  return req.headers.get('x-forwarded-for')?.split(',')[0].trim() || 
-         req.headers.get('x-real-ip') || 
-         'unknown';
+  const xRealIp = req.headers.get('x-real-ip');
+  if (xRealIp) return xRealIp;
+  const xff = req.headers.get('x-forwarded-for');
+  return xff?.split(',').pop()?.trim() ?? 'unknown';
 }
 
 const handler = async (req: Request): Promise<Response> => {
