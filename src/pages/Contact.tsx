@@ -66,6 +66,7 @@ export default function Contact() {
 
     setIsSubmitting(true);
     try {
+      if (!supabase) throw new Error("Service temporarily unavailable");
       const { data, error } = await supabase.functions.invoke("submit-contact-form", { body: formData });
       if (error) throw error;
       toast({ title: t("success.title"), description: t("success.description") });

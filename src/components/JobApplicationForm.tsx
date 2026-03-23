@@ -136,6 +136,7 @@ export default function JobApplicationForm({
     setIsSubmitting(true);
 
     try {
+      if (!supabase) throw new Error("Service temporarily unavailable");
       const cvBase64 = await fileToBase64(cvFile);
 
       const { error } = await supabase.functions.invoke(
