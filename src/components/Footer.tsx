@@ -1,7 +1,7 @@
 import { Linkedin, Github, Youtube, Mail, MapPin, Instagram } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import LocalizedLink from "@/components/LocalizedLink";
-import bswLogo from "@/assets/bsw-logo.png";
+import bswLogo from "@/assets/bsw-logo.webp";
 
 const socialLinks = [
   { icon: Linkedin, url: "https://linkedin.com/company/bsw-tech", label: "LinkedIn" },
