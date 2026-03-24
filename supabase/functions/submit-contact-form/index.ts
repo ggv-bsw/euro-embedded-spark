@@ -106,7 +106,7 @@ const handler = async (req: Request): Promise<Response> => {
     }
 
     // Validate lengths
-    if (name.length > 100 || email.length > 255 || message.length > 1000) {
+    if (name.length > 100 || email.length > 255 || message.length > 1000 || (company && company.length > 200)) {
       return new Response(
         JSON.stringify({ error: "Input exceeds maximum length" }),
         {
