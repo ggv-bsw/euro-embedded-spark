@@ -20,6 +20,7 @@ import SEO from "@/components/SEO";
 import LocalizedLink from "@/components/LocalizedLink";
 import { useTranslation } from "react-i18next";
 import heroImage from "@/assets/hero-tech.webp";
+import heroImageMobile from "@/assets/hero-tech-mobile.webp";
 import logoArobs from "@/assets/Arobs-logo.webp";
 import logoCapgemini from "@/assets/capgemini-logo.webp";
 import logoElectra from "@/assets/electra-logo.webp";
