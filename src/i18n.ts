@@ -3,6 +3,11 @@ import { initReactI18next } from "react-i18next";
 import HttpBackend from "i18next-http-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
 
+// Inline English translations to eliminate the network waterfall
+// (HTML → JS → locale JSON). Other languages still load via HTTP backend.
+import enCommon from "@/../public/locales/en/common.json";
+import enIndex from "@/../public/locales/en/index.json";
+
 i18n
   .use(HttpBackend)
   .use(LanguageDetector)
@@ -13,6 +18,13 @@ i18n
     defaultNS: "common",
     ns: ["common"],
     returnObjects: true,
+    partialBundledLanguages: true,
+    resources: {
+      en: {
+        common: enCommon,
+        index: enIndex,
+      },
+    },
     detection: {
       order: ["path"],
       lookupFromPathIndex: 0,
@@ -24,8 +36,6 @@ i18n
       useSuspense: true,
     },
     interpolation: {
-      // React already escapes all output — double-escaping breaks rendered text.
-      // See: https://react.i18next.com/latest/i18next-instance
       escapeValue: false,
     },
   });
