@@ -117,7 +117,15 @@
   </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Inline shell for instant FCP — replaced by React on hydration -->
+      <style>
+        .shell{min-height:100vh;background:#0f0f11;display:flex;align-items:center;justify-content:center}
+        .shell-spinner{width:40px;height:40px;border:3px solid rgba(255,255,255,.1);border-top-color:#7c3aed;border-radius:50%;animation:spin .7s linear infinite}
+        @keyframes spin{to{transform:rotate(360deg)}}
+      </style>
+      <div class="shell"><div class="shell-spinner"></div></div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
