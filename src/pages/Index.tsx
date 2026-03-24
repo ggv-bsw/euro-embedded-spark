@@ -152,16 +152,19 @@ export default function Index() {
 
         {/* Hero Section */}
         <section className="relative overflow-hidden">
-          <img
-            src={heroImage}
-            alt="Embedded automotive circuit board — BSW TECH near-shore engineering, Chisinau Moldova"
-            width={1920}
-            height={1080}
-            fetchPriority="high"
-            loading="eager"
-            decoding="async"
-            className="absolute inset-0 w-full h-full object-cover z-0"
-          />
+          <picture>
+            <source media="(max-width: 640px)" srcSet={heroImageMobile} type="image/webp" />
+            <img
+              src={heroImage}
+              alt="Embedded automotive circuit board — BSW TECH near-shore engineering, Chisinau Moldova"
+              width={1920}
+              height={1080}
+              fetchPriority="high"
+              loading="eager"
+              decoding="async"
+              className="absolute inset-0 w-full h-full object-cover z-0"
+            />
+          </picture>
           <div className="absolute inset-0 z-0 bg-background/75" />
           <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary/20 via-transparent to-secondary/10" />
 
