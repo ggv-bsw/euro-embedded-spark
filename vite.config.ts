@@ -10,11 +10,24 @@ function heroPreloadPlugin(): Plugin {
       order: "post",
       handler(html, ctx) {
         if (!ctx.bundle) return html;
+        let desktopHref = "";
+        let mobileHref = "";
         for (const [fileName] of Object.entries(ctx.bundle)) {
-          if (fileName.match(/assets\/hero-tech.*\.webp$/)) {
-            const tag = `<link rel="preload" as="image" type="image/webp" href="/${fileName}" fetchpriority="high" />`;
-            return html.replace("</head>", `${tag}\n</head>`);
+          if (fileName.match(/assets\/hero-tech-mobile.*\.webp$/)) {
+            mobileHref = `/${fileName}`;
+          } else if (fileName.match(/assets\/hero-tech.*\.webp$/)) {
+            desktopHref = `/${fileName}`;
           }
+        }
+        const tags: string[] = [];
+        if (mobileHref) {
+          tags.push(`<link rel="preload" as="image" type="image/webp" href="${mobileHref}" media="(max-width: 640px)" fetchpriority="high" />`);
+        }
+        if (desktopHref) {
+          tags.push(`<link rel="preload" as="image" type="image/webp" href="${desktopHref}" media="(min-width: 641px)" fetchpriority="high" />`);
+        }
+        if (tags.length) {
+          return html.replace("</head>", `${tags.join("\n")}\n</head>`);
         }
         return html;
       },
